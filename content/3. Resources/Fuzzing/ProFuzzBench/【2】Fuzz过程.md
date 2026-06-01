@@ -1,3 +1,7 @@
+---
+publish: true
+---
+
 ### Fuzz
 
 - ***1st argument (DOCIMAGE)*** : name of the docker image

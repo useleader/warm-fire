@@ -1,0 +1,663 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%% FULL RESULTS %%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Evaluations and Results}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%% IMAGENET %%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{ImageNet Classification}
+
+
+\subsubsection{Linear Classification}
+For linear classification, we apply the iBOT protocol. We instantiate 52 linear classifiers with the following grid of parameters: use the class token from the [1 or 4] last blocks, [use or don't use] the average of the patch tokens, use a learning rate in [1e-5, 2e-5, 5e-5, 1e-4, 2e-4, 5e-4, 1e-3, 2e-3, 5e-3, 1e-2, 2e-2, 5e-2, 1e-1]. 
+We train all of them simultaneously with SGD on the linear probing dataset (usually Imagenet-1k), with learning rate following a cosine schedule, using only random resized crop and horizontal flip as data augmentations, and retrieve the best classifier in the grid. We train the linear classifier for 12500 iterations, for the results shown in Table~\ref{tab:lin-inet1k} of the main text.
+
+% \pb{POC: Maxime}
+
+
+%%%%%%%%%%%%%%% FINETUNING %%%%%%%%%%%%%%%
+
+\subsubsection{Finetuning}
+% \pb{POC: Pierre}
+
+We finetune our models on ImageNet-1k using the recipe presented in DeiT III \cite{touvron2022deit}. 
+It uses the Three-augment transform with random resized crop, without erasing, and with mixup alpha set at 0.8, cutmix alpha set at 1.0 and color jitter probabilities at 0.3.
+We use the binary cross-entropy loss as suggested by \cite{wightman2021resnet}, with label smoothing at 0.1.
+The optimization is carried out with the AdamW~\cite{loshchilov2018fixing} optimizer during 50 epochs, where the learning rate follows a cosine-annealing schedule, with a linear warmup of 5 epochs.
+The weight decay is of 0.05, and the layer decay is set at 0.7 for all models (this rather high layer decay - meaning that only shallow transformer blocks are optimized - can be explained by the fact that the SSL pre-training creates a strong backbone). 
+The progressive stochastic drop path rate is set at 0.3, 0.4, 0.5 for ViT-L, ViT-H, ViT-G respectively.
+
+We present in Tab.~\ref{tab:ft-inet1k} more detailed results on our \OURS models at different resolutions, and compare them to state-of-the-art methods in image classification.
+Note that architectures differ in patch sizes so results are not perfectly comparable (although we found empirically that the finetuning results do not change in more than $0.1/0.2\%$). 
+For instance, CLIP and \OURS use ViT-L/14, while MAE, iBOT, etc. use ViT-L/16.
+
+\begin{table}[t]
+\centering
+\footnotesize
+{\small
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{@{ }l l ccccc}
+    \toprule
+    Method & Data  & \multicolumn{2}{c}{L}  & \multicolumn{2}{c}{H} & g \\
+\cmidrule{3-4}
+\cmidrule{5-6}
+& & 224 & 384 & 224 & 448 & 224 \\
+    \midrule
+\multicolumn{5}{@{}l}{\textit{Pretrained with text/classes data}}\\
+    CLIP~\cite{radford2021learning} & WIT-400M  & 86.1 & --   & --   & --   & -- \\
+    dBOT \cite{liu2022dbot}     & INet1k+WIT & 87.8 & --   & 88.5 & 89.1 & --   \\
+    %PeCo \cite{dong2021peco}    & INet-1k & 86.5 & --   & 87.5 & 88.3 & --   \\
+    DeiT III~\cite{touvron2022deit} & INet-22k    & 87.0 & 87.7 & 87.2 & --   & -- \\
+    CoCa~\cite{yu2022coca}  & ALIGN+JTF3B  & 88.4 & -& 90.1 & - & 91.0 \\
+    \midrule
+\multicolumn{5}{@{}l}{\textit{Pretrained on images only}}\\
+    MAE~\cite{he2021masked}     & INet-1k & 85.9 & --   & 86.9 & 87.8 & --   \\
+    dBOT \cite{liu2022dbot}     & INet-1k & 86.6 & --   & 87.4 & 88.0 & --   \\
+    iBOT~\cite{zhou2021ibot}    & INet-1k  & 85.2 & -& -    &   -  & - \\
+    iBOT~\cite{zhou2021ibot}    & INet-22k  & 86.6 & 87.5 & --   & --   & --  \\
+    %ViT~\cite{zhai2022scaling} & JTF-3B         & --   & 88.6 & --   & --   & -- \\ 
+    Data2vec~\cite{baevski2022data2vec}& INet-1k & 84.2 & 86.2 & - & -  & - \\
+    \OPENOURS 			& INet-22k  & 87.3 &  87.8 &  88.0 & 88.5 & 88.6 \\
+    \OURS & \LaViDa                     & 86.9 & 87.4 &  87.8 & 88.3 & 88.6 \\
+    \bottomrule
+\end{tabular}
+}
+\caption{
+\textbf{Performance of available pre-trained features after finetuning on ImageNet-1k.}
+We report the performance of different pre-trained features when finetuned on ImageNet at a resolution of 224, unless mentioned otherwise.
+The best overall model is at 91.0 top-1~\cite{yu2022coca}. 
+}
+\label{tab:ft-inet1k}
+\end{table}
+
+
+%%%%%%%%%%%%%%% ROBUSTNESS %%%%%%%%%%%%%%% 
+
+\subsubsection{Robustness Analysis}
+To verify the robustness of our models to out-of-distribution data,
+we evaluated our features on ImageNet-A(dversarial) (\texttt{Im-A})~\cite{hendrycks2021natural}, ImageNet-R(endition) (\texttt{Im-R})~\cite{hendrycks2021many},
+ImageNet-C(orruptions) (\texttt{Im-C})~\cite{hendrycks2018benchmarking},
+ImageNet-Sketch (\texttt{Sketch})~\cite{wang2019learningrobust},
+ImageNet ReaL (\texttt{Real})~\cite{beyer2020imagenetreal} and
+ImageNet-V2 (\texttt{V2})~\cite{recht2019imagenetv2}. The results for finetuned models and models with linear classification, which follow the protocol outlined above, are presented in Tables~\ref{tab:robustness-sup} and~\ref{tab:robustness-linear}.
+We report the mean corruption error (\texttt{mCE}) on ImageNet-C, ReaL accuracy on ImageNet ReaL and top-1 accuracy on the rest of the datasets. For baselines marked with an asterisk (\texttt{*}), we present the results available in the referenced paper.
+
+In the finetuned setting, {\OPENOURS} and {\OURS} models outperform the best models on all the robustness benchmarks, on some of them (Im-A, Im-R, Im-C, Sketch) by a large margin.
+The results in linear classification setting show that {\OPENOURS} and {\OURS} models scale well and yield significant performance gains on Im-A and Im-C benchmarks.
+
+\begin{table*}
+% Reference spreadsheet: https://docs.google.com/spreadsheets/d/1FQTkomgDnyWfx9JUai2npwKVo_J8dep6GpqS7D5GykQ/
+    \centering
+    \begin{tabular}{@{} lll c ccc cccc c cc @{}}
+        \toprule
+        Method      & Arch      & Data   && clean && Im-A & Im-R & Im-C$\downarrow$ & Sketch && Real & V2 \\
+        \midrule
+        SEER *~\cite{goyal2022vision}       & RG-10B   & IG-1B     && 85.8 && 52.7 & 56.1 & --   & 45.6 && 89.8 & 76.2 \\
+        FAN *~\cite{zhou2022understanding}  & FAN-L    & INet-22k  && 86.5 && 60.7 & 64.3 & 35.8 & --   && --   & --   \\
+        MAE~\cite{he2021masked}           & ViT-H/14 & INet-1k   && 86.9 && 68.2 & 64.4 & 33.8 & 49.0 && 90.0 & 78.5 \\
+        DeiT III~\cite{touvron2022deit}   & ViT-H/14 & INet-22k  && 87.2 && 72.5 & 69.8 & 40.3   & 54.3 && 90.0 & 78.8 \\
+        \midrule
+        \OPENOURS-G & ViT-G/16  & INet-22k  && 87.9 && 80.4 & 74.6 & 26.6 & 61.5 && 90.3 & 80.0 \\
+        \OURS-G & ViT-G/16  & \LaViDa   && 88.0 && 81.4 & 80.2 & 26.1 & 65.4 && 90.2 & 80.6 \\
+        \bottomrule
+    \end{tabular}
+    \caption{
+      Evaluation of our features on Domain Generalization datasets using {\bf a finetuned model}.
+      We compare to the best performing model on those datasets.
+    }
+    \label{tab:robustness-sup}
+\end{table*}
+
+\begin{table*}
+% Reference spreadsheet: https://docs.google.com/spreadsheets/d/1FQTkomgDnyWfx9JUai2npwKVo_J8dep6GpqS7D5GykQ/
+    \centering
+    \begin{tabular}{@{} lll c ccc cccc c cc @{}}
+        \toprule
+        Method      & Arch      & Data   && clean && Im-A & Im-R & Im-C$\downarrow$ & Sketch && Real & V2 \\
+        \midrule
+        OpenCLIP & ViT-L/14 & LAION     && 81.9 && 40.8 & 71.6 & 65.4 & 51.9 && 86.6 & 71.4 \\
+        OpenCLIP & ViT-H/14 & LAION     && 84.4 && 56.6 & 82.4 & 48.9 & 61.4 && 88.4 & 75.5 \\
+        CLIP    & ViT-L/14  & WIT-400M  && 84.6 && 66.1 & 76.7 & 51.1 & 53.9 && 88.1 & 75.3 \\
+        \midrule
+        \OPENOURS-L & ViT-L/16  & INet-22k  && 85.1 && 64.4 & 59.4 & 38.3 & 47.4 && 88.9 & 76.2 \\
+        \OPENOURS-H & ViT-H/16  & INet-22k  && 85.4 && 65.9 & 58.2 & 34.5 & 49.7 && 89.0 & 76.9 \\
+        \OPENOURS-G & ViT-G/16  & INet-22k  && 85.9 && 69.2 & 61.5 & 31.3 & 54.2 && 89.2 & 77.1 \\
+      \midrule
+        \OURS-L & ViT-L/16  & \LaViDa  && 84.7 && 66.1 & 64.2 & 37.8 & 53.5 && 88.9 & 76.1 \\
+        \OURS-H & ViT-H/16  & \LaViDa   && 85.2 && 66.8 & 65.5 & 35.9 & 56.3 && 89.2 & 76.8 \\
+        \OURS-G & ViT-G/16  & \LaViDa   && 85.9 && 73.7 & 72.3 & 30.4 & 61.2 && 89.2 & 77.6 \\
+        \bottomrule
+    \end{tabular}
+    \caption{
+      Evaluation of our features on Domain Generalization datasets using {\bf a linear classifier}.
+      For CLIP-like models and our model, we evaluated the robustness of the linear model, not the finetuned one.
+    }
+    \label{tab:robustness-linear}
+\end{table*}
+
+
+\subsubsection{Nearest Neighbor Recognition}
+For k-NN evaluation, we apply a very simple method following the protocol of DINO: we run all the dataset through the backbone to collect the class tokens, perform L2-normalization, retrieve the k closest neighbors in terms of cosine similarities in the training set for each sample of the validation set, and apply a softmax with a fixed temperature of 0.07 for voting. We use $k = 10$ and show results in Table~\ref{tab:knn-inet1k}.
+
+% \pb{POC: Maxime}
+
+\begin{table*}[t]
+  \centering
+  \begin{tabular}{@{}l l l c ccc c@{}}
+    \toprule
+    Method & Arch. & Pretrain && 1 & 2 & 5 & FULL \\
+    \midrule
+    CLIP~\cite{radford2021learning} & ViT-L/14                & WIT-400M && 36.6 & 44.9 & 56.1 & 79.8 \\
+    % CLIP~\cite{radford2021learning} & ViT-L/14$_{\text{336}}$ & WIT-400M && --   & --   & --   &  \\
+    OpenCLIP                        & ViT-L/14                & LAION    && 37.4 & 45.3 & 56.4 & 78.8 \\
+    OpenCLIP                        & ViT-H/14                & LAION    && 40.3 & 48.5 & 59.7 & 81.6 \\
+    \midrule
+    MAE~\cite{he2021masked}         & ViT-H/14                & INet-1k  && 11.6 & 18.6 & 32.8 &  \\
+    % SEER-v2~\cite{goyal2022vision}  & RG10B                   & IG2B     && --   & --   & --   &  \\
+    DINO~\cite{caron2021emerging}   & ViT-S/8                 & INet-1k  && 45.0 & 51.9 & 60.4 & 78.3 \\
+    MSN~\cite{assran2022masked}     & ViT-L/7                 & INet-1k  && 57.1 & 66.4 & 72.1 &  \\ 
+    iBOT~\cite{zhou2021ibot}        & ViT-L/16                & INet-22k && 34.7 & 40.9 & 48.4 & 73.2 \\
+    \midrule
+    \OPENOURS-L 		                    & ViT-L/14                & INet-22k && 57.6 & 63.3 & 69.3 & 81.8 \\
+    \OPENOURS-H 		                    & ViT-H/16                & INet-22k && 58.7 & 64.3 & 70.0 & 81.8 \\
+    \OPENOURS-H 		                    & ViT-H/16$_{\text{512}}$ & INet-22k && 59.8 & 65.4 & 70.8 & 82.8 \\
+    \OPENOURS-G 		                    & ViT-G/16                & INet-22k && 59.1 & 64.5 & 69.8 & 81.5 \\
+    \OURS-L 		                    & ViT-L/14                & \LaViDa && 56.2	& 62.2 & 68.0 & 81.0 \\
+    \OURS-H 		                    & ViT-H/16                & \LaViDa && 56.3	& 62.1 & 67.8 & 81.0 \\
+    \OURS-G 		                    & ViT-G/16                & \LaViDa && 58.5 & 64.0 & 69.5 & 81.7 \\
+    \bottomrule
+  \end{tabular}
+  \caption{
+    \textbf{Nearest neighbor evaluation of our features in full and few-shot.}
+    We compare the performance of different frozen self-supervised pretrained features when we apply a simple nearest neighbor search with either $1$, $2$, $5$ or all the training example per class of the Inet-1k dataset.
+  }
+  \label{tab:knn-inet1k}
+\end{table*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% OPEN VOCAB %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Open Vocabulary Evaluation}
+% \pb{POC: Alaa. Question : do we keep it for the supmat?}
+Pretraining self-supervised features without using ImageNet allows to evaluate their ability at zero-shot classification on this benchmark.
+To probe their quality in this setting, we train a text encoder on top of our frozen features using the LAION dataset.
+Note that we do not finetune our visual features.
+We compare with several recent methods based on CLIP that learn features with a text-guided objective. 
+Most of these methods differs in larger and new architectures, as well as the use of large private text-image datasets.
+As shown in Table~\ref{tab:zs-inet1k}, our features works reasonably well in this setting and achieve comparable performance with other features trained on LAION.
+
+\begin{table}[t]
+{\small
+\centering
+\begin{tabular}{@{}l l l  c@{} }
+\toprule
+Method & Arch. & Pretrain & ZS \\
+\midrule
+\multicolumn{4}{@{}l}{\textit{Text-guided image pretraining}} \\
+CLIP~\cite{radford2021learning} & ViT-L/14 & WIT-400M           & 76.2  \\
+ALIGN~\cite{jia2021scaling} & EffNet-L2 & ALIGN 		  & 76.4  \\ 
+Flamingo~\cite{alayrac2022flamingo} & NFNet-F6 & ALIGN+LTIP & 77.9  \\
+OpenCLIP~\cite{ilharco_gabriel_2021_5143773} & ViT-H/14 & LAION-2B & 78.0\\
+\midrule
+\multicolumn{4}{@{}l}{\textit{Self-supervised pretraining}} \\
+\OPENOURS-H & ViT-H/16 & INet-21k & 73.1 \\
+% \OURS-H & ViT-H/16 & LaViDa & \\
+% \OURS-G & ViT-G/16 & LaViDa & \\
+\bottomrule
+\end{tabular}
+\caption{
+\textbf{Open-vocabulary evaluation on ImageNet-1k.}
+% \aj{POC: Alaa}
+We evaluate the zero-shot ability of models that are not pretrained on ImageNet-1k.
+We train a language encoder on top of our frozen \OPENOURS~ features using LAION-2B~\cite{schuhmann2021laion} to be comparable with OpenCLIP.
+Text-guided pretrained models use aligned text-image data to jointly pretrain both text and image encoders.
+Results for CLIP and ALIGN are taken from~\cite{wortsman2022robust}.
+For Flamingo, we report the zero-shot performance of their image encoder trained with a CLIP loss on the concatenation of the ALIGN and LTIP datasets.
+We denote by INet-21k, the version of ImageNet-22k where we have removed the trainval of INet-1k.
+}
+\label{tab:zs-inet1k}
+}
+\end{table}
+
+\begin{table}[t]
+    \resizebox{1.0\linewidth}{!}
+    {
+    \centering
+    \begin{tabular}{@{}lllccc@{}}
+        \toprule
+        Method & Data & Arch. & $ (\mathcal{J}$\&$\mathcal{F})_m$ & $\mathcal{J}_m$ & $\mathcal{F}_m$\\
+        \midrule
+        \multicolumn{4}{@{}l}{\textit{Supervised}}\\
+        ImageNet & INet & ViT-S/8 & 66.0 & 63.9 & 68.1\\
+        STM~\cite{oh2019video} & I/D/Y & RN50 & 81.8 & 79.2 & 84.3 \\
+        \midrule
+        \multicolumn{4}{@{}l}{\textit{Self-supervised}}\\
+        MoCo~\cite{he2020momentum} & INet & RN50 & 65.4 & 63.2 & 67.6 \\
+        STC~\cite{jabri2020space} & Kinetics & RN18 & 67.6 & 64.8 & 70.2 \\
+        DINO & INet & ViT-B/8 & 71.4 & 67.9 & 74.9 \\
+        \midrule
+        \OPENOURS-H & INet-22k & ViT-H/16 & 72.4 & 68.8 & 76.1 \\
+        \bottomrule
+    \end{tabular}
+    }
+    \caption{
+        \textbf{Evaluation on the DAVIS 2017 Video object segmentation dataset.} $\mathcal{J}$ measures IOU similarity while $\mathcal{F}$ measures boundary alignment.
+    }
+    \label{tab:dense}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% FINEGRAINED %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Fine-grained Classification}
+For the fine-grained classification, we follow the protocol defined in \cite{chen2020simple}, section B.8.1: we employ an off-the-shelf logistic regression classifier (from the scikit-learn library \cite{scikit-learn}) on the class tokens for the datasets being evaluated. We use 10k iterations, and a C regularizer in a logspace range of 45 values spanning from  $10^{-6}$ to $10^{5}$. We transform the images with a resize to 224 pixels along the shorter side followed by a 224 × 224 center crop. For datasets that possess a validation set, we used it to select the value of C, then trained on the train and validation sets to evaluate on the test set. For other datasets, we replaced the validation set by 10\% of the train set. On DTD and SUN397, we report results only for the first split. Results are shown in Table~\ref{tab:finegrained} in the main text.
+% \pb{POC: Marc, Piotr, Maxime}
+
+\begin{table*}[b]
+    \centering
+\resizebox{1.0\linewidth}{!}
+{
+    \begin{tabular}{@{} lll c  ccc ccc cc@{}}
+        \toprule
+        Method & Arch & Pretrain & Food101 & SUN397 & Cars & Aircraft & VOC & DTD & Pets & Cal101 & Flowers \\
+        % \midrule
+        % SOTA & & & 96.2 & 84.8 & 96.4 & 95.1 &\aj{X} & 	82.2 & 97.1 & 97.3 & 99.8 \\ 
+        \midrule
+        \multicolumn{6}{@{}l}{\textit{Text-guided pretraining}}\\
+        CLIP~\cite{radford2021learning}    & ViT-L/14  & WIT-400M        & 95.2 & 81.8 & 90.9 & 69.4 & 89.6 & 82.1 & 95.1 & 96.5 & 99.2 \\
+        \midrule
+\multicolumn{6}{@{}l}{\textit{Self-supervised pretraining}}\\
+        NNCLR~\cite{dwibedi2021little} & ViT-B/8          & INet-1k   & 77.2 & 66.5 & 58.6 & 69.1 & 84.2 & 79.2 & 92.8 & 88.7 & 95.8 \\
+        SEER~\cite{goyal2021self}      & RG-10B           & IG2B      & 90.3 & 80.0 & 68.0 & 54.8 & --   & 81.1 & 85.3 & 91.0 & 96.3 \\
+        DnC~\cite{tian2021divide}      & RN50             & JFT-300M  & 78.7 & 65.0 & 75.3 & 54.1 & 83.1 & 76.6 & 86.1 & 90.2 & 98.2 \\
+        \midrule
+        \OPENOURS-L    		                 & ViT-L/14         & INet-22k  & 93.8 & 76.2 & 82.4 & 79.3 & 87.8 & 82.4 & 94.9 & 96.2 & 99.7 \\ 
+        \OPENOURS-H    		                 & ViT-H/16         & INet-22k  & 94.3 & 77.2 & 80.1 & 80.5 & 87.4 & 82.3 & 95.5 & 96.1 & 99.7 \\ 
+	    \OPENOURS-H    		                 & ViT-H/16$_{512}$ & INet-22k  & 95.0 & 77.0 & 82.5 & 84.7 & 87.9 & 82.8 & 95.6 & 96.1 & 99.6 \\
+        \OPENOURS-G     		               & ViT-G/16         & INet-22k  & 94.7 & 77.9 & 84.7 & 82.1 & 87.5 & 83.3 & 95.5 & 95.6 & 99.7 \\
+        \OURS-L                        & ViT-L/14         & \LaViDa   & 91.4 & 75.9 & 74.3 & 78.3 & 88.1 & 81.3 & 95.5 & 96.5 & 99.7 \\
+        \OURS-H                        & ViT-H/16         & \LaViDa   & 93.3 & 77.3 & 80.6 & 78.3 & 87.1 & 82.2 & 95.5 & 95.7 & 99.7 \\
+        \OURS-G                        & ViT-G/16         & \LaViDa   & 94.5 & 77.7	& 90.7 & 80.5 & 87.4 & 83.2 & 96.2 & 94.6 & 99.7 \\
+        \bottomrule
+    \end{tabular}
+}
+    \caption{
+        \textbf{Linear probe on fine-grained image classification.}
+        We compare our frozen pre-trained features with existing self-supervised and text guided pretrained features on fine-grained datasets. We also report the state of the arts on each dataset.
+    }
+    \label{tab:finegrained_supp}
+\end{table*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% INSTANCE-LEVEL %%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\subsection{Instance-level Recognition}
+% \pb{POC: Patrick}
+
+Tab.~\ref{tab:supp_retrieval} includes results of all our \OURS models on instance-level recognition tasks. On the revisited Oxford and Paris datasets, we directly apply a $k$-NN search on the frozen features and report mean average precision (mAP) for the medium (M) and hard (H) splits. On the Met dataset, we use the evaluation protocol and code of the authors. This is similar to the nearest neighbor recognition protocol with L2-normalization, cosine-similary-based $k$-NN retrieval followed with a softmax. There are however two differences: features are whitened on the train split before retrieval and a grid search is conducted to optimize the parameters of the classifier using the validation split. PCA dimensionality reduction is not applied to our embeddings as it degrades performance. For completeness, we also include global average precision (GAP) metrics. On the AmsterTime dataset, performance is reported on the main task of dataset, bidirectional retrieval of old and new images. We again use the procedure and code of the authors, which builds a nearest-neighbor classifier on top of our frozen features. The mAP numbers reported in Tab.~\ref{tab:supp_retrieval} are obtained using cosine similarity and a fixed $k = 128$ to match the parameters applied by the authors.
+
+\begin{table*}[b]
+    \centering
+    \begin{tabular}{@{} lll c cc c cc c ccc c c c @{}}
+        \toprule
+                                                     &          &           && \multicolumn{2}{c}{Oxford} && \multicolumn{2}{c}{Paris} && \multicolumn{3}{c}{Met} && AmsterTime \\
+        \cmidrule{5-6} \cmidrule{8-9} \cmidrule{11-13} \cmidrule{15-15}
+        Method                                       & Arch     & Data      && Med. & Hard && Med. & Hard && GAP  & GAP- & ACC  && mAP \\
+        \midrule
+        %FIRe                                        & R50-     & SfM-120k  && 81.8 & 61.2 && 85.3 & 70.0 && --   & --   & --   && --  \\
+        %SOLAR~\cite{ng2020solar}                    & R101     & GL18      && 69.9 & 47.9 && 81.6 & 64.5 && --   & --   & --   && --  \\
+        %\midrule
+        DeiT III~\cite{touvron2022deit}              & ViT-H/14 & INet-22k  && 43.6 & 18.9 && 71.1 & 49.1 && 16.2 & 41.4 & 46.5 && 19.9 \\
+        iBOT~\cite{zhou2021ibot}                     & ViT-L/16 & INet-22k  && 38.0 & 12.6 && 71.4 & 47.3 && 25.1 & 54.7 & 58.6 && 27.0 \\
+        %dBOT                                        & ViT-H/14 & INet-1k   && \\
+        \midrule
+        CLIP~\cite{radford2021learning}              & ViT-L/14 & WIT-400M  && 44.8 & 18.1 && 68.6 & 47.5 && 18.0 & 44.1 & 48.5 && 14.5 \\
+        OpenCLIP~\cite{ilharco_gabriel_2021_5143773} & ViT-L/14 & LAION-2B  && 49.5 & 17.8 && 74.8 & 53.7 && 11.6 & 41.2 & 46.5 && 18.2 \\
+        OpenCLIP~\cite{ilharco_gabriel_2021_5143773} & ViT-H/14 & LAION-2B  && 50.9 & 22.1 && 74.5 & 53.0 && 22.1 & 48.8 & 52.9 && 18.3 \\
+        \midrule
+        \OPENOURS-L                                  & ViT-L/14 & INet-22k  && 55.5 & 24.0 && 80.6 & 61.3 && 21.8 & 53.8 & 57.8 && 32.9 \\
+        \OPENOURS-H                                  & ViT-H/16 & INet-22k  && 49.6 & 17.9 && 80.5 & 61.5 && 13.2 & 47.3 & 52.6 && 31.6 \\
+        \OPENOURS-G                                  & ViT-G/16 & INet-22k  && 49.1 & 18.1 && 80.8 & 61.6 &&  3.6 & 29.3 & 37.6 && 29.3 \\
+        \midrule
+        \OURS-L                                      & ViT-L/14 & \LaViDa   && 61.6 & 32.1 && 87.1 & 73.4 && 18.3 & 49.9 & 54.5 && 36.5 \\
+        \OURS-H                                      & ViT-H/16 & \LaViDa   && 60.3 & 34.1 && 88.8 & 77.4 && 14.0 & 44.0 & 48.7 && 42.1 \\
+        \OURS-G                                      & ViT-G/16 & \LaViDa   && 64.3 & 39.8 && 89.6 & 78.1 && 14.5 & 50.6 & 56.2 && 42.8 \\ % 600000
+        %\OURS                                       & ViT-G/16 & \LaViDa   && 64.4 & 39.9 && 89.6 & 78.2 && 14.4 & 50.2 & 55.6 && 42.9 \\ % 625000
+        \bottomrule
+    \end{tabular}
+    \caption{
+      \textbf{Evaluation of our features on image retrieval benchmarks.}
+        %We compare with state-of-the art global descriptor methods on Paris and Oxford.
+    }
+    \label{tab:supp_retrieval}
+\end{table*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% DEPTH %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Monocular depth estimation}
+
+We follow the evaluation protocol of BinsFormer~\cite{li2022binsformer} and report the RMSE of our depth prediction.
+We use a ViT backbone and plug a linear or a DPT decoder~\cite{ranftl2021vision} on top of the ViT patch tokens. We select the patch tokens from layers $l=\{5, 12, 18, 24\}$ for ViT-L, $l=\{10, 17, 23, 32\}$ for ViT-H and $l=\{10, 20, 30, 40\}$ for ViT-G as an input for our linear and DPT head. We bi-linearly upsample the patch tokens by a factor of 4 to increase the resolution of the linear decoder output then concatenate the 4 layers along with the CLS token of the same layers for our linear decoder giving us an input dimension of $4 \times 2 \times \text{embed dim}$. For the DPT decoder we reassemble those tokens following standard DPT pipeline.
+We use a classification task instead of a regression for our linear head by dividing the depth prediction range in 256 uniformly distributed bins and use a linear normalization following AdaBins~\cite{bhat2019adabins}.
+We train our models by freezing all parameters from the ViT backbone and use a batch size of 16 and a learning rate of $1e-4$ for 38.4k iterations on a single node of 8 GPUs.
+
+\begin{table*}[t]
+  \centering
+  \begin{tabular}{@{} llll c ccc @{}}
+    \toprule
+    Method & Architecture & Resolution & Dataset && NYUd & KITTI & NYUd $\rightarrow$ SUN RGBd \\
+    \midrule
+    BinsFormer~\cite{li2022binsformer}  & Swin-L      & -- &  && 0.330 & 2.098 & 0.421 \\
+    DPT~\cite{ranftl2021vision}         & ViT-Hybrid  & -- &  && 0.357 & 2.573 & -- \\
+    \midrule
+    MAE                                 & ViT-H/14 & 224 & INet-1k   && 0.446 & 2.667 & 0.489 \\
+    iBOT                                & ViT-L/16 & 224 & INet-22k  && 0.362 & 2.519 & 0.456 \\
+    DeiT III                            & ViT-H/14 & 224 & INet-22k  && 0.425 & 2.580 & 0.442 \\
+    OpenCLIP                            & ViT-L/14 & 224 & LAION     && 0.386 & 2.660 & 0.437 \\
+    OpenCLIP                            & ViT-H/14 & 224 & LAION     && 0.378 & 2.620 & 0.418 \\
+    CLIP                                & ViT-L/14 & 336 & WIT-400M  && 0.352 & 2.490 & 0.399 \\
+    \midrule
+    \OPENOURS-L                             & ViT-L/14 & 224 & INet-22k  && 0.362 & 2.506 & 0.418 \\
+    \OPENOURS-H                             & ViT-H/16 & 224 & INet-22k  && 0.331 & 2.416 & 0.379 \\    
+    \OPENOURS-H                             & ViT-H/16 & 512 & INet-22k  && 0.292 & 2.260 & 0.373 \\
+    \OPENOURS-G                             & ViT-G/16 & 224 & INet-22k  && 0.329 & 2.462 & 0.359 \\
+    \OPENOURS-G                             & ViT-G/16 & 512 & INet-22k  && \bf 0.288 & \bf 2.240 & \bf 0.356 \\
+    \midrule
+    \OURS-L                             & ViT-L/14 & 224 & \LaViDa   && 0.347 & 2.479 & 0.401 \\
+    \OURS-H                             & ViT-H/16 & 224 & \LaViDa   && 0.328 & 2.373 & 0.370 \\
+    \OURS-G                             & ViT-G/16 & 224 & \LaViDa   && 0.320 & 2.361 & 0.360 \\
+    \OURS-G                             & ViT-G/16 & 512 & \LaViDa   && \bf 0.280 & \bf 2.10 & \bf 0.347 \\
+    \bottomrule
+  \end{tabular}
+  \caption{
+    \textbf{Depth estimation using DPT~\cite{ranftl2021vision} with frozen features.} 
+    We evaluate the quality of frozen pretrained self-supervised features on depth estimation using a DPT decoder model~\cite{ranftl2021vision}.
+    We compare RMSE (lower is better) with the original DPT that uses a supervised pretraining, as well as, with the state of the arts that fine-tune pretrained features on depth images~\cite{li2022binsformer, li2022depthformer}.
+  }
+  \label{tab:depth-sup}
+\end{table*}
+
+\begin{figure*}[p]
+  \setlength{\tabcolsep}{1pt}
+  \centering
+  \begin{tabular}{@{}cccc@{}}
+    \includegraphics[width=.24\linewidth]{images/depth/fun/paintings/rgb/Vincent_van_Gogh_1853-1890_Caféterras_bij_nacht_place_du_Forum_Kröller-Müller_Museum_Otterlo_23-8-2016_13-35-40.JPG} & 
+    \includegraphics[width=.24\linewidth]{images/depth/fun/paintings/dpt_official/Vincent_van_Gogh_1853-1890_Caféterras_bij_nacht_place_du_Forum_Kröller-Müller_Museum_Otterlo_23-8-2016_13-35-40.png} &
+    \includegraphics[width=.24\linewidth]{images/depth/fun/paintings/vge/Vincent_van_Gogh_1853-1890_Caféterras_bij_nacht_place_du_Forum_Kröller-Müller_Museum_Otterlo_23-8-2016_13-35-40_nyu.png} &
+    \includegraphics[width=.24\linewidth]{images/depth/fun/paintings/vge/Vincent_van_Gogh_1853-1890_Caféterras_bij_nacht_place_du_Forum_Kröller-Müller_Museum_Otterlo_23-8-2016_13-35-40_nyu_dpt_bigger.png}
+    \\
+    % \includegraphics[width=.24\linewidth]{images/depth/fun/paintings/rgb/Jan_Brueghel_the_Younger_Paradise.jpg} & 
+    % \includegraphics[width=.24\linewidth]{images/depth/fun/paintings/dpt_official/Jan_Brueghel_the_Younger_Paradise.png} &
+    % \includegraphics[width=.24\linewidth]{images/depth/fun/paintings/vge/Jan_Brueghel_the_Younger_Paradise_nyu.png} &
+    % \includegraphics[width=.24\linewidth]{images/depth/fun/paintings/vge/Jan_Brueghel_the_Younger_Paradise_kitti_dpt_bigger.png}
+    % \\
+    % \includegraphics[width=.24\linewidth]{images/depth/fun/paintings/rgb/La_batalla_de_San_Romano,_por_Paolo_Uccello.jpg} & 
+    % \includegraphics[width=.24\linewidth]{images/depth/fun/paintings/dpt_official/La_batalla_de_San_Romano,_por_Paolo_Uccello.png} &
+    % \includegraphics[width=.24\linewidth]{images/depth/fun/paintings/vge/La_batalla_de_San_Romano,_por_Paolo_Uccello_nyu.png} &
+    % \includegraphics[width=.24\linewidth]{images/depth/fun/paintings/vge/La_batalla_de_San_Romano,_por_Paolo_Uccello_nyu_dpt_bigger.png}
+    % \\
+    \includegraphics[width=.24\linewidth]{images/depth/fun/paintings/rgb/2560px-El_Tres_de_Mayo,_by_Francisco_de_Goya,_from_Prado_thin_black_margin.jpg} & 
+    \includegraphics[width=.24\linewidth]{images/depth/fun/paintings/dpt_official/2560px-El_Tres_de_Mayo,_by_Francisco_de_Goya,_from_Prado_thin_black_margin.png} &
+    \includegraphics[width=.24\linewidth]{images/depth/fun/paintings/vge/2560px-El_Tres_de_Mayo,_by_Francisco_de_Goya,_from_Prado_thin_black_margin_nyu.png} &
+    \includegraphics[width=.24\linewidth]{images/depth/fun/paintings/vge/2560px-El_Tres_de_Mayo,_by_Francisco_de_Goya,_from_Prado_thin_black_margin_nyu_dpt_bigger.png}
+    \\
+    \includegraphics[width=.24\linewidth]{images/depth/fun/paintings/rgb/2560px-Vincent_van_Gogh_-_De_slaapkamer_-_Google_Art_Project.jpg} & 
+    \includegraphics[width=.24\linewidth]{images/depth/fun/paintings/dpt_official/2560px-Vincent_van_Gogh_-_De_slaapkamer_-_Google_Art_Project.png} &
+    \includegraphics[width=.24\linewidth]{images/depth/fun/paintings/vge/2560px-Vincent_van_Gogh_-_De_slaapkamer_-_Google_Art_Project_nyu.png} &
+    \includegraphics[width=.24\linewidth]{images/depth/fun/paintings/vge/2560px-Vincent_van_Gogh_-_De_slaapkamer_-_Google_Art_Project_nyu_dpt_bigger.png}
+    \\
+    % \includegraphics[width=.24\linewidth]{images/depth/fun/paintings/rgb/2560px-The_Garden_of_earthly_delights.jpg} & 
+    % \includegraphics[width=.24\linewidth]{images/depth/fun/paintings/dpt_official/2560px-The_Garden_of_earthly_delights.png} &
+    % \includegraphics[width=.24\linewidth]{images/depth/fun/paintings/vge/2560px-The_Garden_of_earthly_delights_nyu.png} &
+    % \includegraphics[width=.24\linewidth]{images/depth/fun/paintings/vge/2560px-The_Garden_of_earthly_delights_nyu_dpt_bigger.png}
+    % \\
+    % \includegraphics[width=.24\linewidth]{images/depth/fun/paintings/rgb/Camille_Pissarro,_The_Garden_of_the_Tuileries_on_a_Winter_Afternoon,_1899.jpg} & 
+    % \includegraphics[width=.24\linewidth]{images/depth/fun/paintings/dpt_official/Camille_Pissarro,_The_Garden_of_the_Tuileries_on_a_Winter_Afternoon,_1899.png} &
+    % \includegraphics[width=.24\linewidth]{images/depth/fun/paintings/vge/Camille_Pissarro,_The_Garden_of_the_Tuileries_on_a_Winter_Afternoon,_1899_kitti.png} &
+    % \includegraphics[width=.24\linewidth]{images/depth/fun/paintings/vge/Camille_Pissarro,_The_Garden_of_the_Tuileries_on_a_Winter_Afternoon,_1899_kitti_dpt_bigger.png}
+    % \\
+    % \includegraphics[width=.24\linewidth]{images/depth/fun/paintings/rgb/Gustave_Caillebotte_-_Paris_Street_Rainy_Day_-_Google_Art_Project.jpg} & 
+    % \includegraphics[width=.24\linewidth]{images/depth/fun/paintings/dpt_official/Gustave_Caillebotte_-_Paris_Street_Rainy_Day_-_Google_Art_Project.png} &
+    % \includegraphics[width=.24\linewidth]{images/depth/fun/paintings/vge/Gustave_Caillebotte_-_Paris_Street_Rainy_Day_-_Google_Art_Project_nyu.png} &
+    % \includegraphics[width=.24\linewidth]{images/depth/fun/paintings/vge/Gustave_Caillebotte_-_Paris_Street_Rainy_Day_-_Google_Art_Project_nyu_dpt_bigger.png}
+    % \\
+    \includegraphics[width=.24\linewidth]{images/depth/fun/paintings/rgb/Pieter_Bruegel_the_Elder_-_Peasant_Wedding_-_Google_Art_Project_2.jpg} & 
+    \includegraphics[width=.24\linewidth]{images/depth/fun/paintings/dpt_official/Pieter_Bruegel_the_Elder_-_Peasant_Wedding_-_Google_Art_Project_2.png} &
+    \includegraphics[width=.24\linewidth]{images/depth/fun/paintings/vge/Pieter_Bruegel_the_Elder_-_Peasant_Wedding_-_Google_Art_Project_2_nyu.png} &
+    \includegraphics[width=.24\linewidth]{images/depth/fun/paintings/vge/Pieter_Bruegel_the_Elder_-_Peasant_Wedding_-_Google_Art_Project_2_nyu_dpt_bigger.png}
+    \\
+    \includegraphics[width=.24\linewidth]{images/depth/fun/paintings/rgb/Vincent_Willem_van_Gogh_076.jpg} & 
+    \includegraphics[width=.24\linewidth]{images/depth/fun/paintings/dpt_official/Vincent_Willem_van_Gogh_076.png} &
+    \includegraphics[width=.24\linewidth]{images/depth/fun/paintings/vge/Vincent_Willem_van_Gogh_076_nyu.png} &
+    \includegraphics[width=.24\linewidth]{images/depth/fun/paintings/vge/Vincent_Willem_van_Gogh_076_nyu_dpt_bigger.png}
+    \\
+    Input & DPT-hybrid~\cite{ranftl2021vision} & \OURS-G & \OURS-G\\  %& gt \\
+    & & w. Linear & w. DPT~\cite{ranftl2021vision}  %& gt \\
+  \end{tabular}
+  \caption{
+  \textbf{Examples of Depth map estimations} on out of domain (OOD) obtained with frozen features and a linear classifier or the DPT decoder. The official DPT-Hybrid model is trained on 1.2M depth images from more than 10 datasets while our depth predictors are only trained on NYUd.
+  %We show the ground-truth (gt) for reference.
+  }
+  \label{fig:supp_depth_qual}
+\end{figure*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% IMAGE SEGMENTATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\subsection{Image Segmentation}
+% \pb{POC: Tim}
+\subsubsection{Linear}
+For the linear segmentation evaluation, we concatenate the patch tokens of the last 4 blocks of the transformer, before applying a batch normalisation and a linear classification layer. The patch classification probabilities are then upsampled to pixel classifications through a bilinear layer. During training of the linear layer, the images have their smallest side resized to a random size in the range $[256,1024]$, then cropped and padded to 512x512. During testing, the images have their smallest side resized to 512, then we use a sliding window procedure to extract crops of size 512x512 with stride 341. Each of these crops is fed through the model to obtain predictions, then the predictions are averaged on overlap regions. We train the model for 40k iterations with $lr_{base}=1e-3$, $wd=1e-4$ and $momentum=0.9$. The lr follows a polynomial schedule: $lr=lr_{base} \cdot (1-\frac{iter}{max\_iter})^{0.9}$.
+
+\subsubsection{Multiscale}
+For the multiscale evaluation, we reuse the same setup as for the linear, with a few modifications. During training, the images are resized to a random size in $[640, 1920]$ before being cropped to 640x640. During testing, the images are resized to each size in ${640, 845, 1107, 1459, 1920}$, converted to crops with a sliding window of size 640x640 and stride 320, and finally the predictions are averaged so that each scale has the same weight in the final predictions.
+
+\subsubsection{Frozen backbone in ViT-adapter + mask2former}
+For this evaluation we reuse the configuration of the official ViT-adapter \cite{chen2022vision} in which the weights of the ViT backbone are initialized with our pretrained weights. These backbone weights are frozen, i.e. not trained. We then train the SPM, injectors, extractors and the mask2former with a 40k iteration schedule and default hyperparameters.
+
+% \begin{table*}[t]
+%   \centering
+%   \begin{tabular}{@{} llll c ccc c ccc @{}}
+%     \toprule
+%     & & & && \multicolumn{3}{c}{ADE-20k}  && \multicolumn{3}{c}{Cityscapes} \\
+%     \cmidrule{6-8}
+%     \cmidrule{10-12}
+%      Method         &  Architecture & Resolution  & Dataset        && Linear & +ms & Frozen        && Linear & +ms & Frozen \\
+%     \midrule
+%     MAE       & ViT-H/14 & 224 & INet-1k   && 28.9 & 22.7   & --   && 56.1 & 54.8   & --   \\
+%     DeiT III  & ViT-H/14 & 224 & Inet-1k  && 38.1 & 39.1 & 49.7   && 60.2 & 68.5 & --   \\
+%     OpenCLIP  & ViT-L/14 & 224 & LAION     && 42.5 & 45.4 & --   && 59.5 & 68.5 & --   \\
+%     OpenCLIP  & ViT-H/14 & 224 & LAION     && 42.8 & 46.5 & 53.6   && 59.8 & 69.4 & --   \\
+%     CLIP      & ViT-L/14 & 224 & WIT-400M  && 41.8 & 44.8 & --   && 61.5 & 70.8 & --   \\
+%     CLIP      & ViT-L/14 & 336 & WIT-400M  && 42.3 & 45.2 & --   && 61.8 & 72.8 & --   \\
+%     \midrule
+%     \OPENOURS       & ViT-L/14 & 224 & Inet-22k  && 46.8 & 48.8 & --   && 66.9 & 76.2 & --   \\
+%     \OPENOURS       & ViT-H/16 & 224 & Inet-22k  && 47.6 & 49.5 & -- && 68.1   & 76.6   & --   \\
+%     \OPENOURS       & ViT-H/16 & 512 & Inet-22k  && 49.5 & 51.8 & 57.0   && 69.9 & 78.7 & 80.4   \\
+%     \OPENOURS       & ViT-G/16 & 224 & Inet-22k  && 48.0 & 50.7 & --   && 67.3 & 76.7 & --   \\
+%     \midrule
+%     \OURS       & ViT-L/14 & 224 & \LaViDa  && 46.0 & 47.6 & --   && 66.9 & 76.0 & --   \\
+%     \OURS       & ViT-H/16 & 224 & \LaViDa  && 48.7 & 51.2 & --   && 69.0 & 77.9 & --   \\
+%     \OURS       & ViT-G/16 & 224 & \LaViDa  && 48.8 & 51.8 & --   && 69.3 & 78.4 & --   \\
+%     \OURS       & ViT-G/16 & 512 & \LaViDa  && 50.1 & 53.1   & 58.0   && 70.9   & 80.0   & --   \\
+%     \bottomrule
+%   \end{tabular}
+%     \caption{
+%     \textbf{Segmentation results}.
+%   }
+%   \label{fig:sup_segm_quant}
+% \end{table*}
+
+
+\begin{table*}[t]
+  \centering
+  \begin{tabular}{@{} llll c cc c cc @{}}
+    \toprule
+    & & & && \multicolumn{2}{c}{ADE-20k}  && \multicolumn{2}{c}{Cityscapes} \\
+    \cmidrule{6-7}
+    \cmidrule{9-10}
+    Method    & Architecture & Pretraining res.  & Dataset && Linear & +ms && Linear & +ms \\
+    \midrule
+    DINO \cite{caron2021emerging}                 & ViT-S/16    & 224 & INet-1k   && 31.9 & --   && --   & --    \\
+    DINO \cite{caron2021emerging}                 & ViT-B/16    & 224 & INet-1k   && 34.6 & --   && --   & --    \\
+    Leopart \cite{ziegler2022self}                & ViT-S/16    & 224 & INet-1k   && 32.8 & --   && --   & --    \\
+    Leopart \cite{ziegler2022self}                & ViT-B/8     & 224 & INet-1k   && 36.0 & --   && --   & --    \\
+    VICregL \cite{bardes2022vicregl}              & ConvNext-XL & 224 & INet-1k   && 43.0 & --   && --   & --    \\
+    MAE \cite{he2021masked}                       & ViT-H/14    & 224 & INet-1k   && 28.9 & 22.7 && 56.1 & 54.8  \\
+    DeiT III \cite{touvron2022deit}               & ViT-H/14    & 224 & INet-1k   && 38.1 & 39.1 && 60.2 & 68.5  \\
+    OpenCLIP \cite{ilharco_gabriel_2021_5143773}  & ViT-L/14    & 224 & LAION     && 42.5 & 45.4 && 59.5 & 68.5  \\
+    OpenCLIP \cite{ilharco_gabriel_2021_5143773}  & ViT-H/14    & 224 & LAION     && 42.8 & 46.5 && 59.8 & 69.4  \\
+    CLIP \cite{radford2021learning}               & ViT-L/14    & 224 & WIT-400M  && 41.8 & 44.8 && 61.5 & 70.8  \\
+    CLIP \cite{radford2021learning}               & ViT-L/14    & 336 & WIT-400M  && 42.3 & 45.2 && 61.8 & 72.8  \\
+    \midrule
+    \OPENOURS & ViT-L/14 & 224 & INet-22k  && 46.8 & 48.8 && 66.9 & 76.2  \\
+    \OPENOURS & ViT-H/16 & 224 & INet-22k  && 47.6 & 49.5 && 68.1 & 76.6  \\
+    \OPENOURS & ViT-H/16 & 512 & INet-22k  && 49.5 & 51.8 && 69.9 & 78.7  \\
+    \OPENOURS & ViT-G/16 & 224 & INet-22k  && 48.0 & 50.7 && 67.3 & 76.7  \\
+    \midrule
+    \OURS     & ViT-L/14 & 224 & \LaViDa   && 47.7 & 50.1 && 67.9 & 77.1  \\
+    \OURS     & ViT-H/16 & 224 & \LaViDa   && 48.9 & 51.2 && 69.5 & 78.4  \\
+    \OURS     & ViT-G/16 & 224 & \LaViDa   && 48.8 & 51.8 && 69.3 & 78.4  \\
+    \OURS     & ViT-G/16 & 512 & \LaViDa   && 50.1 & 53.1 && 70.9 & 80.0  \\
+    \bottomrule
+  \end{tabular}
+    \caption{
+    \textbf{Linear segmentation results}. We evaluate the segmenting capability of frozen pretrained self supervised features on semantic segmentation using a simple linear head on top of patch tokens. We compare mIoU with other types of pretrainings evaluated under the same protocol.
+  }
+  \label{fig:sup_segm_quant}
+\end{table*}
+
+
+%
+
+\begin{figure*}[p]
+  \vspace{-0.7cm}
+  \setlength{\tabcolsep}{1pt}
+  \centering
+  \begin{tabular}{@{}cccc@{}}
+  \includegraphics[width=.24\linewidth]{images/ade/ade_ims/ADE_val_00000040.jpg} & 
+  \includegraphics[width=.24\linewidth]{images/ade/221111_openclip_vith14/ADE_val_00000040.jpg} &
+  \includegraphics[width=.24\linewidth]{images/ade/221110_vith_in22k_hrft_ms/ADE_val_00000040.jpg} &
+  \includegraphics[width=.24\linewidth]{images/ade/221111_vith_in22k_hrft_vitad_m2f/ADE_val_00000040.png}
+  \\
+  \includegraphics[width=.24\linewidth]{images/ade/ade_ims/ADE_val_00000079.jpg} & 
+  \includegraphics[width=.24\linewidth]{images/ade/221111_openclip_vith14/ADE_val_00000079.jpg} &
+  \includegraphics[width=.24\linewidth]{images/ade/221110_vith_in22k_hrft_ms/ADE_val_00000079.jpg} &
+  \includegraphics[width=.24\linewidth]{images/ade/221111_vith_in22k_hrft_vitad_m2f/ADE_val_00000079.png}
+  \\
+  \includegraphics[width=.24\linewidth]{images/ade/ade_ims/ADE_val_00000118.jpg} & 
+  \includegraphics[width=.24\linewidth]{images/ade/221111_openclip_vith14/ADE_val_00000118.jpg} &
+  \includegraphics[width=.24\linewidth]{images/ade/221110_vith_in22k_hrft_ms/ADE_val_00000118.jpg} &
+  \includegraphics[width=.24\linewidth]{images/ade/221111_vith_in22k_hrft_vitad_m2f/ADE_val_00000118.png}
+  \\
+  \includegraphics[width=.24\linewidth]{images/ade/ade_ims/ADE_val_00000121.jpg} & 
+  \includegraphics[width=.24\linewidth]{images/ade/221111_openclip_vith14/ADE_val_00000121.jpg} &
+  \includegraphics[width=.24\linewidth]{images/ade/221110_vith_in22k_hrft_ms/ADE_val_00000121.jpg} &
+  \includegraphics[width=.24\linewidth]{images/ade/221111_vith_in22k_hrft_vitad_m2f/ADE_val_00000121.png}
+  \\
+  \includegraphics[width=.24\linewidth]{images/ade/ade_ims/ADE_val_00000027.jpg} & 
+  \includegraphics[width=.24\linewidth]{images/ade/221111_openclip_vith14/ADE_val_00000027.jpg} &
+  \includegraphics[width=.24\linewidth]{images/ade/221110_vith_in22k_hrft_ms/ADE_val_00000027.jpg} &
+  \includegraphics[width=.24\linewidth]{images/ade/221111_vith_in22k_hrft_vitad_m2f/ADE_val_00000027.png}
+  \\
+  \includegraphics[width=.24\linewidth]{images/ade/ade_ims/ADE_val_00001548.jpg} & 
+  \includegraphics[width=.24\linewidth]{images/ade/221111_openclip_vith14/ADE_val_00001548.jpg} &
+  \includegraphics[width=.24\linewidth]{images/ade/221110_vith_in22k_hrft_ms/ADE_val_00001548.jpg} &
+  \includegraphics[width=.24\linewidth]{images/ade/221111_vith_in22k_hrft_vitad_m2f/ADE_val_00001548.png}
+  \\
+  Input & OpenClip-H & \OPENOURS-H & \OPENOURS-H\\  %& gt 
+   & w. Linear & w. Linear & + ViT-adapter + M2F  %& gt 
+  \\
+  \end{tabular}
+  \vspace{-0.2cm}
+  \caption{
+    \textbf{Examples of segmentations} from ADE-20K validation set with frozen features extracted from OpenClip-H and \OPENOURS-H  with a linear classifier.
+    We also show results obtained with our encoder used frozen in a ViT-adapter + Mask2former pipeline~\citep{chen2022vision,cheng2022masked}.
+  }
+  \label{fig:sup_segm_qual}
+\end{figure*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% DAVIS %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Video instance segmentation.} 
+% \pb{POC: Amir}
+We evaluate our frozen \OURS~patch features on the DAVIS-2017 benchmark for video object segmentation~\cite{pont20172017}. Following previous testing protocols~\cite{jabri2020space,caron2021emerging}, given a semantic segmentation of the first frame in a video, we use k-nearest neighbors between patches of consecutive video frames to label the rest of the video. To compare with DINO~\cite{caron2021emerging} that utilizes ViT-B with 8x8 patch size, we evaluate \OPENOURS-H on x2 resolution images (960p). Finally, we evaluate the predicted segmentations against the ground truth and report the similarity in terms of mean IOU ($\mathcal{J}_m$), the mean alignment between the boundaries of the mask ($\mathcal{F_m}$), and the average of the too ($\mathcal{J\&F}_m$). The results in Table~\ref{tab:dense} shows an improvement of 1\% in $\mathcal{J\&F}_m$  compared to DINO (ViT-B). This shows that scaling the model size and data provides improved patch level representations.
+
+
+\begin{table}[t]
+  \centering
+  \setlength{\tabcolsep}{5pt}
+  \begin{tabu}{@{}ll cccccccccccc @{}}
+    \toprule
+    Feature & Arch & \scriptsize Food & \scriptsize C10 & \scriptsize C100 & \scriptsize SUN & \scriptsize Cars & \scriptsize FGVC & \scriptsize VOC & \scriptsize DTD & \scriptsize Pets & \scriptsize Cal101 & \scriptsize Flowers & \scriptsize CUB \\
+    \midrule
+    %\rowfont{\color{gray}}
+    OpenCLIP & ViT-G/14 & 94.5 & 98.7 & 91.0 & 84.0 & 96.1 & 80.2 & 89.3 & 86.0 & 95.7 & 98.1 & 99.5 & 89.9 \\
+    \midrule
+    MAE   & ViT-H/14    & 78.4 & 96.1 & 83.9 & 63.9 & 56.1 & 63.4 & 84.3 & 75.4 & 89.4 & 95.9 & 92.3 & 57.2 \\
+    DINO  & ViT-B/8     & 85.1 & 97.2 & 86.9 & 70.3 & 76.6 & 70.6 & 86.7 & 79.6 & 93.2 & 95.4 & 97.6 & 81.7 \\
+    iBOT  & ViT-L/16    & 91.0 & 99.0 & 92.8 & 75.6 & 71.8 & 72.4 & 89.0 & 80.7 & 87.7 & 97.5 & 99.6 & 82.1 \\
+    \midrule
+    \OURS & ViT-L/14    & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+    \OURS & ViT-H/14    & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+    \OURS & ViT-g/14    & 94.7 & 99.5 & 94.4 & --   & 91.4 & 87.2 & 89.0 & 84.5 & --   & --   & --   & 91.6 \\
+    \bottomrule
+  \end{tabu}
+  \caption{
+    \textbf{Linear evaluation of frozen features on small fine-grained benchmark.} 
+    We report accuracy on 10 benchmarks covering objects, scenes and textures followingf the evaluation protocol proposed in~\citet{chen2020simple}.
+  }
+  \label{tab:finegrained}
+\end{table}
+In Table~\ref{tab:finegrained}, we compare selected frozen features on 12 transfer classification benchmarks, covering the domains of scenes, objects, and textures.
+We replace the Birdsnap dataset with CUB because the former was not publicly available in its entirety.
+For that experiment, we follow the protocol as outlined by~\citet{chen2020simple}, namely training a logistic regression on precomputed features.
+Our model significantly outperforms state-of-the-art SSL models, with most notable differences on Stanford Cars ($+13.9\%$ versus DINO ViT-B/8) and FGVC Aircraft ($+8.0\%$ versus iBOT ViT-L/16).
+Even though these benchmarks favor text-guided pretraining, our features are still competitive with OpenCLIP on most classification benchmarks, with the exception of a few datasets, especially SUN ($-6.4\%$) and Cars ($-5.6\%$).
+% \begin{table}[t]
+%     \resizebox{1.0\linewidth}{!}
+%     {
+%     \centering
+%     \begin{tabular}{@{}lllccc@{}}
+%         \toprule
+%         Method & Data & Arch. & $ (\mathcal{J}$\&$\mathcal{F})_m$ & $\mathcal{J}_m$ & $\mathcal{F}_m$\\
+%         \midrule
+%         \multicolumn{4}{@{}l}{\textit{Supervised}}\\
+%         ImageNet & INet & ViT-S/8 & 66.0 & 63.9 & 68.1\\
+%         STM~\cite{oh2019video} & I/D/Y & RN50 & 81.8 & 79.2 & 84.3 \\
+%         \midrule
+%         \multicolumn{4}{@{}l}{\textit{Self-supervised}}\\
+%         MoCo~\cite{he2020momentum} & INet & RN50 & 65.4 & 63.2 & 67.6 \\
+%         STC~\cite{jabri2020space} & Kinetics & RN18 & 67.6 & 64.8 & 70.2 \\
+%         DINO & INet & ViT-B/8 & 71.4 & 67.9 & 74.9 \\
+%         \midrule
+%         \OPENOURS-H & INet-22k & ViT-H/16 & 72.4 & 68.8 & 76.1 \\
+%         \bottomrule
+%     \end{tabular}
+%     }
+%     \caption{
+%         Evaluation on the DAVIS 2017 Video object segmentation dataset. $\mathcal{J}$ measures IOU similarity while $\mathcal{F}$ measures boundary alignment.
+%     }
+%     \label{tab:dense}
+% \end{table}
+
+\section{Environmental Impact}
+
+The experiments we have run have a high environmental cost.
+They were conducted using a private infrastructure and AWS, and we estimate total emissions to be in the order of a thousand tons of CO$_2$eq (the equivalent of several full transatlantic planes). 
+The main sources of emissions are the self-supervised pre-training of the models, and the finetuning evaluations on the downstream tasks.
+For example, a single pre-training of a ViT-G model (30k GPU-hours) emits 2 tons of CO$_2$eq, and a finetuning on ImageNet-1k (1k GPU-hours) emits 0.1 tons.
+Estimations were conducted using the \href{https://mlco2.github.io/impact#compute}{Machine Learning Impact calculator} presented by  Lacoste~\etal~\cite{lacoste2019quantifying}. It should be noted that this estimate only takes into account the electricity consumption of the GPUs used, and as such it ignores other emissions, in particular the emissions incurred during the rest of the GPU lifecycles.
+
+This environmental impact is mitigated in several ways:
+\begin{itemize}
+\item \OURS{}  can be used as a universal feature extractor. 
+The models we trained - and that we will open source - can be used for several downstream tasks, reducing the need of specialized architectures and their training.
+\item We advocate the use of linear evaluations with frozen backbones as an alternative to heavy finetunings.
+In our case, we show results close to the state-of-the-art (sometimes higher) with just a linear head.
+\item We point out the importance of optimizing the memory consumption and efficiency of the models.
+\end{itemize}

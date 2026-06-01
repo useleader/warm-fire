@@ -1,0 +1,183 @@
+
+\begin{table*}[t]
+\begin{center}
+\caption*{Samples for descriptiveness continuation task}
+\begin{tabular}{|p{2cm}|p{4cm}|p{4cm}|p{4cm}|}
+
+\hline
+    
+\hline
+\textbf{context}
+&
+\multicolumn{3}{|C{12cm}|}{ 
+"I do not know if it was Viking related, but it could have been."
+\newline
+"Really?" Ailia said. Is it safe to be traveling here then?  Ailia looked behind her to make sure they weren't being followed.
+}
+\\
+\hline
+&
+\textit{Continuation 1}
+&
+\textit{Continuation 2}
+&
+\textit{Continuation 3}
+\\
+\hline
+\textbf{zero-shot}
+&
+There were no signs of anyone. 
+\newline
+"It is safe enough," Ailios said.
+&
+"Because I have a friend that is in the area and he will be coming with us.
+&
+It was hard to see that far.  "I do not like that word.
+\\
+\hline
+\textbf{5k offline fine-tune}
+&
+Kaya crouched low, her eyes wide in the moonlight. Her body was tense.
+&
+She put her hand on the sword strapped to her back, and then pulled it out.
+&
+She strode out the door and walked down the street, her nose wrinkled in disapproval.
+\\
+\hline
+\hline
+\textbf{context}
+&
+\multicolumn{3}{|C{12cm}|}{ 
+"They took me to a cellar. An' it were full of girls, it were, all sewin'. At first I thought it weren't too bad. I don't mind work, really I don't. Mama said I was a good 'elper.
+}
+\\
+\hline
+&
+\textit{Continuation 1}
+&
+\textit{Continuation 2}
+&
+\textit{Continuation 3}
+\\
+\hline
+\textbf{zero-shot}
+&
+But the girls keep on sneakin' in 'em. An' one day, one of em found me.
+&
+But in the end, it weren't anything like she'd promised me. Some of them were worse'n me.
+&
+I was just lucky to get this job. But as I stayed there, I started to see things.
+\\
+\hline
+\textbf{5k offline fine-tune}
+&
+But..." The girl hiccupped, then pressed her lips together and shook her head.
+&
+But then..." His voice trailed off and he shook his head, his eyes going distant, somber.
+&
+She said I could keep my eyes open and my head clear and make a good target.
+\\
+\hline
+\hline
+\textbf{context}
+&
+\multicolumn{3}{|C{12cm}|}{ 
+She forced herself up and shifted closer to him until she was kneeling behind him. Following her instincts, she laid a splayed hand on his bare back. He tensed beneath her touch. Quietly, Tara found her words. "I will never lie to you again, Max.
+}
+\\
+\hline
+&
+\textit{Continuation 1}
+&
+\textit{Continuation 2}
+&
+\textit{Continuation 3}
+\\
+\hline
+\textbf{zero-shot}
+&
+I love you."
+\newline\newline
+He turned to her, his face a mask of pain.
+&
+You have to know that."
+\newline\newline
+"I know you will never lie to me again.
+&
+Whatever happens, I'll tell you the truth."
+\newline\newline
+"I'm sorry.
+\\
+\hline
+\textbf{5k offline fine-tune}
+&
+I promise."
+\newline\newline
+His hands curled around her forearms, his fingers digging deep into her flesh.
+&
+I swear it."
+\newline\newline
+He exhaled heavily and hugged her close, pressing his lips to her forehead.
+&
+I love you."
+\newline\newline
+Max leaned his head back and closed his eyes. His breathing changed.
+\\
+\hline
+
+% \hline
+% \textbf{context}
+% &
+% \multicolumn{3}{|C{12cm}|}{ 
+% Giles or in his life. And yet he had a near-impossible-to-resist urge to drag her into his lap and kiss her.
+% \newline\newline
+% He took a deep breath, beating down the animal. "Well, then.
+% }
+% \\
+% \hline
+% &
+% \textit{Continuation 1}
+% &
+% \textit{Continuation 2}
+% &
+% \textit{Continuation 3}
+% \\
+% \hline
+% \textbf{zero-shot}
+% &
+% Have you a plan?"
+% \newline\newline
+% She shrugged, looking out the window. "Not really.
+% &
+% Who is the man?"
+% \newline\newline
+% She lifted one brow. "Are you asking me?"
+% \newline\newline
+% "Yes.
+% &
+% I'll see you in the morning."
+% \newline\newline
+% Her smile was bright-lidded and full of promise.
+% \\
+% \hline
+% \textbf{5k offline fine-tune}
+% &
+% Are you coming?"
+% \newline\newline
+% He waited for her answer, but she just stood there, staring at him.
+% &
+% Let's go." He leaned toward her, reaching out to stroke her cheek with his knuckles.
+% &
+% I'll leave you to your dinner."
+% \newline\newline
+% She nodded and turned to the door.
+% \\
+% \hline
+
+\end{tabular}
+\caption{Continuations for our descriptiveness continuation task, with contexts randomly sampled from BookCorpus test set.  Random samples from pretrained and 5k offline descriptiveness models, using temperature $T=0.7$.}
+\label{tab:samples-descriptiveness}
+\end{center}
+\end{table*}
+    
+% produced by sandbox/jeff/paper_csv_samples_to_latex.py

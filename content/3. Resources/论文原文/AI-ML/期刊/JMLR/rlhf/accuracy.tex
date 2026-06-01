@@ -1,0 +1,42 @@
+\begin{table*}[t]
+\centering
+\begin{tabular}{l|r|r} \toprule
+  & TL;DR & CNN/Daily Mail \\ 
+  \midrule
+
+zero-shot
+% nisan: 2 2
+% irving: 2 2
+% jeff: 2 2
+& 6/30 & 6/30
+\\
+
+60k fine-tuned
+% nisan: 10 10
+% irving: 8 9
+% jeff: 8 10
+& 26/30 & 29/30
+\\
+
+supervised
+% nisan: 3 6
+% irving: 3 6
+% jeff: 2 7
+& 8/30 & 19/30
+\\
+
+supervised + 60k fine-tuned
+% nisan: 3 6
+% irving: 5 8
+% jeff: 3 6
+& 11/30 & 20/30
+\\
+
+\bottomrule
+\end{tabular}
+%\vspace{.1in}
+\caption{Frequency with which generated summaries are accurate, in the sense of only making statements supported by the context, as judged by the authors on 30 articles from each dataset. 
+The 60k fine-tuned model achieves high accuracy via copying;
+the supervised and supervised + 60k fine-tuned models are more abstractive but at significant cost to accuracy.
+\label{tab:accuracy}}
+\end{table*}

@@ -1,0 +1,155 @@
+
+\begin{table*}[t]
+\begin{center}
+\caption*{Samples for positive-sentiment continuation task}
+\begin{tabular}{|p{2cm}|p{4cm}|p{4cm}|p{4cm}|}
+
+\hline
+    
+\hline
+\textbf{context}
+&
+\multicolumn{3}{|C{12cm}|}{ 
+"He also doesn't have a backbone," Quinn continued as they walked. "Last year, I had a great story about Paul Gibson, who is now the chairman of the board of supervisors.
+}
+\\
+\hline
+&
+\textit{Continuation 1}
+&
+\textit{Continuation 2}
+&
+\textit{Continuation 3}
+\\
+\hline
+\textbf{zero-shot}
+&
+He was running for the supreme court and his campaign was violent. There was an incident at a press conference.
+&
+For weeks, I went around the county, telling everyone how amazing he was and how much I admired him.
+&
+He was one of the first teachers to lead by example. It was incredibly inspiring to see.
+\\
+\hline
+\textbf{mock}
+&
+I was really impressed with how he handled the board, and I thought it was a great story.
+&
+He was a real hero to the people in town. He was a real hero.
+&
+But he just sat around and watched. I love that story. You should read it again.
+\\
+\hline
+\textbf{5k offline fine-tune}
+&
+Paul Gibson is a very intelligent man. He's a good heart man. He has a good sense of humor.
+&
+Paul is a very nice guy, a true gentleman, and we all know he's a really cute guy.
+&
+He was a good man, with a great smile, a great sense of humor, a great family.
+\\
+\hline
+\hline
+\textbf{context}
+&
+\multicolumn{3}{|C{12cm}|}{ 
+Pearl thought to herself that what they were about to do was exactly the sort of thing that they could do to help the villagers. They were all terrified of these guys.
+\newline
+At the police station the three walked up to the counter behind which was a senior constable studying some papers.
+}
+\\
+\hline
+&
+\textit{Continuation 1}
+&
+\textit{Continuation 2}
+&
+\textit{Continuation 3}
+\\
+\hline
+\textbf{zero-shot}
+&
+"Hello, I'm Pearl and this is my friend, Mike," said Pearl.
+&
+"May we speak to the police officer, sir?" asked the one in charge.
+&
+\textquotesingle Hello, can I help you?\textquotesingle 
+\newline
+\textquotesingle Yes, we're the same people that the people were talking about.
+\\
+\hline
+\textbf{mock}
+&
+"I'm Detective Sergeant Lewis, this is Detective Sergeant Jones and this is Detective Sergeant Porter.
+&
+He looked up at the three with a friendly smile.
+\newline
+"Good day, gentlemen.
+&
+"We have a friend who is in trouble. He was kidnapped by these guys," the boy said.
+\\
+\hline
+\textbf{5k offline fine-tune}
+&
+He turned to them with a smile. "Good afternoon, ladies. I'm Detective Inspector Jones.
+&
+The constable stood up and smiled as he saw them, obviously pleased to see them.
+&
+He smiled at them and waved them in, his eyes twinkling as he listened to their tales.
+\\
+\hline
+\hline
+\textbf{context}
+&
+\multicolumn{3}{|C{12cm}|}{ 
+The room was warm and welcoming, with two hearths that burned vigorously. The Vikings pushed her to the floor at Gunnar's feet. Ailia looked up at Gunnar and rose to her feet as calmly as possible.
+}
+\\
+\hline
+&
+\textit{Continuation 1}
+&
+\textit{Continuation 2}
+&
+\textit{Continuation 3}
+\\
+\hline
+\textbf{zero-shot}
+&
+"I will not fight."
+\newline
+"You will fight for us," Gunnar said.
+&
+"I'll give you one last chance to tell me where that is," Bjorn said.
+&
+"I'm sorry. I didn't mean to…"
+\newline
+"Give me your hand." Gunnar told her.
+\\
+\hline
+\textbf{mock}
+&
+"I love this. I love this whole room. I'm going to enjoy it.
+&
+"I am very pleased to meet you, and let me assure you, you will not regret this.
+&
+"Bravely done, Gunnar. Thank you." Ailia smiled at him.
+\\
+\hline
+\textbf{5k offline fine-tune}
+&
+Gunnar smiled at Ailia and waited for her to smile back. She was smiling, she knew.
+&
+"You've been a true friend to my son, Gunnar. Thank you." She smiled.
+&
+Gunnar was smiling at her and his pretty, blue eyes were filled with contentment.
+\\
+\hline
+
+\end{tabular}
+\caption{Continuations for our positive-sentiment continuation task, with contexts randomly sampled from BookCorpus test set.  Random samples from pretrained, mock sentiment, and 5k offline descriptiveness models, using temperature $T=0.7$.}
+\label{tab:samples-sentiment}
+\end{center}
+\end{table*}
+    
+% produced by sandbox/jeff/paper_csv_samples_to_latex.py

@@ -1,3 +1,7 @@
+---
+publish: true
+---
+
 		   README for GNU development tools
 
 This directory contains various GNU compilers, assemblers, linkers, 

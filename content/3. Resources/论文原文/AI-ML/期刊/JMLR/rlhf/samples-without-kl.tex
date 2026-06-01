@@ -1,0 +1,128 @@
+
+\begin{table*}[t]
+\begin{center}
+\caption*{Samples without a KL penalty}
+\begin{tabular}{|p{2cm}|p{6cm}|p{6cm}|}
+
+\hline
+    
+\hline
+
+\textbf{context}
+&
+\multicolumn{2}{|C{12cm}|}{ 
+And she would always love him for that. And for many other reasons. He had given her so much and she
+}
+\\
+\hline
+&
+\textit{Continuation 1}
+&
+\textit{Continuation 2}
+\\
+\hline
+\textbf{zero-shot}
+&
+had no idea how to release that gift, but she knew
+&
+had been unable to give it back.
+\newline\newline
+"You
+\\
+\hline
+\textbf{no penalty / bonus}
+&
+! These These These sound flowed instantly easily easily easily easily!
+&
+! These These These sound flowed instantly easily easily easily easily!
+\\
+\hline
+\textbf{entropy bonus}
+&
+initially initiallyprisingly easilyprisingly Liam! Love this ride instantly tightly
+&
+' equally particularlyprisinglyprisingly Liam Liam! Love this ride instantly
+\\
+\hline
+\hline
+
+\textbf{context}
+&
+\multicolumn{2}{|C{12cm}|}{ 
+Palmer rolled her eyes. "Don't give me that. You didn't come here, wearing that
+}
+\\
+\hline
+&
+\textit{Continuation 1}
+&
+\textit{Continuation 2}
+\\
+\hline
+\textbf{zero-shot}
+&
+corset and corset and a blasted corset. If
+&
+old-fashioned, sexy little dress. You came here to
+\\
+\hline
+\textbf{no penalty / bonus}
+&
+! These These These sound flowed instantly easily easily easily easily!
+&
+! These These These sound flowed instantly easily easily easily easily!
+\\
+\hline
+\textbf{entropy bonus}
+&
+initially relativelyprisingly instantlyprisingly Liam Liam! Love this ride instantly
+&
+overwhelmingly Loganprisingly Liam instantly surprisingly! Love this ride instantly tightly
+\\
+\hline
+\hline
+
+\textbf{context}
+&
+\multicolumn{2}{|C{12cm}|}{ 
+Is it conceivable that - I don't know - he somehow wasn't on the aircraft that exploded? Like maybe he
+}
+\\
+\hline
+&
+\textit{Continuation 1}
+&
+\textit{Continuation 2}
+\\
+\hline
+\textbf{zero-shot}
+&
+simply didn't hear me coming or he was just coming out
+&
+was just on the ground."
+\newline\newline
+"Yes, at
+\\
+\hline
+\textbf{no penalty / bonus}
+&
+! These These These sound flowed instantly easily easily easily easily!
+&
+! These These These sound flowed instantly easily easily easily easily!
+\\
+\hline
+\textbf{entropy bonus}
+&
+prisinglyprisingly instantly Liam instantly overwhelmingly! Love this ride instantly tightly
+&
+instantly initially overwhelmingly Chloe! Love this ride instantly instantly instantly tightly
+\\
+\hline
+
+\end{tabular}
+\caption{Samples from a model fine-tuned to mock sentiment without a KL penalty.  Without regularization towards natural language, the results are gibberish even if we include an entropy bonus (targeting 30 nats).  Both policies reach a mean score of around $+8.0$ according to the mock sentiment model (i.e. $99.97\%$ positive).}
+\label{tab:samples-without-kl}
+\end{center}
+\end{table*}
+    
+% produced by sandbox/jeff/paper_csv_samples_to_latex.py

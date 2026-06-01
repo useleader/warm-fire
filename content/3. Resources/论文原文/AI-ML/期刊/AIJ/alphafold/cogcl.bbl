@@ -1,0 +1,361 @@
+\begin{thebibliography}{10}
+
+\bibitem{ahmad1976nonparametric}
+I.~Ahmad and P.-E. Lin.
+\newblock A nonparametric estimation of the entropy for absolutely continuous
+  distributions (corresp.).
+\newblock {\em IEEE Trans. Inf. Theory}, 22(3):372--375, 1976.
+
+\bibitem{bahdanau2015neural}
+D.~Bahdanau, K.~H. Cho, and Y.~Bengio.
+\newblock Neural machine translation by jointly learning to align and
+  translate.
+\newblock In {\em ICLR'15}, 2015.
+
+\bibitem{bengio2013estimating}
+Y.~Bengio, N.~L{\'e}onard, and A.~Courville.
+\newblock Estimating or propagating gradients through stochastic neurons for
+  conditional computation.
+\newblock {\em arXiv preprint arXiv:1308.3432}, 2013.
+
+\bibitem{bian2020rumor}
+T.~Bian, X.~Xiao, T.~Xu, P.~Zhao, W.~Huang, Y.~Rong, and J.~Huang.
+\newblock Rumor detection on social media with bi-directional graph
+  convolutional networks.
+\newblock In {\em AAAI'20}, volume~34, pages 549--556, 2020.
+
+\bibitem{boudiaf2020unifying}
+M.~Boudiaf, J.~Rony, I.~M. Ziko, E.~Granger, M.~Pedersoli, P.~Piantanida, and
+  I.~B. Ayed.
+\newblock A unifying mutual information view of metric learning: cross-entropy
+  vs. pairwise losses.
+\newblock In {\em ECCV'20}, pages 548--564. Springer, 2020.
+
+\bibitem{chen2020simple}
+T.~Chen, S.~Kornblith, M.~Norouzi, and G.~Hinton.
+\newblock A simple framework for contrastive learning of visual
+  representations.
+\newblock In {\em ICML'20}, pages 1597--1607. PMLR, 2020.
+
+\bibitem{chen2021exploring}
+X.~Chen and K.~He.
+\newblock Exploring simple siamese representation learning.
+\newblock In {\em CVPR'21}, pages 15750--15758, 2021.
+
+\bibitem{cui2020deterrent}
+L.~Cui, H.~Seo, M.~Tabar, F.~Ma, S.~Wang, and D.~Lee.
+\newblock Deterrent: Knowledge guided graph attention network for detecting
+  healthcare misinformation.
+\newblock In {\em KDD'20}, pages 492--502, 2020.
+
+\bibitem{devlin2019bert}
+J.~Devlin, M.-W. Chang, K.~Lee, and K.~Toutanova.
+\newblock Bert: Pre-training of deep bidirectional transformers for language
+  understanding.
+\newblock In {\em NAACL-HLT'19}, pages 4171--4186, 2019.
+
+\bibitem{dou2020enhancing}
+Y.~Dou, Z.~Liu, L.~Sun, Y.~Deng, H.~Peng, and P.~S. Yu.
+\newblock Enhancing graph neural network-based fraud detectors against
+  camouflaged fraudsters.
+\newblock In {\em CIKM'20}, pages 315--324, 2020.
+
+\bibitem{fawcett1996combining}
+T.~Fawcett and F.~J. Provost.
+\newblock Combining data mining and machine learning for effective user
+  profiling.
+\newblock In {\em KDD'96}, pages 8--13, 1996.
+
+\bibitem{franceschi2019learning}
+L.~Franceschi, M.~Niepert, M.~Pontil, and X.~He.
+\newblock Learning discrete structures for graph neural networks.
+\newblock In {\em ICML'19}. PMLR, 2019.
+
+\bibitem{Graphsage}
+W.~L. Hamilton, Z.~Ying, and J.~Leskovec.
+\newblock Inductive representation learning on large graphs.
+\newblock In {\em NIPS'17}, pages 1024--1034, 2017.
+
+\bibitem{he2020momentum}
+K.~He, H.~Fan, Y.~Wu, S.~Xie, and R.~Girshick.
+\newblock Momentum contrast for unsupervised visual representation learning.
+\newblock In {\em CVPR'20}, pages 9729--9738, 2020.
+
+\bibitem{he2020realformer}
+R.~He, A.~Ravula, B.~Kanagal, and J.~Ainslie.
+\newblock Realformer: Transformer likes residual attention.
+\newblock {\em arXiv preprint arXiv:2012.11747}, 2020.
+
+\bibitem{hjelm2018learning}
+R.~D. Hjelm, A.~Fedorov, S.~Lavoie-Marchildon, K.~Grewal, P.~Bachman,
+  A.~Trischler, and Y.~Bengio.
+\newblock Learning deep representations by mutual information estimation and
+  maximization.
+\newblock In {\em ICLR'18}, 2018.
+
+\bibitem{hu2020gpt}
+Z.~Hu, Y.~Dong, K.~Wang, K.-W. Chang, and Y.~Sun.
+\newblock Gpt-gnn: Generative pre-training of graph neural networks.
+\newblock In {\em KDD'20}, pages 1857--1867, 2020.
+
+\bibitem{huang2022auc}
+M.~Huang, Y.~Liu, X.~Ao, K.~Li, J.~Chi, J.~Feng, H.~Yang, and Q.~He.
+\newblock Auc-oriented graph neural network for fraud detection.
+\newblock In {\em WWW'22}, pages 1311--1321, 2022.
+
+\bibitem{jang2016categorical}
+E.~Jang, S.~Gu, and B.~Poole.
+\newblock Categorical reparameterization with gumbel-softmax.
+\newblock {\em ICLR'17}, 2016.
+
+\bibitem{jin2021anemone}
+M.~Jin, Y.~Liu, Y.~Zheng, L.~Chi, Y.-F. Li, and S.~Pan.
+\newblock Anemone: Graph anomaly detection with multi-scale contrastive
+  learning.
+\newblock In {\em CIKM'21}, pages 3122--3126, 2021.
+
+\bibitem{kalantidis2020hard}
+Y.~Kalantidis, M.~B. Sariyildiz, N.~Pion, P.~Weinzaepfel, and D.~Larlus.
+\newblock Hard negative mixing for contrastive learning.
+\newblock {\em NIPS'20}, 33:21798--21809, 2020.
+
+\bibitem{khosla2020supervised}
+P.~Khosla, P.~Teterwak, C.~Wang, A.~Sarna, Y.~Tian, P.~Isola, A.~Maschinot,
+  C.~Liu, and D.~Krishnan.
+\newblock Supervised contrastive learning.
+\newblock {\em NIPS'20}, 33, 2020.
+
+\bibitem{kipf2016semi}
+T.~N. Kipf and M.~Welling.
+\newblock Semi-supervised classification with graph convolutional networks.
+\newblock 2016.
+
+\bibitem{kipf2016variational}
+T.~N. Kipf and M.~Welling.
+\newblock Variational graph auto-encoders.
+\newblock {\em NIPS'16}, 2016.
+
+\bibitem{kumar2018rev2}
+S.~Kumar, B.~Hooi, D.~Makhija, M.~Kumar, C.~Faloutsos, and V.~Subrahmanian.
+\newblock Rev2: Fraudulent user prediction in rating platforms.
+\newblock In {\em WSDM'18}, pages 333--341, 2018.
+
+\bibitem{kumar2016edge}
+S.~Kumar, F.~Spezzano, V.~Subrahmanian, and C.~Faloutsos.
+\newblock Edge weight prediction in weighted signed networks.
+\newblock In {\em ICDM'16}, pages 221--230. IEEE, 2016.
+
+\bibitem{li2019spam}
+A.~Li, Z.~Qin, R.~Liu, Y.~Yang, and D.~Li.
+\newblock Spam review detection with graph convolutional networks.
+\newblock In {\em CIKM'19}, 2019.
+
+\bibitem{liang2019uncovering}
+C.~Liang, Z.~Liu, B.~Liu, J.~Zhou, X.~Li, S.~Yang, and Y.~Qi.
+\newblock Uncovering insurance fraud conspiracy with network learning.
+\newblock In {\em SIGIR'19}, pages 1181--1184, 2019.
+
+\bibitem{liu2021pick}
+Y.~Liu, X.~Ao, Z.~Qin, J.~Chi, J.~Feng, H.~Yang, and Q.~He.
+\newblock Pick and choose: A gnn-based imbalanced learning approach for fraud
+  detection.
+\newblock In {\em WWW'21}, pages 3168--3177, 2021.
+
+\bibitem{liu2021anomaly}
+Y.~Liu, Z.~Li, S.~Pan, C.~Gong, C.~Zhou, and G.~Karypis.
+\newblock Anomaly detection on attributed networks via contrastive
+  self-supervised learning.
+\newblock {\em IEEE TNNLS'21}, 2021.
+
+\bibitem{liu2019geniepath}
+Z.~Liu, C.~Chen, L.~Li, J.~Zhou, X.~Li, L.~Song, and Y.~Qi.
+\newblock Geniepath: Graph neural networks with adaptive receptive paths.
+\newblock In {\em AAAI'19}, volume~33, pages 4424--4431, 2019.
+
+\bibitem{liu2020alleviating}
+Z.~Liu, Y.~Dou, P.~S. Yu, Y.~Deng, and H.~Peng.
+\newblock Alleviating the inconsistency problem of applying graph neural
+  network to fraud detection.
+\newblock In {\em SIGIR'20}, pages 1569--1572, 2020.
+
+\bibitem{maddison2016concrete}
+C.~J. Maddison, A.~Mnih, and Y.~W. Teh.
+\newblock The concrete distribution: A continuous relaxation of discrete random
+  variables.
+\newblock {\em ICLR'17}, 2016.
+
+\bibitem{nabeel2021cadue}
+M.~Nabeel, E.~Altinisik, H.~Sun, I.~Khalil, H.~Wang, and T.~Yu.
+\newblock Cadue: Content-agnostic detection of unwanted emails for enterprise
+  security.
+\newblock In {\em RAID'21}, pages 205--219, 2021.
+
+\bibitem{FangModel}
+V.~Nguyen, K.~Sugiyama, P.~Nakov, and M.~Kan.
+\newblock {FANG:} leveraging social context for fake news detection using graph
+  representation.
+\newblock In {\em Proceedings of the 29th ACM International Conference on
+  Information and Knowledge Management}, pages 1165--1174, 2020.
+
+\bibitem{oord2018representation}
+A.~v.~d. Oord, Y.~Li, and O.~Vinyals.
+\newblock Representation learning with contrastive predictive coding.
+\newblock {\em arXiv preprint arXiv:1807.03748}, 2018.
+
+\bibitem{qiu2020gcc}
+J.~Qiu, Q.~Chen, Y.~Dong, J.~Zhang, H.~Yang, M.~Ding, K.~Wang, and J.~Tang.
+\newblock Gcc: Graph contrastive coding for graph neural network pre-training.
+\newblock In {\em KDD'20}, pages 1150--1160, 2020.
+
+\bibitem{rao2021xfraud}
+S.~X. Rao, S.~Zhang, Z.~Han, Z.~Zhang, W.~Min, Z.~Chen, Y.~Shan, Y.~Zhao, and
+  C.~Zhang.
+\newblock xfraud: explainable fraud transaction detection.
+\newblock {\em Proceedings of the VLDB Endowment}, (3):427--436, 2021.
+
+\bibitem{rayana2015collective}
+S.~Rayana and L.~Akoglu.
+\newblock Collective opinion spam detection: Bridging review networks and
+  metadata.
+\newblock In {\em KDD'15}, 2015.
+
+\bibitem{AA-HGNN2020}
+Y.~Ren, B.~Wang, J.~Zhang, and Y.~Chang.
+\newblock Adversarial active learning based heterogeneous graph neural network
+  for fake news detection.
+\newblock In {\em ICDE'20}, 2020.
+
+\bibitem{roy2013microsoft}
+S.~B. Roy, M.~De~Cock, V.~Mandava, S.~Savanna, B.~Dalessandro, C.~Perlich,
+  W.~Cukierski, and B.~Hamner.
+\newblock The microsoft academic search dataset and kdd cup 2013.
+\newblock In {\em Proceedings of the 2013 KDD cup 2013 workshop}, pages 1--6,
+  2013.
+
+\bibitem{shi2022h2}
+F.~Shi, Y.~Cao, Y.~Shang, Y.~Zhou, C.~Zhou, and J.~Wu.
+\newblock H2-fdetector: A gnn-based fraud detector with homophilic and
+  heterophilic connections.
+\newblock In {\em WWW'22}, pages 1486--1494, 2022.
+
+\bibitem{silva2021propagation2vec}
+A.~Silva, Y.~Han, L.~Luo, S.~Karunasekera, and C.~Leckie.
+\newblock Propagation2vec: Embedding partial propagation networks for
+  explainable fake news early detection.
+\newblock {\em Information Processing \& Management}, 58(5):102618, 2021.
+
+\bibitem{sinha2015overview}
+A.~Sinha, Z.~Shen, Y.~Song, H.~Ma, D.~Eide, B.-J. Hsu, and K.~Wang.
+\newblock An overview of microsoft academic service (mas) and applications.
+\newblock In {\em WWW'15}, pages 243--246, 2015.
+
+\bibitem{Infograph}
+F.-Y. Sun, J.~Hoffmann, V.~Verma, and J.~Tang.
+\newblock Infograph: Unsupervised and semi-supervised graph-level
+  representation learning via mutual information maximization.
+\newblock In {\em ICLR'20}, 2020.
+
+\bibitem{tang2008arnetminer}
+J.~Tang, J.~Zhang, L.~Yao, J.~Li, L.~Zhang, and Z.~Su.
+\newblock Arnetminer: extraction and mining of academic social networks.
+\newblock In {\em KDD'08}, pages 990--998, 2008.
+
+\bibitem{velivckovic2017graph}
+P.~Veli{\v{c}}kovi{\'c}, G.~Cucurull, A.~Casanova, A.~Romero, P.~Lio, and
+  Y.~Bengio.
+\newblock Graph attention networks.
+\newblock 2017.
+
+\bibitem{velickovic2019deep}
+P.~Velickovic, W.~Fedus, W.~L. Hamilton, P.~Li{\`o}, Y.~Bengio, and R.~D.
+  Hjelm.
+\newblock Deep graph infomax.
+\newblock In {\em ICLR'19}, 2019.
+
+\bibitem{von2007tutorial}
+U.~Von~Luxburg.
+\newblock A tutorial on spectral clustering.
+\newblock {\em Statistics and computing}, 17(4):395--416, 2007.
+
+\bibitem{SemiGNN}
+D.~Wang, J.~Lin, P.~Cui, Q.~Jia, Z.~Wang, Y.~Fang, Q.~Yu, J.~Zhou, S.~Yang, and
+  Y.~Qi.
+\newblock A semi-supervised graph attentive network for financial fraud
+  detection.
+\newblock pages 598--607, 2019.
+
+\bibitem{FdGars}
+J.~Wang, R.~Wen, C.~Wu, Y.~Huang, and J.~Xion.
+\newblock Fdgars: Fraudster detection via graph convolutional networks in
+  online app review system.
+\newblock In {\em WWW'19}, pages 310--316, 2019.
+
+\bibitem{wang2020understanding}
+T.~Wang and P.~Isola.
+\newblock Understanding contrastive representation learning through alignment
+  and uniformity on the hypersphere.
+\newblock In {\em ICML'20}, pages 9929--9939. PMLR, 2020.
+
+\bibitem{wang2021decoupling}
+Y.~Wang, J.~Zhang, S.~Guo, H.~Yin, C.~Li, and H.~Chen.
+\newblock Decoupling representation learning and classification for gnn-based
+  anomaly detection.
+\newblock In {\em SIGIR'21}, pages 1239--1248, 2021.
+
+\bibitem{weston2014memory}
+J.~Weston, S.~Chopra, and A.~Bordes.
+\newblock Memory networks.
+\newblock {\em arXiv preprint arXiv:1410.3916}, 2014.
+
+\bibitem{wu2020graph}
+Y.~Wu, D.~Lian, Y.~Xu, L.~Wu, and E.~Chen.
+\newblock Graph convolutional networks with markov random field reasoning for
+  social spammer detection.
+\newblock In {\em AAAI'20}, volume~34, pages 1054--1061, 2020.
+
+\bibitem{wu2018unsupervised}
+Z.~Wu, Y.~Xiong, S.~X. Yu, and D.~Lin.
+\newblock Unsupervised feature learning via non-parametric instance
+  discrimination.
+\newblock In {\em CVPR'18}, pages 3733--3742, 2018.
+
+\bibitem{xu2021towards}
+B.~Xu, H.~Shen, B.~Sun, R.~An, Q.~Cao, and X.~Cheng.
+\newblock Towards consumer loan fraud detection: Graph neural networks with
+  role-constrained conditional random field.
+\newblock In {\em AAAI'21}, volume~35, pages 4537--4545, 2021.
+
+\bibitem{xu2018powerful}
+K.~Xu, W.~Hu, J.~Leskovec, and S.~Jegelka.
+\newblock How powerful are graph neural networks?
+\newblock In {\em ICLR'18}, 2018.
+
+\bibitem{yang2020rumor}
+X.~Yang, Y.~Lyu, T.~Tian, Y.~Liu, Y.~Liu, and X.~Zhang.
+\newblock Rumor detection on social media with graph structured adversarial
+  learning.
+\newblock In {\em IJCAI'20}, pages 1417--1423, 2020.
+
+\bibitem{yao2020botspot}
+T.~Yao, Q.~Li, S.~Liang, and Y.~Zhu.
+\newblock Botspot: A hybrid learning framework to uncover bot install fraud in
+  mobile advertising.
+\newblock In {\em CIKM'20}, pages 2901--2908, 2020.
+
+\bibitem{you2020graph}
+Y.~You, T.~Chen, Y.~Sui, T.~Chen, Z.~Wang, and Y.~Shen.
+\newblock Graph contrastive learning with augmentations.
+\newblock {\em NIPS'20}, 33, 2020.
+
+\bibitem{zhang2021name}
+J.~Zhang and J.~Tang.
+\newblock Name disambiguation in aminer.
+\newblock {\em Science China-information sciences}, 64(4):10--1007, 2021.
+
+\bibitem{zhang2019key}
+Y.~Zhang, Y.~Fan, Y.~Ye, L.~Zhao, and C.~Shi.
+\newblock Key player identification in underground forums over attributed
+  heterogeneous information network embedding framework.
+\newblock In {\em CIKM'19}, 2019.
+
+\end{thebibliography}

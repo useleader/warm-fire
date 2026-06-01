@@ -1,0 +1,82 @@
+
+% \begin{table*}[t]
+% \begin{center}
+% \begin{tabular}{|p{2cm}|p{12cm}|}
+
+
+% \hline
+% \textbf{reference summary}
+% &
+% Emma music gud yes very love magic
+% \\
+% \hline
+% \hline
+% \textbf{zero-shot}
+% &
+% I'm a musician myself, have been for many years now. And Emma Blackery is my favourite artist.
+% \\
+% \hline
+% \textbf{60k fine-tune}
+% &
+% I am a musician myself, have been for many years now. While Emma's music is not the most technical death metal stuff out there, I love it dearly. Her music actually moves me. No matter what she plays, be it a cover or original stuff, her music *touches* me on a deep personal level.
+% \\
+% \hline
+% \textbf{supervised}
+% &
+% I'm jealous of Emma Blackery's music and I have no clue why.
+% \\
+% \hline
+% \textbf{supervised + 60k fine-tune}
+% &
+% Emma Blackery is my favourite artist, and I love her music to death. I wish I could listen to her music all the time. However, I feel like her music destroys me emotionally. I feel like I need to enjoy her music for the human part of it, and not the technical part. She's my favourite artist.
+% \\
+% \hline
+
+% \end{tabular}
+% \caption{Random ($T=0.7$) completions for our TL;DR summarization task, on the same context.  Sample chosen from appendix \cref{tab:samples-summarization-tldr} (see appendix for context being summarized). The 60k fine-tune model copies from the original post.} 
+% \label{tab:summarization-body-samples}
+% \end{center}
+% \end{table*}
+    
+    
+
+\begin{table*}[t]
+\begin{center}
+\begin{tabular}{|p{2cm}|p{12cm}|}
+
+\hline
+\textbf{reference summary}
+&
+Solar plane attempting to be first to circumnavigate world without using fuel is stuck in China. Solar Impulse 2 attempts to prove the power of renewable energy.\\
+\hline
+\hline
+\textbf{zero-shot}
+&
+The plane has been grounded in China for two weeks because of bad weather.
+\\
+\hline
+\textbf{60k fine-tune}
+&
+The Solar Impulse 2, the experimental plane attempting to fly around the world without using a drop of fuel, has been grounded by the weather in China.
+\newline\newline
+What was supposed to be an overnight pit stop in the southwestern city of Chongqing has now stretched into a two-and-a-half week stay.
+\\
+\hline
+\textbf{supervised}
+&
+Solar Impulse 2 has been grounded by the weather in China. The plane took off from Abu Dhabi on March 9. The plane is trying to prove the power of renewable energy.
+\\
+\hline
+\textbf{supervised + 60k fine-tune}
+&
+Solar Impulse 2 has been grounded in China for two-and-a-half weeks. The plane is attempting to fly around the world without using a drop of fuel. The team, which includes Bertrand Piccard, is taking turns flying the single-seater. The plane took off from Abu Dhabi on March 9 and has successfully flown through Oman.
+\\
+\hline
+
+\end{tabular}
+\caption{Random ($T=0.5$) summaries for our CNN/DM summarization task, on the same context.  Samples chosen from appendix \cref{tab:samples-summarization-cnndm} (see appendix also for context being summarized).  The 60k fine-tune model copies from the source article. }
+\label{tab:summarization-body-samples}
+\end{center}
+\vspace{-.1in}
+\end{table*}
+    

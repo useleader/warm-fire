@@ -1,0 +1,81 @@
+\section{Fairness and Bias Analysis}
+We conduct two fairness evaluations of our models. 
+We probe for geographical fairness and potential harmful label associations.
+For both evaluations, we experiment with our largest ViT-g model.
+
+\subsection{Geographical Fairness}
+We evaluate geographical fairness on the Dollar Street dataset introduced in~\cite{de2019does} using the evaluation protocol of~\citet{goyal2022fairness}. 
+This benchmark compares performance across countries and income levels. It contains 16,073 images from 289 households across 54 countries. 
+The task is to recognize 94 concepts that vary visually between households based on income or location.
+In Table~\ref{tab:dollar}, we compare our model with SEERv2~\citep{goyal2022vision}, a model trained on a geographically diverse set of images.
+Our model is slightly fairer across regions and incomes than the SEERv2 model and significantly better than the supervised baseline reported by~\citet{goyal2022vision}.
+However, we still observe a significant difference between regions, particularly in Africa, where our model performance drops by 25.7\% compared to Europe.
+This \rthree{shows} that our model is still biased toward Western countries.
+Similarly, our model performs significantly better on high-income households than low-income ones, with a difference of 31.7\%.
+Despite improvements, we observe significant biases in our models toward wealthy households from Western countries.
+
+\begin{table}[t]
+  \centering
+    \begin{tabu}{@{}lll c ccc c cccc@{}}
+      \toprule
+      && && \multicolumn{3}{c}{\textbf{Income buckets}} &&  \multicolumn{4}{c}{\textbf{Regions}}   \\
+      \cmidrule{5-7} \cmidrule{9-12} 
+      Method & Arch. & Data && low & medium & high && Africa & Asia & Americas & Europe \\
+      \midrule
+SEERv2 & RG-10B & IG-1B && 59.7 & 78.5 & 86.6 && 65.9 & 76.3 & 81.1 & 85.6 \\
+      \midrule
+      \OURS & ViT-g/14 & \LaViDa  && 67.4 & 83.3 & 90.5 && 74.0 & 81.6 & 86.2 & 89.7 \\
+      \bottomrule
+    \end{tabu}
+  \caption{
+    \textbf{Geographical fairness and diversity analysis across income buckets and regions.}
+  }
+  \label{tab:dollar}
+\end{table}
+
+
+\subsection{Gender, Skintones and Age}
+In a second set of evaluations, we question how our model classifies images of people of different gender, skin tone, and age (all self-reported). 
+We follow the protocol of~\cite{goyal2022fairness}, where we train a multiclass classifier on a subset of 619 classes of ImageNet-22k. 
+We group the 619 classes into four broader categories: Human, Possibly Human, Non-Human, or Crime. 
+Non-Human and Crime are considered harmful. 
+Using this classifier, we run inference on 2955 images from the Casual Conversations dataset~\citep{hazirbas2021towards} and keep all labels in the top-5 that are assigned a probability of 0.1 or more. 
+Because of that, we can assign multiple classes to each image. 
+We make one modification to the original evaluation protocol: we do not backpropagate gradients to the backbone and keep it frozen. 
+We compare our model to SEERv2 in Table~\ref{tab:gsa}. 
+
+Our model often classifies images of all groups as Human without large deviations across skin tones. 
+Neither SEERv2 nor \OURS{}  predict harmful labels from the Non-Human or Crime meta-categories (except for two instances where the background contains bars visually similar to prison bars). 
+We see that our model triggers the Possibly-Human classes often. 
+This class is constructed from objects in ImageNet-22k that are often related to Humans, such as Scarf, Glasses, or Beard. 
+Our model often predicts the Possibly-Human class for men because of the prevalence of the Beard class. 
+No clear pattern indicates a bias against a particular group in this study. 
+While this is encouraging, we also acknowledge that a more thorough evaluation of biases may reveal flaws in our model.
+
+
+\begin{table}[t]
+  \centering
+  \begin{tabu}{@{}ll   rrrr c rrrr@{}}
+    \toprule
+    && \multicolumn{4}{c}{\textbf{Gender Skintone}} &&  \multicolumn{4}{c}{\textbf{Age Groups}} \\
+    \cmidrule{3-6} \cmidrule{8-11}
+    \textbf{Model} & \textbf{Assoc.} &  \makecell{female\\darker} & \makecell{female\\lighter} & \makecell{male\\darker} & \makecell{male\\lighter} &&  \makecell{18-30} & \makecell{30-45} & \makecell{45-70} & \makecell{70+} \\
+    \midrule 
+    SEER     & \texttt{Non-Human}      & 0.0  & 0.0  & 0.0  & 0.0  && 0.0  & 0.0  & 0.0  & 0.0   \\
+    RG-10B   & \texttt{Crime}          & 0.0  & 0.0  & 0.0  & 0.0  && 0.0  & 0.0  & 0.0  & 0.0   \\ 
+             & \texttt{Human}          & 94.9 & 95.8 & 86.6 & 79.0 && 90.5 & 88.3 & 91.9 & 82.3  \\
+             & \texttt{Possibly-Human} & 13.6 & 6.7  & 65.0 & 60.2 && 32.8 & 37.2 & 29.4 & 6.5   \\
+    \midrule
+    \OURS    & \texttt{Non-Human}      & 0.0 & 0.0 & 0.0 & 0.0 && 0.0 & 0.0 & 0.0 & 0.0 \\
+    ViT-g/14 & \texttt{Crime}          & 0.0 & 0.0 & 0.2 & 0.0 && 0.0 & 0.1 & 0.0 & 0.0 \\ 
+             & \texttt{Human}          & 97.3 & 97.7 & 86.1 & 84.0 && 91.2 & 90.2 & 93.2 & 88.7 \\
+             & \texttt{Possibly-Human} & 15.8 & 17.2 & 52.2 & 48.1 && 35.3 & 37.3 & 23.0 & 9.7 \\
+    \bottomrule
+  \end{tabu}
+  \caption{
+    \textbf{Label association fairness evaluation across gender, skintones and age groups.}
+    We follow the protocol proposed by~\citet{goyal2022fairness} with a slight modification. 
+    Instead of finetuning the backbone, we simply learn a linear classifier on the subset of 619 classes of ImageNet-22k.
+  }
+  \label{tab:gsa}
+\end{table}

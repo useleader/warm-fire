@@ -1,0 +1,50 @@
+\begin{table*}[t]
+\centering
+\begin{tabular}{l|rr|rr} \toprule
+  & \multicolumn{2}{c|}{TL;DR} & \multicolumn{2}{c}{CNN/Daily Mail} \\ 
+  & all & preamble & all & preamble \\ 
+  \midrule
+ 
+
+zero-shot &
+% tldr
+1.3\% & 0\% &
+% cnn/dm
+10.4\% & 1.0\% \\
+
+60k fine-tuned &
+% tldr
+28.3\% & 0.2\% &
+% cnn/dm
+77.6\% & 1.4\% \\
+
+supervised &
+% tldr
+1.5\% & 0\% &
+% cnn/dm
+9.4\% & 0\% \\
+
+
+supervised + 60k fine-tuned &
+% tldr
+7.9\% & 0\% &
+% cnn/dm
+16.6\% & 0\% \\
+
+reference summaries &
+% tldr
+0.6\% & 0\% &
+% cnn/dm
+5.1\% & 0\% \\
+
+\midrule
+total articles & 
+30000 & 3762 &  
+13368 & 297 \\
+
+\bottomrule
+\end{tabular}
+%\vspace{.1in}
+\caption{How often different models copy the first 3 words of the article as the first 3 words of the summary, on the validation sets.  We additionally consider the subset of posts/articles with preambles.
+On TL;DR, we used posts which begin with one of `hi', `hello', `hey', `ok', `okay', or `so'.  For CNN/Daily Mail, we used articles with a colon within the first 3 words, such as ``Winner: Simon Wood took home the TV crown [...]'' and ``Fully charged: The new scheme will let EE customers pick up free portable chargers [...]''.  \label{tab:copy-beginning-stats}}
+\end{table*}

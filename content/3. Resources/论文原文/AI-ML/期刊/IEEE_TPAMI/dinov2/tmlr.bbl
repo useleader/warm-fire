@@ -1,0 +1,937 @@
+\begin{thebibliography}{137}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Amir et~al.(2022)Amir, Gandelsman, Bagon, and Dekel]{amir2021deep}
+Shir Amir, Yossi Gandelsman, Shai Bagon, and Tali Dekel.
+\newblock Deep vit features as dense visual descriptors.
+\newblock In \emph{ECCV workshop on "What is Motion For?"}, 2022.
+
+\bibitem[Asano et~al.(2020)Asano, Rupprecht, and Vedaldi]{asano2019self}
+Yuki~Markus Asano, Christian Rupprecht, and Andrea Vedaldi.
+\newblock Self-labelling via simultaneous clustering and representation
+  learning.
+\newblock In \emph{ICLR}, 2020.
+
+\bibitem[Assran et~al.(2022)Assran, Caron, Misra, Bojanowski, Bordes, Vincent,
+  Joulin, Rabbat, and Ballas]{assran2022masked}
+Mahmoud Assran, Mathilde Caron, Ishan Misra, Piotr Bojanowski, Florian Bordes,
+  Pascal Vincent, Armand Joulin, Michael Rabbat, and Nicolas Ballas.
+\newblock Masked siamese networks for label-efficient learning.
+\newblock In \emph{ECCV}, 2022.
+
+\bibitem[Assran et~al.(2023)Assran, Duval, Misra, Bojanowski, Vincent, Rabbat,
+  LeCun, and Ballas]{assran2023self}
+Mahmoud Assran, Quentin Duval, Ishan Misra, Piotr Bojanowski, Pascal Vincent,
+  Michael Rabbat, Yann LeCun, and Nicolas Ballas.
+\newblock Self-supervised learning from images with a joint-embedding
+  predictive architecture.
+\newblock In \emph{CVPR}, 2023.
+
+\bibitem[Baevski et~al.(2022)Baevski, Hsu, Xu, Babu, Gu, and
+  Auli]{baevski2022data2vec}
+Alexei Baevski, Wei-Ning Hsu, Qiantong Xu, Arun Babu, Jiatao Gu, and Michael
+  Auli.
+\newblock Data2vec: A general framework for self-supervised learning in speech,
+  vision and language.
+\newblock In \emph{ICML}, 2022.
+
+\bibitem[Bao et~al.(2021)Bao, Dong, and Wei]{bao2021beit}
+Hangbo Bao, Li~Dong, and Furu Wei.
+\newblock Beit: Bert pre-training of image transformers.
+\newblock In \emph{ICLR}, 2021.
+
+\bibitem[Beirlant et~al.(1997)Beirlant, Dudewicz, Gy{\"o}rfi, Van~der Meulen,
+  et~al.]{beirlant1997nonparametric}
+Jan Beirlant, Edward~J Dudewicz, L{\'a}szl{\'o} Gy{\"o}rfi, Edward~C Van~der
+  Meulen, et~al.
+\newblock Nonparametric entropy estimation: An overview.
+\newblock \emph{International Journal of Mathematical and Statistical
+  Sciences}, 6\penalty0 (1):\penalty0 17--39, 1997.
+
+\bibitem[Berman et~al.(2019)Berman, J{\'e}gou, Andrea, Kokkinos, and
+  Douze]{berman2019multigrain}
+Maxim Berman, Herv{\'e} J{\'e}gou, Vedaldi Andrea, Iasonas Kokkinos, and
+  Matthijs Douze.
+\newblock {{MultiGrain}: a unified image embedding for classes and instances}.
+\newblock \emph{arXiv preprint arXiv:1902.05509}, 2019.
+
+\bibitem[Beyer et~al.(2020)Beyer, H{\'e}naff, Kolesnikov, Zhai, and
+  Oord]{beyer2020we}
+Lucas Beyer, Olivier~J H{\'e}naff, Alexander Kolesnikov, Xiaohua Zhai, and
+  A{\"a}ron van~den Oord.
+\newblock Are we done with imagenet?
+\newblock \emph{arXiv preprint arXiv:2006.07159}, 2020.
+
+\bibitem[Beyer et~al.(2023)Beyer, Izmailov, Kolesnikov, Caron, Kornblith, Zhai,
+  Minderer, Tschannen, Alabdulmohsin, and Pavetic]{beyer2023flexivit}
+Lucas Beyer, Pavel Izmailov, Alexander Kolesnikov, Mathilde Caron, Simon
+  Kornblith, Xiaohua Zhai, Matthias Minderer, Michael Tschannen, Ibrahim
+  Alabdulmohsin, and Filip Pavetic.
+\newblock Flexivit: One model for all patch sizes.
+\newblock In \emph{CVPR}, 2023.
+
+\bibitem[Bhat et~al.(2021)Bhat, Alhashim, and Wonka]{bhat2019adabins}
+Shariq~Farooq Bhat, Ibraheem Alhashim, and Peter Wonka.
+\newblock {AdaBins}: Depth estimation using adaptive bins.
+\newblock In \emph{CVPR}, 2021.
+
+\bibitem[Bojanowski \& Joulin(2017)Bojanowski and
+  Joulin]{bojanowski2017unsupervised}
+Piotr Bojanowski and Armand Joulin.
+\newblock Unsupervised learning by predicting noise.
+\newblock In \emph{ICML}, 2017.
+
+\bibitem[Bommasani et~al.(2021)Bommasani, Hudson, Adeli, Altman, Arora, von
+  Arx, Bernstein, Bohg, Bosselut, Brunskill,
+  et~al.]{bommasani2021opportunities}
+Rishi Bommasani, Drew~A Hudson, Ehsan Adeli, Russ Altman, Simran Arora, Sydney
+  von Arx, Michael~S Bernstein, Jeannette Bohg, Antoine Bosselut, Emma
+  Brunskill, et~al.
+\newblock On the opportunities and risks of foundation models.
+\newblock \emph{arXiv preprint arXiv:2108.07258}, 2021.
+
+\bibitem[Bossard et~al.(2014)Bossard, Guillaumin, and
+  Van~Gool]{dataset-food101}
+Lukas Bossard, Matthieu Guillaumin, and Luc Van~Gool.
+\newblock Food-101 -- mining discriminative components with random forests.
+\newblock In \emph{ECCV}, 2014.
+
+\bibitem[Brown et~al.(2020)Brown, Mann, Ryder, Subbiah, Kaplan, Dhariwal,
+  Neelakantan, Shyam, Sastry, Askell, et~al.]{brown2020language}
+Tom~B Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla
+  Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell,
+  et~al.
+\newblock Language models are few-shot learners.
+\newblock In \emph{NeurIPS}, 2020.
+
+\bibitem[Caron et~al.(2018)Caron, Bojanowski, Joulin, and Douze]{caron2018deep}
+Mathilde Caron, Piotr Bojanowski, Armand Joulin, and Matthijs Douze.
+\newblock Deep clustering for unsupervised learning of visual features.
+\newblock In \emph{ECCV}, 2018.
+
+\bibitem[Caron et~al.(2019)Caron, Bojanowski, Mairal, and
+  Joulin]{caron2019unsupervised}
+Mathilde Caron, Piotr Bojanowski, Julien Mairal, and Armand Joulin.
+\newblock Unsupervised pre-training of image features on non-curated data.
+\newblock In \emph{ICCV}, 2019.
+
+\bibitem[Caron et~al.(2020)Caron, Misra, Mairal, Goyal, Bojanowski, and
+  Joulin]{caron2020unsupervised}
+Mathilde Caron, Ishan Misra, Julien Mairal, Priya Goyal, Piotr Bojanowski, and
+  Armand Joulin.
+\newblock Unsupervised learning of visual features by contrasting cluster
+  assignments.
+\newblock In \emph{NeurIPS}, 2020.
+
+\bibitem[Caron et~al.(2021)Caron, Touvron, Misra, J{\'e}gou, Mairal,
+  Bojanowski, and Joulin]{caron2021emerging}
+Mathilde Caron, Hugo Touvron, Ishan Misra, Herv{\'e} J{\'e}gou, Julien Mairal,
+  Piotr Bojanowski, and Armand Joulin.
+\newblock Emerging properties in self-supervised vision transformers.
+\newblock In \emph{ICCV}, 2021.
+
+\bibitem[Chen et~al.(2018)Chen, Zhu, Papandreou, Schroff, and
+  Adam]{chen2018encoder}
+Liang-Chieh Chen, Yukun Zhu, George Papandreou, Florian Schroff, and Hartwig
+  Adam.
+\newblock Encoder-decoder with atrous separable convolution for semantic image
+  segmentation.
+\newblock In \emph{ECCV}, 2018.
+
+\bibitem[Chen et~al.(2020)Chen, Kornblith, Norouzi, and Hinton]{chen2020simple}
+Ting Chen, Simon Kornblith, Mohammad Norouzi, and Geoffrey Hinton.
+\newblock A simple framework for contrastive learning of visual
+  representations.
+\newblock In \emph{ICML}, 2020.
+
+\bibitem[Chen et~al.(2023{\natexlab{a}})Chen, Liang, Huang, Real, Wang, Liu,
+  Pham, Dong, Luong, Hsieh, et~al.]{chen2023symbolic}
+Xiangning Chen, Chen Liang, Da~Huang, Esteban Real, Kaiyuan Wang, Yao Liu, Hieu
+  Pham, Xuanyi Dong, Thang Luong, Cho-Jui Hsieh, et~al.
+\newblock Symbolic discovery of optimization algorithms.
+\newblock \emph{arXiv preprint arXiv:2302.06675}, 2023{\natexlab{a}}.
+
+\bibitem[Chen \& He(2021)Chen and He]{chen2020exploring}
+Xinlei Chen and Kaiming He.
+\newblock Exploring simple siamese representation learning.
+\newblock In \emph{CVPR}, 2021.
+
+\bibitem[Chen et~al.(2021)Chen, Xie, and He]{chen2021empirical}
+Xinlei Chen, Saining Xie, and Kaiming He.
+\newblock An empirical study of training self-supervised vision transformers.
+\newblock In \emph{ICCV}, 2021.
+
+\bibitem[Chen et~al.(2023{\natexlab{b}})Chen, Duan, Wang, He, Lu, Dai, and
+  Qiao]{chen2022vision}
+Zhe Chen, Yuchen Duan, Wenhai Wang, Junjun He, Tong Lu, Jifeng Dai, and
+  Yu~Qiao.
+\newblock Vision transformer adapter for dense predictions.
+\newblock In \emph{ICLR}, 2023{\natexlab{b}}.
+
+\bibitem[Cheng et~al.(2022)Cheng, Misra, Schwing, Kirillov, and
+  Girdhar]{cheng2022masked}
+Bowen Cheng, Ishan Misra, Alexander~G Schwing, Alexander Kirillov, and Rohit
+  Girdhar.
+\newblock Masked-attention mask transformer for universal image segmentation.
+\newblock In \emph{CVPR}, 2022.
+
+\bibitem[Cherti et~al.(2023)Cherti, Beaumont, Wightman, Wortsman, Ilharco,
+  Gordon, Schuhmann, Schmidt, and Jitsev]{cherti2023reproducible}
+Mehdi Cherti, Romain Beaumont, Ross Wightman, Mitchell Wortsman, Gabriel
+  Ilharco, Cade Gordon, Christoph Schuhmann, Ludwig Schmidt, and Jenia Jitsev.
+\newblock Reproducible scaling laws for contrastive language-image learning.
+\newblock In \emph{CVPR}, 2023.
+
+\bibitem[Chowdhery et~al.(2022)Chowdhery, Narang, Devlin, Bosma, Mishra,
+  Roberts, Barham, Chung, Sutton, Gehrmann, et~al.]{chowdhery2022palm}
+Aakanksha Chowdhery, Sharan Narang, Jacob Devlin, Maarten Bosma, Gaurav Mishra,
+  Adam Roberts, Paul Barham, Hyung~Won Chung, Charles Sutton, Sebastian
+  Gehrmann, et~al.
+\newblock Palm: Scaling language modeling with pathways.
+\newblock \emph{arXiv preprint arXiv:2204.02311}, 2022.
+
+\bibitem[Cimpoi et~al.(2014)Cimpoi, Maji, Kokkinos, Mohamed, , and
+  Vedaldi]{dataset-dtd}
+M.~Cimpoi, S.~Maji, I.~Kokkinos, S.~Mohamed, , and A.~Vedaldi.
+\newblock Describing textures in the wild.
+\newblock In \emph{CVPR}, 2014.
+
+\bibitem[Cordts et~al.(2016)Cordts, Omran, Ramos, Rehfeld, Enzweiler, Benenson,
+  Franke, Roth, and Schiele]{cordts2016cityscapes}
+Marius Cordts, Mohamed Omran, Sebastian Ramos, Timo Rehfeld, Markus Enzweiler,
+  Rodrigo Benenson, Uwe Franke, Stefan Roth, and Bernt Schiele.
+\newblock The cityscapes dataset for semantic urban scene understanding.
+\newblock In \emph{CVPR}, 2016.
+
+\bibitem[Dao et~al.(2022)Dao, Fu, Ermon, Rudra, and
+  R{\'e}]{dao2022flashattention}
+Tri Dao, Daniel~Y. Fu, Stefano Ermon, Atri Rudra, and Christopher R{\'e}.
+\newblock Flashattention: Fast and memory-efficient exact attention with
+  io-awareness.
+\newblock In \emph{NeurIPS}, 2022.
+
+\bibitem[De~Vries et~al.(2019)De~Vries, Misra, Wang, and Van~der
+  Maaten]{de2019does}
+Terrance De~Vries, Ishan Misra, Changhan Wang, and Laurens Van~der Maaten.
+\newblock Does object recognition work for everyone?
+\newblock In \emph{CVPR workshops}, 2019.
+
+\bibitem[Delattre \& Fournier(2017)Delattre and
+  Fournier]{delattre2017kozachenko}
+Sylvain Delattre and Nicolas Fournier.
+\newblock On the kozachenko--leonenko entropy estimator.
+\newblock \emph{Journal of Statistical Planning and Inference}, 185:\penalty0
+  69--93, 2017.
+
+\bibitem[Deng et~al.(2009)Deng, Dong, Socher, Li, Li, and
+  Fei-Fei]{deng2009imagenet}
+Jia Deng, Wei Dong, Richard Socher, Li-Jia Li, Kai Li, and Li~Fei-Fei.
+\newblock Imagenet: A large-scale hierarchical image database.
+\newblock In \emph{CVPR}, 2009.
+
+\bibitem[Devlin et~al.(2019)Devlin, Chang, Lee, and Toutanova]{devlin2018bert}
+Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova.
+\newblock Bert: Pre-training of deep bidirectional transformers for language
+  understanding.
+\newblock \emph{NAACL}, 2019.
+
+\bibitem[Doersch et~al.(2015)Doersch, Gupta, and
+  Efros]{doersch2015unsupervised}
+Carl Doersch, Abhinav Gupta, and Alexei~A Efros.
+\newblock Unsupervised visual representation learning by context prediction.
+\newblock In \emph{ICCV}, 2015.
+
+\bibitem[Dosovitskiy et~al.(2016)Dosovitskiy, Fischer, Springenberg,
+  Riedmiller, and Brox]{dosovitskiy2016discriminative}
+Alexey Dosovitskiy, Philipp Fischer, Jost~Tobias Springenberg, Martin
+  Riedmiller, and Thomas Brox.
+\newblock Discriminative unsupervised feature learning with exemplar
+  convolutional neural networks.
+\newblock \emph{TPAMI}, 2016.
+
+\bibitem[Dosovitskiy et~al.(2021)Dosovitskiy, Beyer, Kolesnikov, Weissenborn,
+  Zhai, Unterthiner, Dehghani, Minderer, Heigold, Gelly,
+  et~al.]{dosovitskiy2020image}
+Alexey Dosovitskiy, Lucas Beyer, Alexander Kolesnikov, Dirk Weissenborn,
+  Xiaohua Zhai, Thomas Unterthiner, Mostafa Dehghani, Matthias Minderer, Georg
+  Heigold, Sylvain Gelly, et~al.
+\newblock An image is worth 16x16 words: Transformers for image recognition at
+  scale.
+\newblock In \emph{ICLR}, 2021.
+
+\bibitem[Douze et~al.(2009)Douze, J{\'e}gou, Sandhawalia, Amsaleg, and
+  Schmid]{douze2009evaluation}
+Matthijs Douze, Herv{\'e} J{\'e}gou, Harsimrat Sandhawalia, Laurent Amsaleg,
+  and Cordelia Schmid.
+\newblock Evaluation of gist descriptors for web-scale image search.
+\newblock In \emph{CIVR}, 2009.
+
+\bibitem[Duval et~al.(2023)Duval, Misra, and Ballas]{duval2023simple}
+Quentin Duval, Ishan Misra, and Nicolas Ballas.
+\newblock A simple recipe for competitive low-compute self supervised vision
+  models.
+\newblock \emph{arXiv preprint arXiv:2301.09451}, 2023.
+
+\bibitem[El-Nouby et~al.(2021)El-Nouby, Izacard, Touvron, Laptev, Jegou, and
+  Grave]{el2021large}
+Alaaeldin El-Nouby, Gautier Izacard, Hugo Touvron, Ivan Laptev, Herv{\'e}
+  Jegou, and Edouard Grave.
+\newblock Are large-scale datasets necessary for self-supervised pre-training?
+\newblock \emph{arXiv preprint arXiv:2112.10740}, 2021.
+
+\bibitem[Everingham et~al.(2010)Everingham, Van~Gool, Williams, Winn, and
+  Zisserman]{everingham2010pascal}
+Mark Everingham, Luc Van~Gool, Christopher~KI Williams, John Winn, and Andrew
+  Zisserman.
+\newblock The pascal visual object classes (voc) challenge.
+\newblock \emph{IJCV}, 2010.
+
+\bibitem[Fang et~al.(2023)Fang, Wang, Xie, Sun, Wu, Wang, Huang, Wang, and
+  Cao]{fang2022eva}
+Yuxin Fang, Wen Wang, Binhui Xie, Quan Sun, Ledell Wu, Xinggang Wang, Tiejun
+  Huang, Xinlong Wang, and Yue Cao.
+\newblock Eva: Exploring the limits of masked visual representation learning at
+  scale.
+\newblock In \emph{CVPR}, 2023.
+
+\bibitem[Fei-Fei et~al.(2004)Fei-Fei, Fergus, and Perona]{dataset-caltech101}
+Li~Fei-Fei, Rob Fergus, and Pietro Perona.
+\newblock Learning generative visual models from few training examples: An
+  incremental bayesian approach tested on 101 object categories.
+\newblock In \emph{CVPR}, 2004.
+
+\bibitem[Geiger et~al.(2013)Geiger, Lenz, Stiller, and
+  Urtasun]{geiger2013vision}
+Andreas Geiger, Philip Lenz, Christoph Stiller, and Raquel Urtasun.
+\newblock Vision meets robotics: The kitti dataset.
+\newblock \emph{IJRR}, 2013.
+
+\bibitem[Gidaris et~al.(2018)Gidaris, Singh, and
+  Komodakis]{gidaris2018unsupervised}
+Spyros Gidaris, Praveer Singh, and Nikos Komodakis.
+\newblock Unsupervised representation learning by predicting image rotations.
+\newblock In \emph{ICLR}, 2018.
+
+\bibitem[Girdhar et~al.(2023)Girdhar, El-Nouby, Singh, Alwala, Joulin, and
+  Misra]{girdhar2022omnimae}
+Rohit Girdhar, Alaaeldin El-Nouby, Mannat Singh, Kalyan~Vasudev Alwala, Armand
+  Joulin, and Ishan Misra.
+\newblock Omnimae: Single model masked pretraining on images and videos.
+\newblock In \emph{CVPR}, 2023.
+
+\bibitem[Goyal et~al.(2019)Goyal, Mahajan, Gupta, and Misra]{goyal2019scaling}
+Priya Goyal, Dhruv Mahajan, Abhinav Gupta, and Ishan Misra.
+\newblock Scaling and benchmarking self-supervised visual representation
+  learning.
+\newblock In \emph{ICCV}, 2019.
+
+\bibitem[Goyal et~al.(2021)Goyal, Caron, Lefaudeux, Xu, Wang, Pai, Singh,
+  Liptchinsky, Misra, Joulin, et~al.]{goyal2021self}
+Priya Goyal, Mathilde Caron, Benjamin Lefaudeux, Min Xu, Pengchao Wang, Vivek
+  Pai, Mannat Singh, Vitaliy Liptchinsky, Ishan Misra, Armand Joulin, et~al.
+\newblock Self-supervised pretraining of visual features in the wild.
+\newblock \emph{preprint arXiv:2103.01988}, 2021.
+
+\bibitem[Goyal et~al.(2022{\natexlab{a}})Goyal, Duval, Seessel, Caron, Singh,
+  Misra, Sagun, Joulin, and Bojanowski]{goyal2022vision}
+Priya Goyal, Quentin Duval, Isaac Seessel, Mathilde Caron, Mannat Singh, Ishan
+  Misra, Levent Sagun, Armand Joulin, and Piotr Bojanowski.
+\newblock Vision models are more robust and fair when pretrained on uncurated
+  images without supervision.
+\newblock \emph{arXiv preprint arXiv:2202.08360}, 2022{\natexlab{a}}.
+
+\bibitem[Goyal et~al.(2022{\natexlab{b}})Goyal, Soriano, Hazirbas, Sagun, and
+  Usunier]{goyal2022fairness}
+Priya Goyal, Adriana~Romero Soriano, Caner Hazirbas, Levent Sagun, and Nicolas
+  Usunier.
+\newblock Fairness indicators for systematic assessments of visual feature
+  extractors.
+\newblock In \emph{FAcct}, 2022{\natexlab{b}}.
+
+\bibitem[Goyal et~al.(2017)Goyal, Ebrahimi~Kahou, Michalski, Materzynska,
+  Westphal, Kim, Haenel, Fruend, Yianilos, Mueller-Freitag,
+  et~al.]{goyal2017something}
+Raghav Goyal, Samira Ebrahimi~Kahou, Vincent Michalski, Joanna Materzynska,
+  Susanne Westphal, Heuna Kim, Valentin Haenel, Ingo Fruend, Peter Yianilos,
+  Moritz Mueller-Freitag, et~al.
+\newblock The "something something" video database for learning and evaluating
+  visual common sense.
+\newblock In \emph{ICCV}, 2017.
+
+\bibitem[Grill et~al.(2020)Grill, Strub, Altch{\'e}, Tallec, Richemond,
+  Buchatskaya, Doersch, Pires, Guo, Azar, Piot, Kavukcuoglu, Munos, and
+  Valko]{grill2020bootstrap}
+Jean-Bastien Grill, Florian Strub, Florent Altch{\'e}, Corentin Tallec,
+  Pierre~H Richemond, Elena Buchatskaya, Carl Doersch, Bernardo~Avila Pires,
+  Zhaohan~Daniel Guo, Mohammad~Gheshlaghi Azar, Bilal Piot, Koray Kavukcuoglu,
+  Rémi Munos, and Michal Valko.
+\newblock Bootstrap your own latent: A new approach to self-supervised
+  learning.
+\newblock In \emph{NeurIPS}, 2020.
+
+\bibitem[Hadsell et~al.(2006)Hadsell, Chopra, and
+  LeCun]{hadsell2006dimensionality}
+Raia Hadsell, Sumit Chopra, and Yann LeCun.
+\newblock Dimensionality reduction by learning an invariant mapping.
+\newblock In \emph{CVPR}, 2006.
+
+\bibitem[Hamilton et~al.(2022)Hamilton, Zhang, Hariharan, Snavely, and
+  Freeman]{hamilton2022unsupervised}
+Mark Hamilton, Zhoutong Zhang, Bharath Hariharan, Noah Snavely, and William~T
+  Freeman.
+\newblock Unsupervised semantic segmentation by distilling feature
+  correspondences.
+\newblock In \emph{ICLR}, 2022.
+
+\bibitem[Hazirbas et~al.(2021)Hazirbas, Bitton, Dolhansky, Pan, Gordo, and
+  Ferrer]{hazirbas2021towards}
+Caner Hazirbas, Joanna Bitton, Brian Dolhansky, Jacqueline Pan, Albert Gordo,
+  and Cristian~Canton Ferrer.
+\newblock Towards measuring fairness in ai: the casual conversations dataset.
+\newblock \emph{IEEE Transactions on Biometrics, Behavior, and Identity
+  Science}, 2021.
+
+\bibitem[He et~al.(2020)He, Fan, Wu, Xie, and Girshick]{he2020momentum}
+Kaiming He, Haoqi Fan, Yuxin Wu, Saining Xie, and Ross Girshick.
+\newblock Momentum contrast for unsupervised visual representation learning.
+\newblock In \emph{CVPR}, 2020.
+
+\bibitem[He et~al.(2022)He, Chen, Xie, Li, Doll{\'a}r, and
+  Girshick]{he2021masked}
+Kaiming He, Xinlei Chen, Saining Xie, Yanghao Li, Piotr Doll{\'a}r, and Ross
+  Girshick.
+\newblock Masked autoencoders are scalable vision learners.
+\newblock In \emph{CVPR}, 2022.
+
+\bibitem[H{\'e}naff et~al.(2019)H{\'e}naff, Srinivas, De~Fauw, Razavi, Doersch,
+  Eslami, and Oord]{henaff2019data}
+Olivier~J H{\'e}naff, Aravind Srinivas, Jeffrey De~Fauw, Ali Razavi, Carl
+  Doersch, SM~Eslami, and Aaron van~den Oord.
+\newblock Data-efficient image recognition with contrastive predictive coding.
+\newblock \emph{PMLR}, 2019.
+
+\bibitem[Hendrycks \& Dietterich(2019)Hendrycks and
+  Dietterich]{hendrycks2018benchmarking}
+Dan Hendrycks and Thomas Dietterich.
+\newblock Benchmarking neural network robustness to common corruptions and
+  perturbations.
+\newblock In \emph{ICLR}, 2019.
+
+\bibitem[Hendrycks et~al.(2021{\natexlab{a}})Hendrycks, Basart, Mu, Kadavath,
+  Wang, Dorundo, Desai, Zhu, Parajuli, Guo, et~al.]{hendrycks2021many}
+Dan Hendrycks, Steven Basart, Norman Mu, Saurav Kadavath, Frank Wang, Evan
+  Dorundo, Rahul Desai, Tyler Zhu, Samyak Parajuli, Mike Guo, et~al.
+\newblock The many faces of robustness: A critical analysis of
+  out-of-distribution generalization.
+\newblock In \emph{ICCV}, 2021{\natexlab{a}}.
+
+\bibitem[Hendrycks et~al.(2021{\natexlab{b}})Hendrycks, Zhao, Basart,
+  Steinhardt, and Song]{hendrycks2021natural}
+Dan Hendrycks, Kevin Zhao, Steven Basart, Jacob Steinhardt, and Dawn Song.
+\newblock Natural adversarial examples.
+\newblock In \emph{CVPR}, 2021{\natexlab{b}}.
+
+\bibitem[Hinton et~al.(2014)Hinton, Vinyals, and Dean]{hinton2015distilling}
+Geoffrey Hinton, Oriol Vinyals, and Jeff Dean.
+\newblock Distilling the knowledge in a neural network.
+\newblock In \emph{NeurIPS Deep Learning Workshop}, 2014.
+
+\bibitem[Hoffmann et~al.(2022)Hoffmann, Borgeaud, Mensch, Buchatskaya, Cai,
+  Rutherford, Casas, Hendricks, Welbl, Clark, et~al.]{hoffmann2022training}
+Jordan Hoffmann, Sebastian Borgeaud, Arthur Mensch, Elena Buchatskaya, Trevor
+  Cai, Eliza Rutherford, Diego de~Las Casas, Lisa~Anne Hendricks, Johannes
+  Welbl, Aidan Clark, et~al.
+\newblock Training compute-optimal large language models.
+\newblock \emph{arXiv preprint arXiv:2203.15556}, 2022.
+
+\bibitem[Huang et~al.(2016)Huang, Sun, Liu, Sedra, and
+  Weinberger]{huang2016deep}
+Gao Huang, Yu~Sun, Zhuang Liu, Daniel Sedra, and Kilian~Q Weinberger.
+\newblock Deep networks with stochastic depth.
+\newblock In \emph{ECCV}, 2016.
+
+\bibitem[Ilharco et~al.(2021)Ilharco, Wortsman, Wightman, Gordon, Carlini,
+  Taori, Dave, Shankar, Namkoong, Miller, Hajishirzi, Farhadi, and
+  Schmidt]{ilharco_gabriel_2021_5143773}
+Gabriel Ilharco, Mitchell Wortsman, Ross Wightman, Cade Gordon, Nicholas
+  Carlini, Rohan Taori, Achal Dave, Vaishaal Shankar, Hongseok Namkoong, John
+  Miller, Hannaneh Hajishirzi, Ali Farhadi, and Ludwig Schmidt.
+\newblock Openclip.
+\newblock 2021.
+
+\bibitem[Jegou et~al.(2010)Jegou, Douze, and Schmid]{jegou2010product}
+Herve Jegou, Matthijs Douze, and Cordelia Schmid.
+\newblock Product quantization for nearest neighbor search.
+\newblock \emph{TPAMI}, 2010.
+
+\bibitem[Johnson et~al.(2019)Johnson, Douze, and J{\'e}gou]{johnson2019billion}
+Jeff Johnson, Matthijs Douze, and Herv{\'e} J{\'e}gou.
+\newblock Billion-scale similarity search with {GPUs}.
+\newblock \emph{IEEE Transactions on Big Data}, 2019.
+
+\bibitem[Joulin et~al.(2016)Joulin, Van Der~Maaten, Jabri, and
+  Vasilache]{joulin2016learning}
+Armand Joulin, Laurens Van Der~Maaten, Allan Jabri, and Nicolas Vasilache.
+\newblock Learning visual features from large weakly supervised data.
+\newblock In \emph{ECCV}, 2016.
+
+\bibitem[Kay et~al.(2017)Kay, Carreira, Simonyan, Zhang, Hillier,
+  Vijayanarasimhan, Viola, Green, Back, Natsev, et~al.]{kay2017kinetics}
+Will Kay, Joao Carreira, Karen Simonyan, Brian Zhang, Chloe Hillier, Sudheendra
+  Vijayanarasimhan, Fabio Viola, Tim Green, Trevor Back, Paul Natsev, et~al.
+\newblock The kinetics human action video dataset.
+\newblock \emph{arXiv preprint arXiv:1705.06950}, 2017.
+
+\bibitem[Krause et~al.(2013)Krause, Stark, Deng, and
+  Fei-Fei]{dataset-stanfordcars}
+Jonathan Krause, Michael Stark, Jia Deng, and Li~Fei-Fei.
+\newblock 3d object representations for fine-grained categorization.
+\newblock In \emph{3DRR}, 2013.
+
+\bibitem[Krell et~al.(2022)Krell, Kosec, Perez, and
+  Fitzgibbon]{krell2022efficient}
+Mario~Michael Krell, Matej Kosec, Sergio~P. Perez, and Andrew Fitzgibbon.
+\newblock Efficient sequence packing without cross-contamination: Accelerating
+  large language models without impacting performance, 2022.
+
+\bibitem[Krizhevsky et~al.(2009)Krizhevsky, Hinton,
+  et~al.]{krizhevsky2009learning}
+Alex Krizhevsky, Geoffrey Hinton, et~al.
+\newblock Learning multiple layers of features from tiny images.
+\newblock 2009.
+
+\bibitem[Lefaudeux et~al.(2022)Lefaudeux, Massa, Liskovich, Xiong, Caggiano,
+  Naren, Xu, Hu, Tintore, Zhang, Labatut, and Haziza]{xFormers2022}
+Benjamin Lefaudeux, Francisco Massa, Diana Liskovich, Wenhan Xiong, Vittorio
+  Caggiano, Sean Naren, Min Xu, Jieru Hu, Marta Tintore, Susan Zhang, Patrick
+  Labatut, and Daniel Haziza.
+\newblock xformers: A modular and hackable transformer modelling library.
+\newblock \url{https://github.com/facebookresearch/xformers}, 2022.
+
+\bibitem[Li et~al.(2022{\natexlab{a}})Li, Yang, Zhang, Gao, Xiao, Dai, Yuan,
+  and Gao]{li2021efficient}
+Chunyuan Li, Jianwei Yang, Pengchuan Zhang, Mei Gao, Bin Xiao, Xiyang Dai,
+  Lu~Yuan, and Jianfeng Gao.
+\newblock Efficient self-supervised vision transformers for representation
+  learning.
+\newblock In \emph{ICLR}, 2022{\natexlab{a}}.
+
+\bibitem[Li et~al.(2022{\natexlab{b}})Li, Wang, Liu, and
+  Jiang]{li2022binsformer}
+Zhenyu Li, Xuyang Wang, Xianming Liu, and Junjun Jiang.
+\newblock Binsformer: Revisiting adaptive bins for monocular depth estimation.
+\newblock \emph{arXiv preprint arXiv:2204.00987}, 2022{\natexlab{b}}.
+
+\bibitem[Likhomanenko et~al.(2021)Likhomanenko, Xu, Synnaeve, Collobert, and
+  Rogozhnikov]{likhomanenko2021cape}
+Tatiana Likhomanenko, Qiantong Xu, Gabriel Synnaeve, Ronan Collobert, and Alex
+  Rogozhnikov.
+\newblock Cape: Encoding relative positions with continuous augmented
+  positional embeddings.
+\newblock In \emph{NeurIPS}, 2021.
+
+\bibitem[Liu et~al.(2021)Liu, Liu, Fan, and Huang]{liu2021polarized}
+Huajun Liu, Fuqiang Liu, Xinyi Fan, and Dong Huang.
+\newblock Polarized self-attention: towards high-quality pixel-wise regression.
+\newblock \emph{arXiv preprint arXiv:2107.00782}, 2021.
+
+\bibitem[Mahajan et~al.(2018)Mahajan, Girshick, Ramanathan, He, Paluri, Li,
+  Bharambe, and van~der Maaten]{mahajan2018exploring}
+Dhruv Mahajan, Ross Girshick, Vignesh Ramanathan, Kaiming He, Manohar Paluri,
+  Yixuan Li, Ashwin Bharambe, and Laurens van~der Maaten.
+\newblock Exploring the limits of weakly supervised pretraining.
+\newblock In \emph{ECCV}, 2018.
+
+\bibitem[Maji et~al.(2013)Maji, Kannala, Rahtu, Blaschko, and
+  Vedaldi]{dataset-aircraft}
+S.~Maji, J.~Kannala, E.~Rahtu, M.~Blaschko, and A.~Vedaldi.
+\newblock Fine-grained visual classification of aircraft.
+\newblock Technical report, 2013.
+
+\bibitem[Misra \& Maaten(2020)Misra and Maaten]{misra2020self}
+Ishan Misra and Laurens van~der Maaten.
+\newblock Self-supervised learning of pretext-invariant representations.
+\newblock In \emph{CVPR}, 2020.
+
+\bibitem[Nilsback \& Zisserman(2008)Nilsback and
+  Zisserman]{nilsback2008automated}
+Maria-Elena Nilsback and Andrew Zisserman.
+\newblock Automated flower classification over a large number of classes.
+\newblock In \emph{ICVGIP}, 2008.
+
+\bibitem[Noroozi \& Favaro(2016)Noroozi and Favaro]{noroozi2016jigsaw}
+Mehdi Noroozi and Paolo Favaro.
+\newblock Unsupervised learning of visual representations by solving jigsaw
+  puzzles.
+\newblock In \emph{ECCV}, 2016.
+
+\bibitem[Ofri-Amar et~al.(2023)Ofri-Amar, Geyer, Kasten, and
+  Dekel]{ofri2023neural}
+Dolev Ofri-Amar, Michal Geyer, Yoni Kasten, and Tali Dekel.
+\newblock Neural congealing: Aligning images to a joint semantic atlas.
+\newblock In \emph{CVPR}, 2023.
+
+\bibitem[Parkhi et~al.(2012)Parkhi, Vedaldi, Zisserman, and
+  Jawahar]{dataset-pets}
+Omkar~M. Parkhi, Andrea Vedaldi, Andrew Zisserman, and C.~V. Jawahar.
+\newblock Cats and dogs.
+\newblock In \emph{CVPR}, 2012.
+
+\bibitem[Pathak et~al.(2016)Pathak, Kr\"ahenb\"uhl, Donahue, Darrell, and
+  Efros]{pathakCVPR16context}
+Deepak Pathak, Philipp Kr\"ahenb\"uhl, Jeff Donahue, Trevor Darrell, and Alexei
+  Efros.
+\newblock Context encoders: Feature learning by inpainting.
+\newblock In \emph{CVPR}, 2016.
+
+\bibitem[Patterson et~al.(2021)Patterson, Gonzalez, Le, Liang, Munguia,
+  Rothchild, So, Texier, and Dean]{patterson2021carbon}
+David Patterson, Joseph Gonzalez, Quoc Le, Chen Liang, Lluis-Miquel Munguia,
+  Daniel Rothchild, David So, Maud Texier, and Jeff Dean.
+\newblock Carbon emissions and large neural network training.
+\newblock \emph{arXiv preprint arXiv:2104.10350}, 2021.
+
+\bibitem[Pizzi et~al.(2022)Pizzi, Roy, Ravindra, Goyal, and
+  Douze]{pizzi2022self}
+Ed~Pizzi, Sreya~Dutta Roy, Sugosh~Nagavara Ravindra, Priya Goyal, and Matthijs
+  Douze.
+\newblock A self-supervised descriptor for image copy detection.
+\newblock In \emph{CVPR}, 2022.
+
+\bibitem[Radenovi{\'c} et~al.(2018{\natexlab{a}})Radenovi{\'c}, Iscen, Tolias,
+  Avrithis, and Chum]{radenovic2018revisiting}
+Filip Radenovi{\'c}, Ahmet Iscen, Giorgos Tolias, Yannis Avrithis, and
+  Ond{\v{r}}ej Chum.
+\newblock Revisiting oxford and paris: Large-scale image retrieval
+  benchmarking.
+\newblock In \emph{CVPR}, 2018{\natexlab{a}}.
+
+\bibitem[Radenovi{\'c} et~al.(2018{\natexlab{b}})Radenovi{\'c}, Tolias, and
+  Chum]{radenovic2018fine}
+Filip Radenovi{\'c}, Giorgos Tolias, and Ond{\v{r}}ej Chum.
+\newblock Fine-tuning cnn image retrieval with no human annotation.
+\newblock \emph{TPAMI}, 2018{\natexlab{b}}.
+
+\bibitem[Radford et~al.(2017)Radford, Jozefowicz, and
+  Sutskever]{radford2017learning}
+Alec Radford, Rafal Jozefowicz, and Ilya Sutskever.
+\newblock Learning to generate reviews and discovering sentiment.
+\newblock \emph{arXiv preprint arXiv:1704.01444}, 2017.
+
+\bibitem[Radford et~al.(2019)Radford, Wu, Child, Luan, Amodei, and
+  Sutskever]{radford2019language}
+Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, and Ilya
+  Sutskever.
+\newblock Language models are unsupervised multitask learners.
+\newblock 2019.
+
+\bibitem[Radford et~al.(2021)Radford, Kim, Hallacy, Ramesh, Goh, Agarwal,
+  Sastry, Askell, Mishkin, Clark, et~al.]{radford2021learning}
+Alec Radford, Jong~Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh,
+  Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark,
+  et~al.
+\newblock Learning transferable visual models from natural language
+  supervision.
+\newblock In \emph{ICML}, 2021.
+
+\bibitem[Raffel et~al.(2020)Raffel, Shazeer, Roberts, Lee, Narang, Matena,
+  Zhou, Li, Liu, et~al.]{raffel2020exploring}
+Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael
+  Matena, Yanqi Zhou, Wei Li, Peter~J Liu, et~al.
+\newblock Exploring the limits of transfer learning with a unified text-to-text
+  transformer.
+\newblock \emph{JMLR}, 2020.
+
+\bibitem[Ranftl et~al.(2021)Ranftl, Bochkovskiy, and Koltun]{ranftl2021vision}
+Ren{\'e} Ranftl, Alexey Bochkovskiy, and Vladlen Koltun.
+\newblock Vision transformers for dense prediction.
+\newblock In \emph{ICCV}, 2021.
+
+\bibitem[Recht et~al.(2019)Recht, Roelofs, Schmidt, and
+  Shankar]{recht2019imagenet}
+Benjamin Recht, Rebecca Roelofs, Ludwig Schmidt, and Vaishaal Shankar.
+\newblock Do imagenet classifiers generalize to imagenet?
+\newblock In \emph{ICML}, 2019.
+
+\bibitem[Revaud et~al.(2019)Revaud, Almaz{\'a}n, Rezende, and
+  Souza]{revaud2019learning}
+Jerome Revaud, Jon Almaz{\'a}n, Rafael~S Rezende, and Cesar Roberto~de Souza.
+\newblock Learning with average precision: Training image retrieval with a
+  listwise loss.
+\newblock In \emph{ICCV}, 2019.
+
+\bibitem[Ruan et~al.(2023)Ruan, Singh, Morningstar, Alemi, Ioffe, Fischer, and
+  Dillon]{ruan2022weighted}
+Yangjun Ruan, Saurabh Singh, Warren Morningstar, Alexander~A Alemi, Sergey
+  Ioffe, Ian Fischer, and Joshua~V Dillon.
+\newblock Weighted ensemble self-supervised learning.
+\newblock In \emph{ICLR}, 2023.
+
+\bibitem[Russakovsky et~al.(2015)Russakovsky, Deng, Su, Krause, Satheesh, Ma,
+  Huang, Karpathy, Khosla, Bernstein, Berg, and
+  Fei-Fei]{russakovsky2015imagenet}
+Olga Russakovsky, Jia Deng, Hao Su, Jonathan Krause, Sanjeev Satheesh, Sean Ma,
+  Zhiheng Huang, Andrej Karpathy, Aditya Khosla, Michael Bernstein, Alexander~C
+  Berg, and Li~Fei-Fei.
+\newblock Imagenet large scale visual recognition challenge.
+\newblock \emph{IJCV}, 2015.
+
+\bibitem[Sablayrolles et~al.(2019)Sablayrolles, Douze, Schmid, and
+  J{\'e}gou]{sablayrolles2018spreading}
+Alexandre Sablayrolles, Matthijs Douze, Cordelia Schmid, and Herv{\'e}
+  J{\'e}gou.
+\newblock Spreading vectors for similarity search.
+\newblock In \emph{ICLR}, 2019.
+
+\bibitem[Schuhmann et~al.(2021)Schuhmann, Vencu, Beaumont, Kaczmarczyk, Mullis,
+  Katta, Coombes, Jitsev, and Komatsuzaki]{schuhmann2021laion}
+Christoph Schuhmann, Richard Vencu, Romain Beaumont, Robert Kaczmarczyk,
+  Clayton Mullis, Aarush Katta, Theo Coombes, Jenia Jitsev, and Aran
+  Komatsuzaki.
+\newblock Laion-400m: Open dataset of clip-filtered 400 million image-text
+  pairs.
+\newblock In \emph{NeurIPS Data Centric AI Workshop}, 2021.
+
+\bibitem[Schuhmann et~al.(2022)Schuhmann, Beaumont, Vencu, Gordon, Wightman,
+  Cherti, Coombes, Katta, Mullis, Wortsman, et~al.]{schuhmann2022laion}
+Christoph Schuhmann, Romain Beaumont, Richard Vencu, Cade Gordon, Ross
+  Wightman, Mehdi Cherti, Theo Coombes, Aarush Katta, Clayton Mullis, Mitchell
+  Wortsman, et~al.
+\newblock Laion-5b: An open large-scale dataset for training next generation
+  image-text models.
+\newblock In \emph{NeurIPS}, 2022.
+
+\bibitem[Shazeer(2020)]{shazeer2020glu}
+Noam Shazeer.
+\newblock Glu variants improve transformer.
+\newblock \emph{arXiv preprint arXiv:2002.05202}, 2020.
+
+\bibitem[Silberman et~al.(2012)Silberman, Hoiem, Kohli, and
+  Fergus]{silberman2012indoor}
+Nathan Silberman, Derek Hoiem, Pushmeet Kohli, and Rob Fergus.
+\newblock Indoor segmentation and support inference from rgbd images.
+\newblock In \emph{ECCV}, 2012.
+
+\bibitem[Singh et~al.(2022)Singh, Gustafson, Adcock, Reis, Gedik, Kosaraju,
+  Mahajan, Girshick, Doll{\'a}r, and van~der Maaten]{singh2022revisiting}
+Mannat Singh, Laura Gustafson, Aaron Adcock, Vinicius de~Freitas Reis, Bugra
+  Gedik, Raj~Prateek Kosaraju, Dhruv Mahajan, Ross Girshick, Piotr Doll{\'a}r,
+  and Laurens van~der Maaten.
+\newblock {Revisiting Weakly Supervised Pre-Training of Visual Perception
+  Models}.
+\newblock In \emph{CVPR}, 2022.
+
+\bibitem[Song et~al.(2015)Song, Lichtenberg, and Xiao]{song2015sun}
+Shuran Song, Samuel~P Lichtenberg, and Jianxiong Xiao.
+\newblock Sun rgb-d: A rgb-d scene understanding benchmark suite.
+\newblock In \emph{CVPR}, 2015.
+
+\bibitem[Soomro et~al.(2012)Soomro, Zamir, and Shah]{soomro2012ucf101}
+Khurram Soomro, Amir~Roshan Zamir, and Mubarak Shah.
+\newblock Ucf101: A dataset of 101 human actions classes from videos in the
+  wild.
+\newblock \emph{arXiv preprint arXiv:1212.0402}, 2012.
+
+\bibitem[Steiner et~al.(2021)Steiner, Kolesnikov, Zhai, Wightman, Uszkoreit,
+  and Beyer]{steiner2021train}
+Andreas Steiner, Alexander Kolesnikov, Xiaohua Zhai, Ross Wightman, Jakob
+  Uszkoreit, and Lucas Beyer.
+\newblock How to train your vit? data, augmentation, and regularization in
+  vision transformers.
+\newblock \emph{TMLR}, 2021.
+
+\bibitem[Strubell et~al.(2019)Strubell, Ganesh, and
+  McCallum]{strubell2019energy}
+Emma Strubell, Ananya Ganesh, and Andrew McCallum.
+\newblock Energy and policy considerations for deep learning in nlp.
+\newblock \emph{ACL}, 2019.
+
+\bibitem[Tian et~al.(2021)Tian, Henaff, and van~den Oord]{tian2021divide}
+Yonglong Tian, Olivier~J Henaff, and A{\"a}ron van~den Oord.
+\newblock Divide and contrast: Self-supervised learning from uncurated data.
+\newblock In \emph{ICCV}, 2021.
+
+\bibitem[Tolias et~al.(2016)Tolias, Sicre, and J{\'e}gou]{tolias2015particular}
+Giorgos Tolias, Ronan Sicre, and Herv{\'e} J{\'e}gou.
+\newblock Particular object retrieval with integral max-pooling of cnn
+  activations.
+\newblock In \emph{ICLR}, 2016.
+
+\bibitem[Tong et~al.(2022)Tong, Song, Wang, and Wang]{tong2022videomae}
+Zhan Tong, Yibing Song, Jue Wang, and Limin Wang.
+\newblock Videomae: Masked autoencoders are data-efficient learners for
+  self-supervised video pre-training.
+\newblock In \emph{NeurIPS}, 2022.
+
+\bibitem[Touvron et~al.(2019)Touvron, Vedaldi, Douze, and
+  J{\'e}gou]{touvron2019fixing}
+Hugo Touvron, Andrea Vedaldi, Matthijs Douze, and Herv{\'e} J{\'e}gou.
+\newblock Fixing the train-test resolution discrepancy.
+\newblock In \emph{NeurIPS}, 2019.
+
+\bibitem[Touvron et~al.(2022)Touvron, Cord, and J{\'e}gou]{touvron2022deit}
+Hugo Touvron, Matthieu Cord, and Herv{\'e} J{\'e}gou.
+\newblock Deit iii: Revenge of the vit.
+\newblock In \emph{ECCV}, 2022.
+
+\bibitem[Touvron et~al.(2023)Touvron, Lavril, Izacard, Martinet, Lachaux,
+  Lacroix, Rozi{\`e}re, Goyal, Hambro, Azhar, Rodriguez, Joulin, Grave, and
+  Lample]{touvron2023llama}
+Hugo Touvron, Thibaut Lavril, Gautier Izacard, Xavier Martinet, Marie-Anne
+  Lachaux, Timoth{\'e}e Lacroix, Baptiste Rozi{\`e}re, Naman Goyal, Eric
+  Hambro, Faisal Azhar, Aurelien Rodriguez, Armand Joulin, Edouard Grave, and
+  Guillaume Lample.
+\newblock Llama: Open and efficient foundation language models.
+\newblock \emph{arXiv preprint arXiv:2302.13971}, 2023.
+
+\bibitem[Tumanyan et~al.(2022)Tumanyan, Bar-Tal, Bagon, and
+  Dekel]{tumanyan2022splicing}
+Narek Tumanyan, Omer Bar-Tal, Shai Bagon, and Tali Dekel.
+\newblock Splicing vit features for semantic appearance transfer.
+\newblock In \emph{CVPR}, 2022.
+
+\bibitem[Van~Horn et~al.(2018)Van~Horn, Mac~Aodha, Song, Cui, Sun, Shepard,
+  Adam, Perona, and Belongie]{van2018inaturalist}
+Grant Van~Horn, Oisin Mac~Aodha, Yang Song, Yin Cui, Chen Sun, Alex Shepard,
+  Hartwig Adam, Pietro Perona, and Serge Belongie.
+\newblock The inaturalist species classification and detection dataset.
+\newblock In \emph{CVPR}, 2018.
+
+\bibitem[Van~Horn et~al.(2021)Van~Horn, Cole, Beery, Wilber, Belongie, and
+  Mac~Aodha]{van2021benchmarking}
+Grant Van~Horn, Elijah Cole, Sara Beery, Kimberly Wilber, Serge Belongie, and
+  Oisin Mac~Aodha.
+\newblock Benchmarking representation learning for natural world image
+  collections.
+\newblock In \emph{CVPR}, 2021.
+
+\bibitem[Wang et~al.(2022)Wang, Dai, Chen, Huang, Li, Zhu, Hu, Lu, Lu, Li,
+  et~al.]{wang2022internimage}
+Wenhai Wang, Jifeng Dai, Zhe Chen, Zhenhang Huang, Zhiqi Li, Xizhou Zhu,
+  Xiaowei Hu, Tong Lu, Lewei Lu, Hongsheng Li, et~al.
+\newblock Internimage: Exploring large-scale vision foundation models with
+  deformable convolutions.
+\newblock In \emph{CVPR}, 2022.
+
+\bibitem[Wang et~al.(2019)Wang, Jabri, and Efros]{wang2019learning}
+Xiaolong Wang, Allan Jabri, and Alexei~A Efros.
+\newblock Learning correspondence from the cycle-consistency of time.
+\newblock In \emph{CVPR}, 2019.
+
+\bibitem[Warburg et~al.(2020)Warburg, Hauberg, Lopez-Antequera, Gargallo,
+  Kuang, and Civera]{warburg2020mapillary}
+Frederik Warburg, Soren Hauberg, Manuel Lopez-Antequera, Pau Gargallo, Yubin
+  Kuang, and Javier Civera.
+\newblock Mapillary street-level sequences: A dataset for lifelong place
+  recognition.
+\newblock In \emph{CVPR}, 2020.
+
+\bibitem[Weinzaepfel et~al.(2021)Weinzaepfel, Lucas, Larlus, and
+  Kalantidis]{weinzaepfel2021learning}
+Philippe Weinzaepfel, Thomas Lucas, Diane Larlus, and Yannis Kalantidis.
+\newblock Learning super-features for image retrieval.
+\newblock In \emph{ICLR}, 2021.
+
+\bibitem[Welinder et~al.(2010)Welinder, Branson, Mita, Wah, Schroff, Belongie,
+  and Perona]{dataset-cub}
+P.~Welinder, S.~Branson, T.~Mita, C.~Wah, F.~Schroff, S.~Belongie, and
+  P.~Perona.
+\newblock {Caltech-UCSD Birds 200}.
+\newblock Technical Report CNS-TR-2010-001, 2010.
+
+\bibitem[Wenzek et~al.(2020)Wenzek, Lachaux, Conneau, Chaudhary, Guzm{\'a}n,
+  Joulin, and Grave]{wenzek2019ccnet}
+Guillaume Wenzek, Marie-Anne Lachaux, Alexis Conneau, Vishrav Chaudhary,
+  Francisco Guzm{\'a}n, Armand Joulin, and Edouard Grave.
+\newblock Ccnet: Extracting high quality monolingual datasets from web crawl
+  data.
+\newblock In \emph{LREC}, 2020.
+
+\bibitem[Weyand et~al.(2020)Weyand, Araujo, Cao, and Sim]{weyand2020google}
+Tobias Weyand, Andre Araujo, Bingyi Cao, and Jack Sim.
+\newblock Google landmarks dataset v2 -- a large-scale benchmark for
+  instance-level recognition and retrieval.
+\newblock In \emph{CVPR}, 2020.
+
+\bibitem[Wu et~al.(2018)Wu, Xiong, Yu, and Lin]{wu2018unsupervised}
+Zhirong Wu, Yuanjun Xiong, Stella~X Yu, and Dahua Lin.
+\newblock Unsupervised feature learning via non-parametric instance
+  discrimination.
+\newblock In \emph{CVPR}, 2018.
+
+\bibitem[{Xiao} et~al.(2010){Xiao}, {Hays}, {Ehinger}, {Oliva}, and
+  {Torralba}]{dataset-sun397}
+J.~{Xiao}, J.~{Hays}, K.~A. {Ehinger}, A.~{Oliva}, and A.~{Torralba}.
+\newblock Sun database: Large-scale scene recognition from abbey to zoo.
+\newblock In \emph{CVPR}, 2010.
+
+\bibitem[Xu et~al.(2022)Xu, Li, Baevski, Auli, Galuba, Metze, Feichtenhofer,
+  et~al.]{xu2022masked}
+Hu~Xu, Juncheng Li, Alexei Baevski, Michael Auli, Wojciech Galuba, Florian
+  Metze, Christoph Feichtenhofer, et~al.
+\newblock Masked autoencoders that listen.
+\newblock \emph{arXiv preprint arXiv:2207.06405}, 2022.
+
+\bibitem[Yalniz et~al.(2019)Yalniz, J{\'e}gou, Chen, Paluri, and
+  Mahajan]{yalniz2019billion}
+I~Zeki Yalniz, Herv{\'e} J{\'e}gou, Kan Chen, Manohar Paluri, and Dhruv
+  Mahajan.
+\newblock Billion-scale semi-supervised learning for image classification.
+\newblock \emph{arXiv preprint arXiv:1905.00546}, 2019.
+
+\bibitem[Yildiz et~al.(2022)Yildiz, Khademi, Siebes, and van
+  Gemert]{yildiz2022amstertime}
+Burak Yildiz, Seyran Khademi, Ronald~Maria Siebes, and Jan van Gemert.
+\newblock Amstertime: A visual place recognition benchmark dataset for severe
+  domain shift.
+\newblock In \emph{ICPR}, 2022.
+
+\bibitem[Ypsilantis et~al.(2021)Ypsilantis, Garcia, Han, Ibrahimi, Van~Noord,
+  and Tolias]{ypsilantis2021met}
+Nikolaos-Antonios Ypsilantis, Noa Garcia, Guangxing Han, Sarah Ibrahimi, Nanne
+  Van~Noord, and Giorgos Tolias.
+\newblock The met dataset: Instance-level recognition for artworks.
+\newblock In \emph{NeurIPS Datasets and Benchmarks Track}, 2021.
+
+\bibitem[Zhai et~al.(2022)Zhai, Kolesnikov, Houlsby, and
+  Beyer]{zhai2022scaling}
+Xiaohua Zhai, Alexander Kolesnikov, Neil Houlsby, and Lucas Beyer.
+\newblock Scaling vision transformers.
+\newblock In \emph{CVPR}, 2022.
+
+\bibitem[Zhang et~al.(2016)Zhang, Isola, and Efros]{zhang2016colorful}
+Richard Zhang, Phillip Isola, and Alexei~A Efros.
+\newblock Colorful image colorization.
+\newblock In \emph{ECCV}, 2016.
+
+\bibitem[Zhou et~al.(2014)Zhou, Lapedriza, Xiao, Torralba, and
+  Oliva]{zhou2014learning}
+Bolei Zhou, Agata Lapedriza, Jianxiong Xiao, Antonio Torralba, and Aude Oliva.
+\newblock Learning deep features for scene recognition using places database.
+\newblock In \emph{NeurIPS}, 2014.
+
+\bibitem[Zhou et~al.(2017)Zhou, Zhao, Puig, Fidler, Barriuso, and
+  Torralba]{zhou2017scene}
+Bolei Zhou, Hang Zhao, Xavier Puig, Sanja Fidler, Adela Barriuso, and Antonio
+  Torralba.
+\newblock Scene parsing through ade20k dataset.
+\newblock In \emph{CVPR}, 2017.
+
+\bibitem[Zhou et~al.(2022{\natexlab{a}})Zhou, Wei, Wang, Shen, Xie, Yuille, and
+  Kong]{zhou2021ibot}
+Jinghao Zhou, Chen Wei, Huiyu Wang, Wei Shen, Cihang Xie, Alan Yuille, and Tao
+  Kong.
+\newblock ibot: Image bert pre-training with online tokenizer.
+\newblock In \emph{ICLR}, 2022{\natexlab{a}}.
+
+\bibitem[Zhou et~al.(2022{\natexlab{b}})Zhou, Zhou, Si, Yu, Ng, and
+  Yan]{zhou2022mugs}
+Pan Zhou, Yichen Zhou, Chenyang Si, Weihao Yu, Teck~Khim Ng, and Shuicheng Yan.
+\newblock Mugs: A multi-granular self-supervised learning framework.
+\newblock \emph{arXiv preprint arXiv:2203.14415}, 2022{\natexlab{b}}.
+
+\end{thebibliography}

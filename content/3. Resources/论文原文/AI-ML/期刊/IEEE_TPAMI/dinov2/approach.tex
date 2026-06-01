@@ -1,0 +1,108 @@
+\section{Discriminative Self-supervised Pre-training}
+\label{sec:approach}
+We learn our features with a discriminative self-supervised method that can be seen as a combination of DINO and iBOT losses with the centering of SwAV~\citep{caron2020unsupervised}.
+We also add a regularizer to spread features and a short high-resolution training phase.
+We rapidly introduce each of these approaches, but more details can be found in the related papers, or in our open-sourced code. 
+
+\begin{itemize}
+\item
+ \myparagraph{Image-level objective~\citep{caron2021emerging}.}
+We consider the cross-entropy loss between the features extracted from a student and a teacher network.
+Both features are coming from the class token of a ViT, obtained from different crops of the same image.
+\rone{
+We pass the student class token through the student DINO head.
+This head is an MLP model outputting a vector of scores, that we call "prototype scores".
+We then apply a softmax to obtain $p_s$. 
+Similarly, we apply the teacher DINO head to the teacher class token to obtain teacher prototype scores.
+We then apply a softmax followed by a centering with moving average (or a Sinkhorn-Knopp centering as detailed thereafter) to obtain $p_t$.
+The DINO loss term corresponds to:}
+$${\mathcal L}_{DINO} = - \sum p_t \log p_s$$
+
+We learn the parameters of the student and build the teacher head with an exponential moving average of past iterates~\citep{he2020momentum}. 
+\item
+\myparagraph{Patch-level objective~\citep{zhou2021ibot}.}
+We randomly mask some of the input patches given to the student, but not to the teacher.
+\rone{
+We then apply the student iBOT head to the student mask tokens. 
+Similarly, we apply the teacher iBOT head to the (visible) teacher patch tokens corresponding to the ones masked in the student. 
+We then apply the softmax and centering steps as above, and obtain the iBOT loss term:
+$${\mathcal L}_{iBOT} = - \sum_i p_{ti} \log p_{si}$$,
+where $i$ are patch indices for masked tokens.
+Similarly to above, we learn the parameters of the student, and build the teacher head through exponential moving average.
+}
+\item
+\myparagraph{Untying head weights between both objectives.}
+\rtwo{
+Both the DINO and the iBOT loss use a learnable MLP projection head. 
+It is applied to the output tokens and the loss is compute atop. 
+In \cite{zhou2021ibot}, an ablation study shows that sharing parameters between the DINO and iBOT heads leads to better performance. 
+At scale, we observed that the opposite is true, and we therefore use two separate heads in all our experiments.
+}
+\item
+\myparagraph{Sinkhorn-Knopp centering~\citep{caron2020unsupervised}.}
+\cite{ruan2022weighted} recommend to replace the teacher softmax-centering step of DINO and iBot by the Sinkhorn-Knopp (SK) batch normalization of SwAV~\citep{caron2020unsupervised}. 
+We run the Sinkhorn-Knopp algorithm steps for 3 iterations.
+For the student, we apply the softmax normalization.
+\item
+\myparagraph{KoLeo regularizer ~\citep{sablayrolles2018spreading}.}
+The KoLeo regularizer derives from the Kozachenko-Leonenko differential entropy estimator (see ~\citet{beirlant1997nonparametric,delattre2017kozachenko}) and encourages a uniform span of the features within a batch. 
+Given a set of $n$ vectors $(x_1,\dots,x_n)$, it is defined as $${\mathcal L}_{\mathrm{koleo}} = - \frac{1}{n} \sum_{i=1}^n \log( d_{n, i}),$$ where $ d_{n, i} = \min_{j \neq i} \| x_i - x_j \| $ is the minimum distance between $x_i$ and any other point within the batch. 
+We also $\ell_2$-normalize the features before computing this regularizer. 
+\item
+\myparagraph{Adapting the resolution~\citep{touvron2019fixing}.} 
+Increasing image resolution is key to pixel-level downstream tasks such as segmentation or detection, where small objects disappear at low resolutions.
+However, training at high resolution is time and memory demanding, and instead, we increase the resolution of images to $518\times 518$ during a short period at the end of pretraining. This is also similar to UniViT training from \cite{likhomanenko2021cape} and FlexiViT training from \cite{beyer2023flexivit}.
+\end{itemize}
+
+
+\section{Efficient implementation}
+\label{sec:optim}
+We consider several improvements to train models at a larger scale.
+We train models on A100 GPUs using PyTorch 2.0.
+The code and pretrained models are made available under Apache 2.0 license~\footnote{\url{https://github.com/facebookresearch/dinov2}}.
+The details of our models are in the appendix, Table~\ref{tab:vit-hparams}. With the same hardware, compared to the iBOT implementation, the \OURS{} code runs around $2\times$ faster using only $1/3$ of the memory.
+
+\paragraph{Fast and memory-efficient attention.} 
+We implemented our own version of FlashAttention~\citep{dao2022flashattention} to improve memory usage and speed on the self-attention layers. 
+Our version is on par with or better than the original on all cases considered, while covering more use-cases and hardware. 
+Due to the GPU hardware specifics, the efficiency is best when the embedding dimension per head is a multiple of 64, and the matrix operations are even better when the full embedding dimension is a multiple of 256. 
+As a consequence, our ViT-g architecture slightly differs from the architecture proposed by~\cite{zhai2022scaling} in order to maximize compute efficiency, and we use an embedding dimension of 1536 with 24 heads (64 dim/head), rather than 1408 with 16 heads (88 dim/head). Our experiments did not show significant differences in final accuracy, and our ViT-g backbone counts 1.1B parameters.
+\rone{
+\paragraph{Sequence packing.} The DINO algorithm requires forwarding both large crops (at resolution 224) and small crops (resolution 98).
+When split into patches, these two groups are represented by token sequences of different lengths and cannot be forwarded together.
+In order to accelerate training, we use a trick called "sequence packing," which originates from NLP \citep{krell2022efficient}.
+The idea is simple: we concatenate the sequences we must forward through the transformers into a single long sequence.
+We pass this sequence through the transformer blocks as usual.
+However, a block-diagonal mask is applied to the self-attention matrix in attention layers, preventing attention between different sequences.
+This way, the forward is strictly equivalent to forwarding each sequence separately.
+This trick gives us significant compute efficiency gains compared to using separate forward and backward passes, as in prior implementations.
+The lower-level components of our setup are available in the xFormers library\footnote{\url{https://github.com/facebookresearch/xformers}} (\cite{xFormers2022}).
+}
+
+
+\paragraph{Efficient stochastic depth.}
+We implement an improved version of stochastic depth~\citep{huang2016deep} that skips the computation of the dropped residuals rather than masking the result. 
+This saves memory and compute in proportion approximately equal to the drop rate, thanks to specific fused kernels. 
+With high drop rates ($d = 40\%$ in this work), this allows a drastic improvement in compute efficiency and memory usage. 
+The implementation consists of randomly shuffling the $B$ samples over the batch dimension, and slicing the first $(1-d) \times B$ samples for the computations in the block. 
+
+\paragraph{Fully-Sharded Data Parallel (FSDP).} 
+Minimizing our objective with the AdamW optimizer requires 4 model replicas in float32 precision  -- student, teacher, optimizer first moments, optimizer second moments. 
+This sums to $16~\mathrm{GB}$ of memory for a billion-parameter model such as our ViT-g. 
+In order to reduce this memory footprint per GPU, we split the model replicas across GPUs, i.e., sharding $16~\mathrm{GB}$ across GPUs using the PyTorch implementation of FSDP. 
+Consequently, the model size is not bounded by the memory of a single GPU but by the total sum of GPU memory across compute nodes.
+The Pytorch implementation of FSDP brings a second advantage, which is to save on the cross-GPU communication costs: the weight shards are stored in float32 precision as required by the optimizer, but broadcasting weights and reducing gradients is done in float16 precision for the backbone (MLP heads gradients are reduced in float32 to avoid training instabilities). 
+This leads to approximately 50\% reduction in communication costs compared to the float32 gradient all-reduce operation used in DistributedDataParallel (DDP), which is used in other self-supervised pretraining methods~\citep{caron2021emerging,zhou2021ibot}. 
+As a consequence, the training procedure scales more efficiently than DDP with float16 autocast when scaling the number of GPU nodes.
+Overall, Pytorch-FSDP mixed-precision is superior to DDP with autocast in virtually all cases we encountered. 
+
+
+\paragraph{Model distillation.}
+\label{sec:distill}
+Most of our technical improvements to the training loop aim at improving the training of large models over large quantities of data.
+For smaller models, we distill them from our largest model, the ViT-g, instead of training them from scratch.
+Knowledge distillation~\citep{hinton2015distilling} aims at reproducing the output of a large model with a smaller model by minimizing some distance between both outputs for a set of given inputs.
+Since our objective function is a form of distillation from the teacher network to the student network, we leverage the same training loop with a few exceptions:
+we use a larger model as a frozen teacher, keep a spare EMA of the student that we use as our final model, remove the masking and stochastic depth, and, apply the iBOT loss on the two global crops.
+In our ablations, we observe that this approach achieves better performance than training from scratch, even for a ViT-L. 
+Our distillation method ends up close to the one described by~\cite{duval2023simple}, except we do not modify the loss terms for distillation and evaluate the EMA of the student.

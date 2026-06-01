@@ -1,0 +1,13 @@
+\section{Conclusion and Future Direction}
+\label{sec:con} 
+
+This paper proposes \model, a %context-aware GNN model by contrastive learning, 
+graph contrastive learning model
+for anomaly detection. 
+Instead of directly classifying node labels, \smodel contrasts abnormal nodes with normal ones in terms of their distance to the global context of the graph. We further extend \smodel to an unsupervised version by designing a graph corrupting strategy to generate the synthetic node labels. 
+To achieve the contrastive goal, we design a three-stages GNN encoder to infer and remove suspicious links during message passing, as well as to learn the global context.
+The experimental results on four real-world datasets demonstrate that \smodel significantly outperforms the baselines and \spmodel without any fine-tuning can achieve comparable performance with the fully-supervised version on the two academic datasets. 
+As the performance of \smodel highly resorts to the consistent representation of the global context, \smodel performs relatively worse on Yelp which is a large single-graph and the most diverse dataset among all the evaluated ones. To ameliorate this, one can trivially sample a sub-graph among the node to be detected as the local context. We leave this in the future work.
+% We will continue to study more promising pre-training strategies for detecting anomalies on Yelp, the most diverse dataset among all the evaluated ones.
+
+

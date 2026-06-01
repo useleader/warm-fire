@@ -1,0 +1,119 @@
+
+
+
+\begin{table*}[t]
+\begin{center}
+\begin{tabular}{|p{2cm}|p{4cm}|p{4cm}|p{4cm}|}
+
+\hline
+\textbf{context}
+&
+\multicolumn{3}{|C{12cm}|}{ 
+Pearl thought to herself that what they were about to do was exactly the sort of thing that they could do to help the villagers. They were all terrified of these guys.
+\newline
+At the police station the three walked up to the counter behind which was a senior constable studying some papers.
+}
+\\
+\hline
+&
+\textit{Continuation 1}
+&
+\textit{Continuation 2}
+&
+\textit{Continuation 3}
+\\
+\hline
+\textbf{zero-shot}
+&
+"Hello, I'm Pearl and this is my friend, Mike," said Pearl.
+&
+"May we speak to the police officer, sir?" asked the one in charge.
+&
+\textquotesingle{}Hello, can I help you?\textquotesingle{}
+\newline
+\textquotesingle{}Yes, we're the same people that the people were talking about.
+\\
+\hline
+% \textbf{mock}
+% &
+% "I'm Detective Sergeant Lewis, this is Detective Sergeant Jones and this is Detective Sergeant Porter.
+% &
+% He looked up at the three with a friendly smile.
+% \newline
+% "Good day, gentlemen.
+% &
+% "We have a friend who is in trouble. He was kidnapped by these guys," the boy said.
+% \\
+% \hline
+\textbf{5k offline fine-tune}
+&
+He turned to them with a smile. "Good afternoon, ladies. I'm Detective Inspector Jones.
+&
+The constable stood up and smiled as he saw them, obviously pleased to see them.
+&
+He smiled at them and waved them in, his eyes twinkling as he listened to their tales.
+\\
+\hline
+
+\end{tabular}
+\caption{Three random ($T=0.7$) continuations for our sentiment continuation task.  Chosen from appendix \cref{tab:samples-sentiment}; see appendix for more.}
+\label{tab:samples-body-sentiment}
+\end{center}
+\end{table*}
+    
+\begin{table*}[t]
+\begin{center}
+\begin{tabular}{|p{2cm}|p{4cm}|p{4cm}|p{4cm}|}
+
+\hline
+    
+\hline
+\textbf{context}
+&
+\multicolumn{3}{|C{12cm}|}{ 
+"I do not know if it was Viking related, but it could have been."
+\newline
+"Really?" Ailia said. Is it safe to be traveling here then?  Ailia looked behind her to make sure they weren't being followed.
+}
+\\
+\hline
+&
+\textit{Continuation 1}
+&
+\textit{Continuation 2}
+&
+\textit{Continuation 3}
+\\
+\hline
+\textbf{zero-shot}
+&
+There were no signs of anyone. 
+\newline
+"It is safe enough," Ailios said.
+&
+"Because I have a friend that is in the area and he will be coming with us.
+&
+It was hard to see that far.  "I do not like that word.
+\\
+\hline
+\textbf{5k offline fine-tune}
+&
+Kaya crouched low, her eyes wide in the moonlight. Her body was tense.
+&
+She put her hand on the sword strapped to her back, and then pulled it out.
+&
+She strode out the door and walked down the street, her nose wrinkled in disapproval.
+\\
+\hline
+
+
+\end{tabular}
+\caption{Three random ($T=0.7$) continuations for our descriptiveness continuation task.  Chosen from appendix \cref{tab:samples-descriptiveness}; see appendix for more.}
+\label{tab:samples-body-descriptiveness}
+\end{center}
+\vspace{-.1in}
+\end{table*}
+    
+% produced by sandbox/jeff/paper_csv_samples_to_latex.py
+
+

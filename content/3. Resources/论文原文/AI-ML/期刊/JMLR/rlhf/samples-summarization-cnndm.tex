@@ -1,0 +1,237 @@
+
+\begin{table*}[t]
+\begin{center}
+\caption*{Samples for CNN/DM summarization task (part 1)}
+\begin{tabular}{|p{2cm}|p{12cm}|}
+
+\hline
+    
+\hline
+\textbf{context article}
+&
+\multicolumn{1}{|C{12cm}|}{ 
+Google launched a new U.S. wireless service today that switches between Wi-Fi and cellular networks
+\newline\newline
+Google is already the world's most popular phone software provider, and a pay-TV operator - and now it wants to be your mobile network carrier.
+\newline\newline
+The company has unveiled a U.S. wireless service that switches between Wi-Fi and cellular networks to curb data use and keep phone bills low.
+\newline\newline
+The service, called \textquotesingle{}Project Fi,\textquotesingle{} debuted today, about two months after Google revealed its plans to expand its ever-growing empire into providing wireless connections for smartphones.
+\newline\newline
+Google is selling the basic phone service for \$20 a month and will only charge customers for the amount of cellular data that they use each month, instead of a flat rate.  
+\newline\newline
+Each gigabyte of data will cost \$10 a month. That means a customer could sign up for a plan offering three gigabytes of data and get \$20 back if only one gigabyte was used in a month.\newline\newline[...\textit{Truncated}...]\newline\newline Rather than building its own network, Google is leasing space on cellular towers built by Sprint and T-Mobile, which are hoping the deals will boost their profits without costing them too many customers tempted to defect to Project Fi.
+}
+\\
+\hline
+
+\textbf{reference summary}
+&
+Project Fi will be hosted through Sprint Corp and T-Mobile's networks. It costs \$20 for basic service and unused data is paid back to customer. The invitation-only service will work only on Nexus 6 phones in the US. Numbers will live in the cloud so users can talk on any connected tablet.\\
+\hline
+\hline
+
+\textbf{zero-shot}
+&
+Project Fi is a new smartphone service that switches between Wi-Fi and cellular networks to curb data use and keep phone bills low. The service is available for an introductory price of \$20 a month and will only charge customers for the amount of cellular data that they use each month.
+\\
+\hline
+\textbf{60k fine-tune}
+&
+Google is already the world's most popular phone software provider, and a pay-TV operator - and now it wants to be your mobile network carrier.
+\newline\newline
+The company has unveiled a U.S. wireless service that switches between Wi-Fi and cellular networks to curb data use and keep phone bills low.
+\\
+\hline
+\textbf{supervised}
+&
+Google launched a new U.S. wireless service today. Called \textquotesingle{}Project Fi,\textquotesingle{} it switches between Wi-Fi and cellular networks. The service, called \textquotesingle{}Project Fi,\textquotesingle{} debuted today. About two months after Google announced its plans to expand its ever-growing empire into providing wireless connections for smartphones.
+\\
+\hline
+\textbf{supervised + 60k fine-tune}
+&
+Google launched a new U.S. wireless service today that switches between Wi-Fi and cellular networks. The service, called \textquotesingle{}Project Fi,\textquotesingle{} debuted today, about two months after Google revealed its plans to expand its ever-growing empire into providing wireless connections for smartphones.
+\\
+\hline
+
+% \textbf{30k fine-tune}
+% &
+% Google is launching a new U.S. wireless service today that switches between Wi-Fi and cellular networks to curb data use and keep phone bills low.
+% \newline\newline
+% Google is already the world's most popular phone software provider, and a pay-TV operator - and now it wants to be your mobile network carrier.
+% \\
+% \hline
+% \textbf{60k offline fine-tune}
+% &
+% Google is launching a new wireless service that switches between Wi-Fi and cellular networks to curb data use and keep phone bills low. The service, called 'Project Fi,' debuted today, about two months after Google revealed its plans to expand its ever-growing empire into providing wireless connections for smartphones.
+% \\
+% \hline
+
+\end{tabular}
+\caption{Random ($T=0.5$) summaries for our CNN/DM summarization task, with contexts (shown truncated) randomly sampled from CNN/DM test set.}
+\label{tab:samples-summarization-cnndm}
+\end{center}
+\end{table*}
+    
+
+\begin{table*}[t]
+\begin{center}
+\caption*{Samples for CNN/DM summarization task (part 2)}
+\begin{tabular}{|p{2cm}|p{12cm}|}
+
+\hline
+    
+\hline
+\textbf{context article}
+&
+\multicolumn{1}{|C{12cm}|}{ 
+With the date of their hugely anticipated bout less than a month away, Floyd Mayweather and Manny Pacquiao's training intensity has hit gruelling levels ahead of the clash in Las Vegas.
+\newline\newline
+Mayweather is as renowned for showing off his extravagant lifestyle as he is for going undefeated in his professional career.
+\newline\newline
+But the latest pictures released from his training camp, appearing to show him hanging a weight from his head, displays the extreme level he hits in order to be as fit as possible for his fights.
+\newline\newline
+Manny Pacquiao (right) poses alongside actor Mark Wahlberg, who visited the Filipino at training
+\newline\newline
+Floyd Mayweather released two pictures from his training camp appearing hold a weight from his head
+\newline\newline
+Mayweather (left) takes on Pacquiao in a £160million mega-fight in Las Vegas on May 2
+\newline\newline
+Mayweather (left) appeared to take his training intensity to a new height before his meeting with Pacquiao
+\newline\newline
+As for Pacquiao, he had a famous visitor check up on his preparations for May 2.\newline\newline[...\textit{Truncated}...]\newline\newline Pacquiao and Mayweather's clash will be a reported £160million mega-fight, with Pacquiao seeking to inflict a first ever defeat upon Mayweather.
+\newline\newline
+The 36-year-old Pacquiao also uploaded a picture to his Twitter page away from training with his daughter.
+}
+\\
+\hline
+\textbf{reference summary}
+&
+Manny Pacquiao took time out from training to meet Mark Wahlberg. Floyd Mayweather shared a picture of him holding a weight with his head. The due meet in Las Vegas in a £160million encounter on May 2.
+\\
+\hline
+\hline
+
+\textbf{zero-shot}
+&
+Mayweather and Pacquiao are going to clash in Las Vegas on May 2.
+\\
+\hline
+\textbf{60k fine-tune}
+&
+With the date of their hugely anticipated bout less than a month away, Floyd Mayweather and Manny Pacquiao's training intensity has hit gruelling levels ahead of the clash in Las Vegas.
+\newline\newline
+Mayweather is as renowned for showing off his extravagant lifestyle as he is for going undefeated in his professional career.
+\\
+\hline
+\textbf{supervised}
+&
+Floyd Mayweather and Manny Pacquiao will fight in Las Vegas on May 2. Pacquiao has a visitor check up on his preparations for the bout. Mayweather released pictures of his training camp to social media.
+\\
+\hline
+\textbf{supervised + 60k fine-tune}
+&
+Floyd Mayweather and Manny Pacquiao will fight in Las Vegas on May 2. Mayweather released two pictures from his training camp appearing hold a weight from his head. The 36-year-old boxer is as renowned for showing off his extravagant lifestyle as he is for going undefeated in his professional career.
+\\
+\hline
+
+% \textbf{30k fine-tune}
+% &
+% With the date of their hugely anticipated bout less than a month away, Floyd Mayweather and Manny Pacquiao's training intensity has hit gruelling levels ahead of the clash in Las Vegas
+% \newline\newline
+% Mayweather (left) and Pacquiao's clash will be a reported £160million mega-fight, with Pacquiao seeking to inflict a first ever defeat upon Mayweather
+% \\
+% \hline
+% \textbf{60k offline fine-tune}
+% &
+% With the date of their hugely anticipated bout less than a month away, Floyd Mayweather and Manny Pacquiao's training intensity has hit gruelling levels ahead of the clash in Las Vegas.
+% \\
+% \hline
+
+\end{tabular}
+\caption{Random ($T=0.5$) summaries for our CNN/DM summarization task, with contexts (shown truncated) randomly sampled from CNN/DM test set.}
+\label{tab:samples-summarization-cnndm2}
+\end{center}
+\end{table*}
+    
+
+\begin{table*}[t]
+\begin{center}
+\caption*{Samples for CNN/DM summarization task (part 3)}
+\begin{tabular}{|p{2cm}|p{12cm}|}
+
+\hline
+    
+\hline
+\textbf{context article}
+&
+\multicolumn{1}{|C{12cm}|}{ 
+The Solar Impulse 2, the experimental plane attempting to fly around the world without using a drop of fuel, has been grounded by the weather in China.
+\newline\newline
+What was supposed to be an overnight pit stop in the southwestern city of Chongqing has now stretched into a two-and-a-half week stay.
+\newline\newline
+It's an unexpected layover that is testing the patience of the pilots and more than 60 team members, just a quarter of the way along a journey that will cover some 35,000 kilometers (21,748 miles) over five months.
+\newline\newline
+"You can believe that your will can influence the weather," says pilot Bertrand Piccard, who comes from a long family line of explorers.  But "then you'll be really disappointed because it doesn't work.
+\newline\newline
+"Or you just know that it's an adventure you do with the forces of nature."
+\newline\newline
+Piccard, along with Andre Borschberg, a Swiss engineer, are taking turns flying the single-seater aircraft, which took off from Abu Dhabi on March 9 and has successfully flown through Oman, India, and Myanmar.
+\newline\newline
+There is much at stake.\newline\newline[...\textit{Truncated}...]\newline\newline "Our boss is the sun," says Solar Impulse spokeswoman Claudia Durgnat.
+\newline\newline
+Durgnat says there may be a tiny window ahead, with the next possible departure from Chongqing on Tuesday. "It's not good before, and the days after don't look very clear."
+}
+\\
+\hline
+\textbf{reference summary}
+&
+Solar plane attempting to be first to circumnavigate world without using fuel is stuck in China. Solar Impulse 2 attempts to prove the power of renewable energy.\\
+\hline
+\hline
+
+\textbf{zero-shot}
+&
+The plane has been grounded in China for two weeks because of bad weather.
+\\
+\hline
+\textbf{60k fine-tune}
+&
+The Solar Impulse 2, the experimental plane attempting to fly around the world without using a drop of fuel, has been grounded by the weather in China.
+\newline\newline
+What was supposed to be an overnight pit stop in the southwestern city of Chongqing has now stretched into a two-and-a-half week stay.
+\\
+\hline
+\textbf{supervised}
+&
+Solar Impulse 2 has been grounded by the weather in China. The plane took off from Abu Dhabi on March 9. The plane is trying to prove the power of renewable energy.
+\\
+\hline
+\textbf{supervised + 60k fine-tune}
+&
+Solar Impulse 2 has been grounded in China for two-and-a-half weeks. The plane is attempting to fly around the world without using a drop of fuel. The team, which includes Bertrand Piccard, is taking turns flying the single-seater. The plane took off from Abu Dhabi on March 9 and has successfully flown through Oman.
+\\
+\hline
+
+% \textbf{30k fine-tune}
+% &
+% The Solar Impulse 2, the experimental plane attempting to fly around the world without using a drop of fuel, has been grounded by the weather in China.
+% \newline\newline
+% What was supposed to be an overnight pit stop in the southwestern city of Chongqing has now stretched into a two-and-a-half week stay.
+% \\
+% \hline
+% \textbf{60k offline fine-tune}
+% &
+% The Solar Impulse 2, the experimental plane attempting to fly around the world without using a drop of fuel, has been grounded by the weather in China.
+% \newline\newline
+% The Solar Impulse 2, the experimental plane attempting to fly around the world without using a drop of fuel, has been grounded by the weather in China.
+% \\
+% \hline
+
+\end{tabular}
+\caption{Random ($T=0.5$) summaries for our CNN/DM summarization task, with contexts (shown truncated) randomly sampled from CNN/DM test set.}
+\label{tab:samples-summarization-cnndm3}
+\end{center}
+\end{table*}
+    
+% produced by sandbox/jeff/paper_csv_samples_to_latex.py

@@ -1,0 +1,135 @@
+\begin{table*}[t]
+\centering
+\begin{tabular}{l|cccc|cccc} \toprule
+  & \multicolumn{4}{c|}{TL;DR} & \multicolumn{4}{c}{CNN/Daily Mail} \\ 
+  & R-1 & R-2 & R-L & R-AVG & R-1 & R-2 & R-L & R-AVG \\ 
+  \midrule
+
+SOTA
+& 22* & 5* & 17* & 14.7*
+% Gehrmann et al https://arxiv.org/pdf/1808.10792.pdf
+& 41.22 & 18.68 & 38.34 & 32.75 \\
+\midrule
+lead-3 
+& 17.435 & 3.243 & 14.575 & 11.751
+% cnn/dm valid
+% & \textbf{41.305} & \textbf{18.310} & \textbf{37.573} & \textbf{32.396*}
+% cnn/dm test
+& \textbf{40.379} & \textbf{17.658} & 36.618 & 31.552
+\\
+
+zero-shot 
+% tldr t=0.7
+& 15.862 & 2.325 & 13.518 & 10.568
+% cnn/dm t=0.5 valid
+% & 28.550 & 8.405 & 25.431 & 20.795*
+% cnn/dm t=0.5 test
+& 28.406 & 8.321 & 25.175 & 20.634
+\\
+
+%larger model zero-shot
+% tldr t=0.7
+%& 16.503 & 2.568 & 14.019 & 11.030
+% cnn/dm t=0.5
+%& 29.098 & 8.419 & 25.882 & 21.133*
+%\\
+
+supervised baseline 
+% TLDR
+% 16.403 & 3.802 & 14.069 & 11.425 % k=1 OLD
+% 17.480 & 3.713 & 15.051 & 12.081 % k=2 OLD
+% t=0.5 OLD: gets 12.23 avg, but lost the data for it :(
+% 17.646 & 3.166 & 15.067 & 11.960 % t=0.7 OLD
+& 17.535 & 3.124 & 14.969 & 11.877 % t=0.7 rerun
+
+% t=0.5 cnn/dm valid
+% & 39.830 & 17.339 & 37.082 & 31.417*
+% t=0.7 cnn/dm test
+& 39.525 & 16.992 & 36.728 & 31.082
+\\
+
+supervised + 60k fine-tune
+% t=0.7
+& \textbf{18.434} & \textbf{3.542} & \textbf{15.457} & \textbf{12.478}
+% t=0.5 cnn/dm valid
+% & 40.293 & 17.895 & 37.383 & 31.857*
+& 40.093 & 17.611 & \textbf{37.104} & \textbf{31.603}
+\\
+
+60k fine-tune
+% TLDR
+& 16.800 & 2.884 & 14.011 & 11.232 % t=0.7
+% & 16.635 & 2.759 & 13.858 & 11.084 % p=0.8
+% & 16.849 & 2.906 & 14.065 & 11.273 % p=0.6
+% & 16.811 & 2.964 & 14.015 & 11.263 % p=0.4
+% & 16.751 & 2.949 & 13.984 & 11.228 % t=0.5
+% & 16.655 & 2.945 & 13.879 & 11.160 % t=0.3
+% & 16.601 & 2.951 & 13.835 & 11.129 % t=0.1
+% & 16.734 & 2.948 & 13.981 & 11.221 % k=2
+% & 16.590 & 2.950 & 13.818 & 11.119 % k=1
+% t=0.5 cnn/dm valid
+% & 38.242 & 16.085 & 34.250 & 29.526*
+% t=0.5 cnn/dm test
+& 37.385 & 15.478 & 33.330 & 28.731
+\\
+
+30k fine-tune
+% t=0.7 tldr
+& 16.410 & 2.920 & 13.653 & 10.994
+% t=0.5 cnn/dm valid
+% & 36.372 & 14.052 & 32.514 & 27.646*
+% t=0.5 cnn/dm test
+& 35.581 & 13.662 & 31.734 & 26.992
+\\
+
+15k fine-tune
+% t=0.7 
+& 15.275 & 2.240 & 12.872 & 10.129
+% t=0.5 cnn/dm valid
+% & 39.306 & 16.486 & 35.365 & 30.386*
+% t=0.5 cnn/dm test
+& 38.466 & 15.960 & 34.468 & 29.631
+\\
+
+%8k fine-tune
+%& - & - & - & -
+%% t=0.5 cnn/dm valid
+%& 35.945 & 13.988 & 32.156 & 27.363*
+%\\
+
+60k offline fine-tune
+% t=0.7 tldr
+& 16.632 & 2.699 & 13.984 & 11.105
+% t=0.5 cnn/dm valid
+% & 34.452 & 13.155 & 30.647 & 26.085*
+% t=0.5 cnn/dm test
+& 33.860 & 12.850 & 30.018 & 25.576
+\\
+
+%30k offline fine-tune
+%% t=0.7 tldr
+%& 15.532 & 2.297 & 13.055 & 10.295
+%& - & - & - & -
+%\\
+
+%15k offline fine-tune
+%% t=0.7 tldr
+%& 15.766 & 2.356 & 13.261 & 10.461
+%& - & - & - & -
+%\\
+
+%8k offline fine-tune
+%% t=0.7 tldr
+%& 15.229 & 1.977 & 12.888 & 10.031
+%& - & - & - & -
+%\\
+
+% 350M policy 60k??? 
+
+\bottomrule
+\end{tabular}
+%\vspace{.1in}
+\caption{ROUGE evaluations of summarization models.  For all models (excluding the lead-3 baselines), we sample with temperature 0.7 for TL;DR and 0.5 for CNN/Daily Mail.  We use the CNN/DM test set, but our own validation set for TL;DR. CNN/Daily Mail SOTA is from \citet{gehrmann2018bottom}.  * TL;DR SOTA is from \citet{gehrmann2019generating}, but the numbers are not comparable as we lack test set access and the TL;DR leaderboard uses an unofficial implementation of ROUGE.
+% For both zero-shot and supervised baselines, we could used truncated sampling with k=2 to improve results?  tldr also does better with lower temp?
+\label{tab:rouge}}
+\end{table*}

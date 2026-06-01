@@ -1,3 +1,7 @@
+---
+publish: true
+---
+
 > 学习链接：[GREYONE: Data Flow Sensitive Fuzzing | USENIX](https://www.usenix.org/conference/usenixsecurity20/presentation/gan)
 > [[论文阅读] 02.清华张超老师Fuzzing总结 - GreyOne: Discover Vulnerabilities with Data Flow Sensitive Fuzzing - 知乎](https://zhuanlan.zhihu.com/p/446308018)
 

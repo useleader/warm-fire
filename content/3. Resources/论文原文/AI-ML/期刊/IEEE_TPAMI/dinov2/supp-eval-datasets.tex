@@ -1,0 +1,76 @@
+\rthree{
+\section{List of Datasets used}
+\label{app:benchmarks_list}
+We show in Table \ref{tab:datasets_list} the list of benchmarks and datasets used and their purposes.
+}
+\newcommand{\xmark}{\textcolor{DecrRed}{\ding{55}}}
+\newcommand{\cmark}{\textcolor{IncrGreen}{\ding{51}}}%
+
+
+
+\begin{table}[t]
+  \centering
+  \begin{tabular}{p{2.5cm}cccp{2cm}p{5cm}}
+      \toprule
+      \multicolumn{1}{p{1.5cm}}{Dataset} &
+      \multicolumn{1}{p{1.5cm}}{\centering Pretraining\\(as is)} &
+      \multicolumn{1}{p{1.5cm}}{\centering Retrieving\\pretraining\\data} &
+      \multicolumn{1}{p{1cm}}{\centering Eval.} &
+      Task &
+      Citation \\
+      \midrule
+      ImageNet-1k & \xmark & \cmark & \cmark & Classif. & ~\citep{russakovsky2015imagenet} \\
+      ImageNet-22k & \cmark & \cmark & \xmark &  & ~\citep{deng2009imagenet} \\
+      ImageNet-V2 & \xmark & \xmark & \cmark & Classif. & ~\citep{recht2019imagenet} \\
+      ImageNet-ReaL & \xmark & \xmark & \cmark & Classif. & ~\citep{beyer2020we} \\
+      \midrule
+      ImageNet-A & \xmark & \xmark & \cmark & Classif. & ~\citep{hendrycks2021natural} \\
+      ImageNet-C & \xmark & \xmark & \cmark & Classif. & ~\citep{hendrycks2018benchmarking} \\
+      ImageNet-R & \xmark & \xmark & \cmark & Classif. & ~\citep{hendrycks2021many} \\
+      ImageNet-Sk. & \xmark & \xmark & \cmark & Classif. & ~\citep{wang2019learning} \\
+      \midrule
+      Food-101 & \xmark & \cmark & \cmark & Classif. & ~\citep{dataset-food101} \\
+      CIFAR-10 & \xmark & \cmark & \cmark & Classif. & ~\citep{krizhevsky2009learning} \\
+      CIFAR-100 & \xmark & \cmark & \cmark & Classif. & ~\citep{krizhevsky2009learning} \\
+      SUN397 & \xmark & \cmark & \cmark & Classif. & ~\citep{dataset-sun397} \\
+      StanfordCars & \xmark & \cmark & \cmark & Classif. & ~\citep{dataset-stanfordcars} \\
+      FGVC-Aircraft & \xmark & \cmark & \cmark & Classif. & ~\citep{dataset-aircraft} \\
+      VOC 2007 & \xmark & \cmark & \cmark & Classif. & ~\citep{everingham2010pascal} \\
+      DTD & \xmark & \cmark & \cmark & Classif. & ~\citep{dataset-dtd} \\
+      Oxford Pets & \xmark & \cmark & \cmark & Classif. & ~\citep{dataset-pets} \\
+      Caltech101 & \xmark & \cmark & \cmark & Classif. & ~\citep{dataset-caltech101} \\
+      Flowers & \xmark & \cmark & \cmark & Classif. & ~\citep{nilsback2008automated} \\
+      CUB200 & \xmark & \cmark & \cmark & Classif. & ~\citep{dataset-cub} \\
+      \midrule
+      iNaturalist 2018 & \xmark & \xmark & \cmark & Classif. & ~\citep{van2018inaturalist} \\
+      iNaturalist 2021 & \xmark & \xmark & \cmark & Classif. & ~\citep{van2021benchmarking} \\
+      Places-205 & \xmark & \xmark & \cmark & Classif. & ~\citep{zhou2014learning} \\
+      \midrule
+      UCF101 & \xmark & \xmark & \cmark & Video & ~\citep{soomro2012ucf101} \\
+      Kinetics-400 & \xmark & \xmark & \cmark & Video & ~\citep{kay2017kinetics} \\
+      SSv2 & \xmark & \xmark & \cmark & Video & ~\citep{goyal2017something} \\
+      \midrule
+      GLD v2 & \cmark & \cmark & \xmark &  & ~\citep{weyand2020google} \\
+      R-Paris & \xmark & \cmark & \cmark & Retrieval & ~\citep{radenovic2018revisiting} \\
+      R-Oxford & \xmark & \cmark & \cmark & Retrieval & ~\citep{radenovic2018revisiting} \\
+      Met & \xmark & \cmark & \cmark & Retrieval & ~\citep{ypsilantis2021met} \\
+      Amstertime & \xmark & \cmark & \cmark & Retrieval & ~\citep{yildiz2022amstertime} \\
+      \midrule
+      ADE20k & \xmark & \cmark & \cmark & Seg. & ~\citep{zhou2017scene} \\
+      Cityscapes & \xmark & \cmark & \cmark & Seg. & ~\citep{cordts2016cityscapes} \\
+      VOC 2012 & \xmark & \cmark & \cmark & Seg. & ~\citep{everingham2010pascal} \\
+      \midrule
+      Mapillary SLS & \cmark & \xmark & \xmark &  & ~\citep{warburg2020mapillary} \\
+      NYU-Depth V2 & \xmark & \cmark & \cmark & Depth & ~\citep{silberman2012indoor} \\
+      KITTI & \xmark & \cmark & \cmark & Depth & ~\citep{geiger2013vision} \\
+      SUN-RGBD & \xmark & \cmark & \cmark & Depth & ~\citep{song2015sun} \\
+      \midrule
+      DollarStreet & \xmark & \xmark & \cmark & Fairness & ~\citep{de2019does} \\
+      Casual Conv. & \xmark & \xmark & \cmark & Fairness & ~\citep{hazirbas2021towards} \\
+      \bottomrule &  &  &  &  & 
+      \end{tabular}
+  \caption{
+    \textbf{List of datasets used.}
+  }
+  \label{tab:datasets_list}
+\end{table}

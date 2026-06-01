@@ -1,0 +1,44 @@
+\section{Estimating the Environmental Impact of Training our Models} 
+
+\begin{table}[t]
+  \centering
+  \begin{tabular}{@{}l cccccc@{}}
+    \toprule
+    Model to      & \multirow{2}{*}{GPU Type} & GPU Power &  \multirow{2}{*}{GPU-hours} & \multirow{2}{*}{PUE} & Total power  & Carbon emitted\\
+    Reproduce      &  & consumption & &      &  consumption & (tCO$_2$eq)\\
+    \midrule
+    \OURS-g     & A100-40GB & 400W & 22,016 & 1.1 & 9.7 MWh  & 3.7 \\       
+    \bottomrule
+  \end{tabular}
+  \caption{
+    \textbf{Carbon footprint of reproducing \OURS.}
+    We report the potential carbon emission of reproducing \OURS-g when assuming a  power consumption for the A100-40GB of 400W,  a PUE of 1.1 and carbon intensity factor of 0.385 kg CO$_2$e per KWh.
+    \label{tab:carbon}
+  }
+\end{table}
+
+Training foundation models consumes a significant amount of energy, resulting in carbon dioxide emissions.
+\citet{patterson2021carbon} propose a methodology to report an estimation of the carbon emitted during the training of a model based on the specifics of the data center and its power grid.
+This computation informs the design of the data center used for the training of models and the choice of location for data centers.
+This methodology requires to know the specifics of the data center used for training, which can be complex when multiple data centers are involved over time. 
+Additionally, these specifics are most often not in the control of the AI practitioner, and hence, this methodology is less helpful when practioners make technical decisions about future trainings.
+Instead, in this section, we follow an alternative that reports the potential carbon emission of retraining a similar model in an average data center located in the US.
+This methodology was used in previous work in natural language processing~\citep{strubell2019energy,touvron2023llama} to establish an apple-to-apple comparison between pretraining schemes.
+More precisely, we fix the value of all exogenous variables, i.e., the Power Usage Effectiveness (PUE) and carbon intensity factor of a power grid to the same values as in \citet{touvron2023llama}, that is, a PUE of 1.1 and the carbon intensity factor to the US average of 0.385 kg CO$_2$eq/KWh.
+We use the same formula as in~\cite{patterson2021carbon} to estimate the potential energy consumption and the carbon emission.
+For the power consumption of an A100-80GB, we take the thermal design power for NVLink systems, which is 400W.
+We report the potential carbon emission of retraining a \OURS{} ViT-g in Table~\ref{tab:carbon}.
+For comparison, retraining an OpenCLIP ViT-L or OpenCLIP ViT-G would require 22.4 MWh and 118.9 MWh, respectively, if run in the same data center. 
+This is 10$\times$ more carbon emission.
+Note that this comparison is not fair to them, since they also train a text encoder in parallel, and we thus do not report them in the table.
+However, it gives a reasonable \rthree{guideline} for those who are interested in training only visual features: in this context, training a self-supervised model is preferable in terms of carbon emission.
+Training a text-guided model still makes sense when planning to reuse the text encoder.
+
+
+\paragraph{Carbon footprint of the whole project.} 
+Additionally, we estimate the footprint of the whole project to be between $0.5$k and $1$k tCO$_2$eq using the same grid as presented above \footnote{\rthree{For context, a full Boeing 777 return flight between London and New York corresponds to approximately 560 tCO$_2$eq.}}. 
+This carbon footprint represents in the order of $200$k GPU-days.
+The primary sources of emissions are the self-supervised pre-trainings of the models.
+For example, a single pre-training of a ViT-g model (22k GPU-hours) emits 3.7 tons of CO$_2$eq, while a finetuning on ImageNet-1k (1k GPU-hours) emits 0.2 tons.
+This estimate only considers the GPUs' electricity consumption and ignores other emissions, such as their manufacturing and disposal.
+

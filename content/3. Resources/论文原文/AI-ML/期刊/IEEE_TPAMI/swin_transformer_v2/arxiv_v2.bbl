@@ -1,0 +1,496 @@
+\begin{thebibliography}{10}\itemsep=-1pt
+
+\bibitem{anonymous}
+Anonymous.
+\newblock Simmim: A simple framework for masked image modeling.
+\newblock In {\em CVPR submission}, 2022.
+
+\bibitem{arnab2021vivit}
+Anurag Arnab, Mostafa Dehghani, Georg Heigold, Chen Sun, Mario Lučić, and
+  Cordelia Schmid.
+\newblock Vivit: A video vision transformer, 2021.
+
+\bibitem{ba2016layer}
+Jimmy~Lei Ba, Jamie~Ryan Kiros, and Geoffrey~E. Hinton.
+\newblock Layer normalization, 2016.
+
+\bibitem{bao2021beit}
+Hangbo Bao, Li Dong, and Furu Wei.
+\newblock Beit: Bert pre-training of image transformers, 2021.
+
+\bibitem{Bodla2017softnms}
+Navaneeth Bodla, Bharat Singh, Rama Chellappa, and Larry~S. Davis.
+\newblock Soft-nms -- improving object detection with one line of code.
+\newblock In {\em Proceedings of the IEEE International Conference on Computer
+  Vision (ICCV)}, Oct 2017.
+
+\bibitem{brock2021characterizing}
+Andrew Brock, Soham De, and Samuel~L Smith.
+\newblock Characterizing signal propagation to close the performance gap in
+  unnormalized resnets.
+\newblock {\em arXiv preprint arXiv:2101.08692}, 2021.
+
+\bibitem{brown2020language}
+Tom~B. Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan,
+  Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda
+  Askell, Sandhini Agarwal, Ariel Herbert-Voss, Gretchen Krueger, Tom Henighan,
+  Rewon Child, Aditya Ramesh, Daniel~M. Ziegler, Jeffrey Wu, Clemens Winter,
+  Christopher Hesse, Mark Chen, Eric Sigler, Mateusz Litwin, Scott Gray,
+  Benjamin Chess, Jack Clark, Christopher Berner, Sam McCandlish, Alec Radford,
+  Ilya Sutskever, and Dario Amodei.
+\newblock Language models are few-shot learners, 2020.
+
+\bibitem{cai2018cascade}
+Zhaowei Cai and Nuno Vasconcelos.
+\newblock Cascade r-cnn: Delving into high quality object detection.
+\newblock In {\em Proceedings of the IEEE Conference on Computer Vision and
+  Pattern Recognition}, pages 6154--6162, 2018.
+
+\bibitem{carion2020detr}
+Nicolas Carion, Francisco Massa, Gabriel Synnaeve, Nicolas Usunier, Alexander
+  Kirillov, and Sergey Zagoruyko.
+\newblock End-to-end object detection with transformers.
+\newblock In {\em European Conference on Computer Vision}, pages 213--229.
+  Springer, 2020.
+
+\bibitem{chen2019htc}
+Kai Chen, Jiangmiao Pang, Jiaqi Wang, Yu Xiong, Xiaoxiao Li, Shuyang Sun,
+  Wansen Feng, Ziwei Liu, Jianping Shi, Wanli Ouyang, et~al.
+\newblock Hybrid task cascade for instance segmentation.
+\newblock In {\em Proceedings of the IEEE/CVF Conference on Computer Vision and
+  Pattern Recognition}, pages 4974--4983, 2019.
+
+\bibitem{chen2019mmdetection}
+Kai Chen, Jiaqi Wang, Jiangmiao Pang, Yuhang Cao, Yu Xiong, Xiaoxiao Li,
+  Shuyang Sun, Wansen Feng, Ziwei Liu, Jiarui Xu, et~al.
+\newblock Mmdetection: Open mmlab detection toolbox and benchmark.
+\newblock {\em arXiv preprint arXiv:1906.07155}, 2019.
+
+\bibitem{chen2016training}
+Tianqi Chen, Bing Xu, Chiyuan Zhang, and Carlos Guestrin.
+\newblock Training deep nets with sublinear memory cost, 2016.
+
+\bibitem{cheng2021maskformer}
+Bowen Cheng, Alexander~G. Schwing, and Alexander Kirillov.
+\newblock Per-pixel classification is not all you need for semantic
+  segmentation.
+\newblock {\em arXiv}, 2021.
+
+\bibitem{chu2021twins}
+Xiangxiang Chu, Zhi Tian, Yuqing Wang, Bo Zhang, Haibing Ren, Xiaolin Wei,
+  Huaxia Xia, and Chunhua Shen.
+\newblock Twins: Revisiting the design of spatial attention in vision
+  transformers, 2021.
+
+\bibitem{cubuk2020randaugment}
+Ekin~D Cubuk, Barret Zoph, Jonathon Shlens, and Quoc~V Le.
+\newblock Randaugment: Practical automated data augmentation with a reduced
+  search space.
+\newblock In {\em Proceedings of the IEEE/CVF Conference on Computer Vision and
+  Pattern Recognition Workshops}, pages 702--703, 2020.
+
+\bibitem{dai2021dynamic}
+Xiyang Dai, Yinpeng Chen, Bin Xiao, Dongdong Chen, Mengchen Liu, Lu Yuan, and
+  Lei Zhang.
+\newblock Dynamic head: Unifying object detection heads with attentions, 2021.
+
+\bibitem{dai2021coatnet}
+Zihang Dai, Hanxiao Liu, Quoc~V. Le, and Mingxing Tan.
+\newblock Coatnet: Marrying convolution and attention for all data sizes, 2021.
+
+\bibitem{deng2009imagenet}
+Jia Deng, Wei Dong, Richard Socher, Li-Jia Li, Kai Li, and Li Fei-Fei.
+\newblock Imagenet: A large-scale hierarchical image database.
+\newblock In {\em 2009 IEEE conference on computer vision and pattern
+  recognition}, pages 248--255. Ieee, 2009.
+
+\bibitem{devlin2018bert}
+Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova.
+\newblock Bert: Pre-training of deep bidirectional transformers for language
+  understanding.
+\newblock {\em arXiv preprint arXiv:1810.04805}, 2018.
+
+\bibitem{ding2021cogview}
+Ming Ding, Zhuoyi Yang, Wenyi Hong, Wendi Zheng, Chang Zhou, Da Yin, Junyang
+  Lin, Xu Zou, Zhou Shao, Hongxia Yang, and Jie Tang.
+\newblock Cogview: Mastering text-to-image generation via transformers.
+\newblock {\em arXiv preprint arXiv:2105.13290}, 2021.
+
+\bibitem{dong2021cswin}
+Xiaoyi Dong, Jianmin Bao, Dongdong Chen, Weiming Zhang, Nenghai Yu, Lu Yuan,
+  Dong Chen, and Baining Guo.
+\newblock Cswin transformer: A general vision transformer backbone with
+  cross-shaped windows, 2021.
+
+\bibitem{dosovitskiy2020vit}
+Alexey Dosovitskiy, Lucas Beyer, Alexander Kolesnikov, Dirk Weissenborn,
+  Xiaohua Zhai, Thomas Unterthiner, Mostafa Dehghani, Matthias Minderer, Georg
+  Heigold, Sylvain Gelly, Jakob Uszkoreit, and Neil Houlsby.
+\newblock An image is worth 16x16 words: Transformers for image recognition at
+  scale.
+\newblock In {\em International Conference on Learning Representations}, 2021.
+
+\bibitem{fang2019instaboost}
+Hao-Shu Fang, Jianhua Sun, Runzhong Wang, Minghao Gou, Yong-Lu Li, and Cewu Lu.
+\newblock Instaboost: Boosting instance segmentation via probability map guided
+  copy-pasting.
+\newblock In {\em Proceedings of the IEEE/CVF International Conference on
+  Computer Vision}, pages 682--691, 2019.
+
+\bibitem{fedus2021switch}
+William Fedus, Barret Zoph, and Noam Shazeer.
+\newblock Switch transformers: Scaling to trillion parameter models with simple
+  and efficient sparsity, 2021.
+
+\bibitem{ghiasi2020copy}
+Golnaz Ghiasi, Yin Cui, Aravind Srinivas, Rui Qian, Tsung-Yi Lin, Ekin~D Cubuk,
+  Quoc~V Le, and Barret Zoph.
+\newblock Simple copy-paste is a strong data augmentation method for instance
+  segmentation.
+\newblock {\em arXiv preprint arXiv:2012.07177}, 2020.
+
+\bibitem{ghiasi2019fpn}
+Golnaz Ghiasi, Tsung-Yi Lin, and Quoc~V Le.
+\newblock Nas-fpn: Learning scalable feature pyramid architecture for object
+  detection.
+\newblock In {\em Proceedings of the IEEE/CVF Conference on Computer Vision and
+  Pattern Recognition}, pages 7036--7045, 2019.
+
+\bibitem{goyal2021selfsupervised}
+Priya Goyal, Mathilde Caron, Benjamin Lefaudeux, Min Xu, Pengchao Wang, Vivek
+  Pai, Mannat Singh, Vitaliy Liptchinsky, Ishan Misra, Armand Joulin, and Piotr
+  Bojanowski.
+\newblock Self-supervised pretraining of visual features in the wild, 2021.
+
+\bibitem{he2017mask}
+Kaiming He, Georgia Gkioxari, Piotr Doll{\'a}r, and Ross Girshick.
+\newblock Mask r-cnn.
+\newblock In {\em Proceedings of the IEEE international conference on computer
+  vision}, pages 2961--2969, 2017.
+
+\bibitem{he2015resnet}
+Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
+\newblock Deep residual learning for image recognition.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 770--778, 2016.
+
+\bibitem{hu2018relation}
+Han Hu, Jiayuan Gu, Zheng Zhang, Jifeng Dai, and Yichen Wei.
+\newblock Relation networks for object detection.
+\newblock In {\em Proceedings of the IEEE Conference on Computer Vision and
+  Pattern Recognition}, pages 3588--3597, 2018.
+
+\bibitem{hu2019localrelation}
+Han Hu, Zheng Zhang, Zhenda Xie, and Stephen Lin.
+\newblock Local relation networks for image recognition.
+\newblock In {\em Proceedings of the IEEE/CVF International Conference on
+  Computer Vision (ICCV)}, pages 3464--3473, October 2019.
+
+\bibitem{huang2016deep}
+Gao Huang, Yu Sun, Zhuang Liu, Daniel Sedra, and Kilian~Q Weinberger.
+\newblock Deep networks with stochastic depth.
+\newblock In {\em European conference on computer vision}, pages 646--661.
+  Springer, 2016.
+
+\bibitem{huang2021fapn}
+Shihua Huang, Zhichao Lu, Ran Cheng, and Cheng He.
+\newblock Fapn: Feature-aligned pyramid network for dense image prediction,
+  2021.
+
+\bibitem{huang2021shuffle}
+Zilong Huang, Youcheng Ben, Guozhong Luo, Pei Cheng, Gang Yu, and Bin Fu.
+\newblock Shuffle transformer: Rethinking spatial shuffle for vision
+  transformer, 2021.
+
+\bibitem{ioffe2015batch}
+Sergey Ioffe and Christian Szegedy.
+\newblock Batch normalization: Accelerating deep network training by reducing
+  internal covariate shift, 2015.
+
+\bibitem{kaplan2020scaling}
+Jared Kaplan, Sam McCandlish, Tom Henighan, Tom~B. Brown, Benjamin Chess, Rewon
+  Child, Scott Gray, Alec Radford, Jeffrey Wu, and Dario Amodei.
+\newblock Scaling laws for neural language models, 2020.
+
+\bibitem{kay2017kinetics}
+Will Kay, Joao Carreira, Karen Simonyan, Brian Zhang, Chloe Hillier, Sudheendra
+  Vijayanarasimhan, Fabio Viola, Tim Green, Trevor Back, Paul Natsev, et~al.
+\newblock The kinetics human action video dataset.
+\newblock {\em arXiv preprint arXiv:1705.06950}, 2017.
+
+\bibitem{ke2021rethinking}
+Guolin Ke, Di He, and Tie-Yan Liu.
+\newblock Rethinking positional encoding in language pre-training, 2021.
+
+\bibitem{kolesnikov2019bigtransfer}
+Alexander Kolesnikov, Lucas Beyer, Xiaohua Zhai, Joan Puigcerver, Jessica Yung,
+  Sylvain Gelly, and Neil Houlsby.
+\newblock Big transfer (bit): General visual representation learning.
+\newblock {\em arXiv preprint arXiv:1912.11370}, 6(2):8, 2019.
+
+\bibitem{krizhevsky2012alexnet}
+Alex Krizhevsky, Ilya Sutskever, and Geoffrey~E Hinton.
+\newblock Imagenet classification with deep convolutional neural networks.
+\newblock In {\em Advances in neural information processing systems}, pages
+  1097--1105, 2012.
+
+\bibitem{lecun1998lenet}
+Yann LeCun, L{\'e}on Bottou, Yoshua Bengio, Patrick Haffner, et~al.
+\newblock Gradient-based learning applied to document recognition.
+\newblock {\em Proceedings of the IEEE}, 86(11):2278--2324, 1998.
+
+\bibitem{li2021localvit}
+Yawei Li, Kai Zhang, Jiezhang Cao, Radu Timofte, and Luc~Van Gool.
+\newblock Localvit: Bringing locality to vision transformers, 2021.
+
+\bibitem{liang2021cbnetv2}
+Tingting Liang, Xiaojie Chu, Yudong Liu, Yongtao Wang, Zhi Tang, Wei Chu,
+  Jingdong Chen, and Haibin Ling.
+\newblock Cbnetv2: A composite backbone network architecture for object
+  detection, 2021.
+
+\bibitem{lin2014coco}
+Tsung-Yi Lin, Michael Maire, Serge Belongie, James Hays, Pietro Perona, Deva
+  Ramanan, Piotr Doll{\'a}r, and C~Lawrence Zitnick.
+\newblock Microsoft coco: Common objects in context.
+\newblock In {\em European conference on computer vision}, pages 740--755.
+  Springer, 2014.
+
+\bibitem{liu2020closer}
+Ze Liu, Han Hu, Yue Cao, Zheng Zhang, and Xin Tong.
+\newblock A closer look at local aggregation operators in point cloud analysis,
+  2020.
+
+\bibitem{liu2021swin}
+Ze Liu, Yutong Lin, Yue Cao, Han Hu, Yixuan Wei, Zheng Zhang, Stephen Lin, and
+  Baining Guo.
+\newblock Swin transformer: Hierarchical vision transformer using shifted
+  windows, 2021.
+
+\bibitem{liu2021video}
+Ze Liu, Jia Ning, Yue Cao, Yixuan Wei, Zheng Zhang, Stephen Lin, and Han Hu.
+\newblock Video swin transformer, 2021.
+
+\bibitem{loshchilov2017decoupled}
+Ilya Loshchilov and Frank Hutter.
+\newblock Decoupled weight decay regularization.
+\newblock In {\em International Conference on Learning Representations}, 2019.
+
+\bibitem{Turing-17B}
+Microsoft.
+\newblock Turing-nlg: A 17-billion-parameter language model by microsoft, 2020.
+
+\bibitem{Megatron-Turing-530B}
+Microsoft.
+\newblock Using deepspeed and megatron to train megatron-turing nlg 530b, the
+  world’s largest and most powerful generative language model, 2021.
+
+\bibitem{radford2021clip}
+Alec Radford, Jong~Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh,
+  Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark,
+  Gretchen Krueger, and Ilya Sutskever.
+\newblock Learning transferable visual models from natural language
+  supervision, 2021.
+
+\bibitem{radford2019language}
+Alec Radford, Jeff Wu, Rewon Child, David Luan, Dario Amodei, and Ilya
+  Sutskever.
+\newblock Language models are unsupervised multitask learners.
+\newblock 2019.
+
+\bibitem{raffel2019t5}
+Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael
+  Matena, Yanqi Zhou, Wei Li, and Peter~J. Liu.
+\newblock Exploring the limits of transfer learning with a unified text-to-text
+  transformer.
+\newblock {\em Journal of Machine Learning Research}, 21(140):1--67, 2020.
+
+\bibitem{rajbhandari2020zero}
+Samyam Rajbhandari, Jeff Rasley, Olatunji Ruwase, and Yuxiong He.
+\newblock Zero: Memory optimizations toward training trillion parameter models,
+  2020.
+
+\bibitem{recht2019imagenet}
+Benjamin Recht, Rebecca Roelofs, Ludwig Schmidt, and Vaishaal Shankar.
+\newblock Do imagenet classifiers generalize to imagenet?, 2019.
+
+\bibitem{riquelme2021scaling}
+Carlos Riquelme, Joan Puigcerver, Basil Mustafa, Maxim Neumann, Rodolphe
+  Jenatton, André~Susano Pinto, Daniel Keysers, and Neil Houlsby.
+\newblock Scaling vision with sparse mixture of experts, 2021.
+
+\bibitem{ryoo2021tokenlearner}
+Michael~S. Ryoo, AJ Piergiovanni, Anurag Arnab, Mostafa Dehghani, and Anelia
+  Angelova.
+\newblock Tokenlearner: What can 8 learned tokens do for images and videos?,
+  2021.
+
+\bibitem{schutt2017schnet}
+Kristof~T Sch{\"u}tt, Pieter-Jan Kindermans, Huziel~E Sauceda, Stefan Chmiela,
+  Alexandre Tkatchenko, and Klaus-Robert M{\"u}ller.
+\newblock Schnet: A continuous-filter convolutional neural network for modeling
+  quantum interactions.
+\newblock {\em arXiv preprint arXiv:1706.08566}, 2017.
+
+\bibitem{Shao_2019_ICCV}
+Shuai Shao, Zeming Li, Tianyuan Zhang, Chao Peng, Gang Yu, Xiangyu Zhang, Jing
+  Li, and Jian Sun.
+\newblock Objects365: A large-scale, high-quality dataset for object detection.
+\newblock In {\em Proceedings of the IEEE/CVF International Conference on
+  Computer Vision (ICCV)}, October 2019.
+
+\bibitem{simonyan2014vgg}
+K. Simonyan and A. Zisserman.
+\newblock Very deep convolutional networks for large-scale image recognition.
+\newblock In {\em International Conference on Learning Representations}, May
+  2015.
+
+\bibitem{sun2020sparsercnn}
+Peize Sun, Rufeng Zhang, Yi Jiang, Tao Kong, Chenfeng Xu, Wei Zhan, Masayoshi
+  Tomizuka, Lei Li, Zehuan Yuan, Changhu Wang, et~al.
+\newblock Sparse r-cnn: End-to-end object detection with learnable proposals.
+\newblock {\em arXiv preprint arXiv:2011.12450}, 2020.
+
+\bibitem{szegedy2015googlenet}
+Christian Szegedy, Wei Liu, Yangqing Jia, Pierre Sermanet, Scott Reed, Dragomir
+  Anguelov, Dumitru Erhan, Vincent Vanhoucke, and Andrew Rabinovich.
+\newblock Going deeper with convolutions.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 1--9, 2015.
+
+\bibitem{touvron2020deit}
+Hugo Touvron, Matthieu Cord, Matthijs Douze, Francisco Massa, Alexandre
+  Sablayrolles, and Herv{\'e} J{\'e}gou.
+\newblock Training data-efficient image transformers \& distillation through
+  attention.
+\newblock {\em arXiv preprint arXiv:2012.12877}, 2020.
+
+\bibitem{ulyanov2017instance}
+Dmitry Ulyanov, Andrea Vedaldi, and Victor Lempitsky.
+\newblock Instance normalization: The missing ingredient for fast stylization,
+  2017.
+
+\bibitem{vaswani2017attention}
+Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones,
+  Aidan~N Gomez, {\L}ukasz Kaiser, and Illia Polosukhin.
+\newblock Attention is all you need.
+\newblock In {\em Advances in Neural Information Processing Systems}, pages
+  5998--6008, 2017.
+
+\bibitem{wang2021learn}
+Chien-Yao Wang, I-Hau Yeh, and Hong-Yuan~Mark Liao.
+\newblock You only learn one representation: Unified network for multiple
+  tasks, 2021.
+
+\bibitem{wang2018continuousconvcvpr}
+Shenlong Wang, Simon Suo, Wei-Chiu Ma, Andrei Pokrovsky, and Raquel Urtasun.
+\newblock Deep parametric continuous convolutional neural networks.
+\newblock {\em 2018 IEEE/CVF Conference on Computer Vision and Pattern
+  Recognition}, Jun 2018.
+
+\bibitem{wang2021pyramid}
+Wenhai Wang, Enze Xie, Xiang Li, Deng-Ping Fan, Kaitao Song, Ding Liang, Tong
+  Lu, Ping Luo, and Ling Shao.
+\newblock Pyramid vision transformer: A versatile backbone for dense prediction
+  without convolutions, 2021.
+
+\bibitem{wu2021rethinking}
+Kan Wu, Houwen Peng, Minghao Chen, Jianlong Fu, and Hongyang Chao.
+\newblock Rethinking and improving relative position encoding for vision
+  transformer, 2021.
+
+\bibitem{wu2018group}
+Yuxin Wu and Kaiming He.
+\newblock Group normalization.
+\newblock In {\em Proceedings of the European Conference on Computer Vision
+  (ECCV)}, pages 3--19, 2018.
+
+\bibitem{xiao2021early}
+Tete Xiao, Mannat Singh, Eric Mintun, Trevor Darrell, Piotr Doll{\'a}r, and
+  Ross Girshick.
+\newblock Early convolutions help transformers see better.
+\newblock {\em arXiv preprint arXiv:2106.14881}, 2021.
+
+\bibitem{simmim}
+Zhenda Xie, Zheng Zhang, Yue Cao, Yutong Lin, Jianmin Bao, Zhuliang Yao, Qi
+  Dai, and Han Hu.
+\newblock Simmim: A simple framework for masked image modeling.
+\newblock In {\em Tech report}, 2022.
+
+\bibitem{xiongLN2020}
+Ruibin Xiong, Yunchang Yang, Di He, Kai Zheng, Shuxin Zheng, Chen Xing,
+  Huishuai Zhang, Yanyan Lan, Liwei Wang, and Tie-Yan Liu.
+\newblock On layer normalization in the transformer architecture.
+\newblock 2020.
+
+\bibitem{xu2021endtoend}
+Mengde Xu, Zheng Zhang, Han Hu, Jianfeng Wang, Lijuan Wang, Fangyun Wei, Xiang
+  Bai, and Zicheng Liu.
+\newblock End-to-end semi-supervised object detection with soft teacher, 2021.
+
+\bibitem{yang2021focal}
+Jianwei Yang, Chunyuan Li, Pengchuan Zhang, Xiyang Dai, Bin Xiao, Lu Yuan, and
+  Jianfeng Gao.
+\newblock Focal self-attention for local-global interactions in vision
+  transformers, 2021.
+
+\bibitem{yao2021leveraging}
+Zhuliang Yao, Yue Cao, Yutong Lin, Ze Liu, Zheng Zhang, and Han Hu.
+\newblock Leveraging batch normalization for vision transformers.
+\newblock In {\em Proceedings of the IEEE/CVF International Conference on
+  Computer Vision}, pages 413--422, 2021.
+
+\bibitem{yuan2021tokenstotoken}
+Li Yuan, Yunpeng Chen, Tao Wang, Weihao Yu, Yujun Shi, Zihang Jiang, Francis~EH
+  Tay, Jiashi Feng, and Shuicheng Yan.
+\newblock Tokens-to-token vit: Training vision transformers from scratch on
+  imagenet, 2021.
+
+\bibitem{yuan2021volo}
+Li Yuan, Qibin Hou, Zihang Jiang, Jiashi Feng, and Shuicheng Yan.
+\newblock Volo: Vision outlooker for visual recognition.
+\newblock {\em arXiv preprint arXiv:2106.13112}, 2021.
+
+\bibitem{yun2019cutmix}
+Sangdoo Yun, Dongyoon Han, Seong~Joon Oh, Sanghyuk Chun, Junsuk Choe, and
+  Youngjoon Yoo.
+\newblock Cutmix: Regularization strategy to train strong classifiers with
+  localizable features.
+\newblock In {\em Proceedings of the IEEE/CVF International Conference on
+  Computer Vision}, pages 6023--6032, 2019.
+
+\bibitem{zhai2021scaling}
+Xiaohua Zhai, Alexander Kolesnikov, Neil Houlsby, and Lucas Beyer.
+\newblock Scaling vision transformers, 2021.
+
+\bibitem{zhang2017mixup}
+Hongyi Zhang, Moustapha Cisse, Yann~N Dauphin, and David Lopez-Paz.
+\newblock mixup: Beyond empirical risk minimization.
+\newblock {\em arXiv preprint arXiv:1710.09412}, 2017.
+
+\bibitem{zhang2021multiscale}
+Pengchuan Zhang, Xiyang Dai, Jianwei Yang, Bin Xiao, Lu Yuan, Lei Zhang, and
+  Jianfeng Gao.
+\newblock Multi-scale vision longformer: A new vision transformer for
+  high-resolution image encoding, 2021.
+
+\bibitem{zheng2020SETR}
+Sixiao Zheng, Jiachen Lu, Hengshuang Zhao, Xiatian Zhu, Zekun Luo, Yabiao Wang,
+  Yanwei Fu, Jianfeng Feng, Tao Xiang, Philip~HS Torr, et~al.
+\newblock Rethinking semantic segmentation from a sequence-to-sequence
+  perspective with transformers.
+\newblock {\em arXiv preprint arXiv:2012.15840}, 2020.
+
+\bibitem{zhong2020random}
+Zhun Zhong, Liang Zheng, Guoliang Kang, Shaozi Li, and Yi Yang.
+\newblock Random erasing data augmentation.
+\newblock In {\em Proceedings of the AAAI Conference on Artificial
+  Intelligence}, volume~34, pages 13001--13008, 2020.
+
+\bibitem{zhou2018semantic}
+Bolei Zhou, Hang Zhao, Xavier Puig, Tete Xiao, Sanja Fidler, Adela Barriuso,
+  and Antonio Torralba.
+\newblock Semantic understanding of scenes through the ade20k dataset.
+\newblock {\em International Journal on Computer Vision}, 2018.
+
+\end{thebibliography}

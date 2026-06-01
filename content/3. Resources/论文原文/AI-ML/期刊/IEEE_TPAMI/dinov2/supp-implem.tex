@@ -1,0 +1,68 @@
+\section{Implementation Details}
+
+\subsection{Unsupervised pre-training}
+
+For unsupervised pre-training we build on the DINO and iBOT codebases. We use hyperparameters shown in 
+Table~\ref{tab:appendix-hparams}, ViT architectures described in Table~\ref{tab:vit-hparams}.
+
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}l cc  ccccc}
+\toprule
+                                & Arch.       & Drop-rate   & LR        & Batch size\\
+\midrule
+\OURS-S (distilled)             & ViT-S/14    & 0           & 1e-3      & 2048    \\ 
+\OURS-B (distilled)             & ViT-B/14    & 0           & 1e-3      & 2048    \\ 
+\OURS-L (distilled)             & ViT-L/14    & 0           & 1e-3      & 2048  \\ 
+\OURS-L (from scratch)          & ViT-L/14    & 0.4         & 3.5e-4    & 3072  \\ 
+\OURS-g (from scratch)          & ViT-g/14    & 0.4         & 3.5e-4    & 3072  \\
+\bottomrule
+\end{tabular}
+\caption{
+\textbf{Training hyperparameters for \OURS-S, \OURS-B, \OURS-L and \OURS-g.}
+All models run for 625k iterations with optimizer AdamW, an initial LayerScale value of 1e-5, a weight decay cosine schedule from 0.04 to 0.2, a learning rate warmup of 100k iterations, a teacher momentum cosine schedule from 0.994 to 1, and we train in float16 precision in all cases (except for the DINO heads where we reduce the gradients in float32).
+}
+\label{tab:appendix-hparams}
+\end{table}
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}l cccc}
+\toprule
+Arch.     & Embed dim   & Heads & Blocks & FFN layer    \\
+\midrule
+ViT-S/14 (distilled)        & 384           & 6    & 12     & MLP        \\ 
+ViT-B/14 (distilled)        & 768           & 12    & 18     & MLP        \\ 
+ViT-L/14 (distilled)        & 1024          & 16    & 24     & MLP        \\ 
+ViT-L/14 (from scratch)     & 1024          & 16    & 24     & SwiGLU   \\ 
+ViT-g/14 (from scratch)     & 1536          & 24    & 40     & SwiGLU    \\
+\bottomrule
+\end{tabular}
+\caption{
+\textbf{Architecture details of the ViT-S/B/L/g networks used in this work.} We use MLP feed-forward networks for distilled models, and SwiGLU ~\citep{shazeer2020glu} when training from scratch.
+}
+\label{tab:vit-hparams}
+\end{table}
+
+\paragraph{KoLeo regularization.}
+We apply the KoLeo regularizer with a weight of 0.1 between the class tokens of the first global crop, for all samples within a GPU without cross-communication for this step.
+
+\paragraph{EMA update for the teacher.}
+The teacher is initialized with the same state as the student, and is an exponential moving average of the student network, with a momentum value in [0.994, 1.0] following a cosine schedule. It is updated at the end of every training step.
+
+\subsection{High-Resolution adaptation}
+We initialise the model with the pretrained weights then train it for 10k iterations with the same procedure as the original pretraining. All the schedules are kept the same as in the original training, but compressed to fit in 10k iterations. All the hyperparameters are kept the same as in the first pretraining, except the base learning rate which is reduced.
+
+\subsection{Linear probing evaluation}\label{app:linearprobing}
+For linear probing we define 3 evaluation parameters: the learning rate, how many output layers we use, whether we concatenate the average-pooled patch token features with the class token (or use only the class token).
+We train our linear layer with SGD for 12500 iterations, using random-resized-crop data augmentation, and perform the following grid search:
+\begin{itemize}
+    \item learning rate in $\{0.0001, 0.0002, 0.0005, 0.001, 0.002, 0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.3, 0.5 \}$
+    \item output layers in $\{1,4\}$
+    \item concatenate average-pooled tokens in $\{yes, no\}$
+\end{itemize}
+We then report the highest accuracy value obtained on the validation set as is common practice.
+Note that this grid search is not expensive, because at each iteration we perform inference on the backbone only once, then feed the output to all linear classifiers (each performing a single matrix multiplication).

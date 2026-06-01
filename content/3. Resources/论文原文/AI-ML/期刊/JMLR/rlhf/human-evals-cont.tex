@@ -1,0 +1,48 @@
+{
+% \newcommand{\Chart}[1]{%
+%   \begin{tikzpicture}
+%     \fill[color=black]   (0.0mm , 0.0ex) rectangle (#1*20mm , 1.5ex );
+%     \fill[color=gray] (#1*20mm  , 0.0ex) rectangle (20mm, 1.5ex);
+%   \end{tikzpicture}%
+% }
+
+
+\newlength\MAX  \setlength\MAX{20mm}
+\newlength\MAXPERC  \setlength\MAXPERC{0.2mm}
+\newcommand*\Chart[4]{
+    {\color{#3} \ifthenelse{#1 > \numexpr#2+6}{\textbf{#1\%}}{#1\%}}
+    &
+    \rlap{\textcolor{#4}{\rule{\MAX}{2ex}}}\textcolor{#3}{\rule{#1\MAXPERC}{2ex}}
+    &
+    {\color{#4} \ifthenelse{#2 > \numexpr#1+6}{\textbf{#2\%}}{#2\%}}
+}
+
+\newcommand{\tableentry}[5]{
+  {\color{orange} 5k offline} vs. {\color{gray} #1}
+  &  \Chart{#2}{#3}{orange}{gray}
+  & \Chart{#4}{#5}{orange}{gray}
+  \\}
+
+\newcommand{\lefttableentry}[3]{
+  {\color{orange} 5k offline} vs. {\color{gray} #1}
+  & \Chart{#2}{#3}{orange}{gray}
+  & \multicolumn{3}{c}{\large ---}
+  \\}
+
+\centering
+\begin{tabular}{l|lll|lll} \toprule
+  & \multicolumn{3}{c|}{Sentiment}
+  & \multicolumn{3}{c}{Descriptiveness} \\ 
+  \midrule
+
+\tableentry{zero-shot}{88}{12}{86}{14}
+\lefttableentry{mock}{77}{23}
+\tableentry{20k offline}{48}{52}{47}{53}
+\tableentry{5k online}{50}{50}{48}{52}
+
+\bottomrule
+\end{tabular}
+\vspace{.1in}
+\captionof{table}{Human evaluations for the sentiment and descriptiveness tasks.  We sample 1024 excerpts from the BookCorpus test set and report how often each model's continuations were preferred, as judged by a majority of 3 labelers.
+\label{tab:human_evals_cont}}
+}

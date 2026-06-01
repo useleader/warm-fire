@@ -1,0 +1,216 @@
+
+\begin{table*}[t]
+\begin{center}
+\caption*{Samples for TL;DR summarization task (part 1)}
+\begin{tabular}{|p{2cm}|p{12cm}|}
+
+\hline
+    
+\hline
+\textbf{context post}
+&
+\multicolumn{1}{|C{12cm}|}{ 
+Okay, this was actually going to go into a comment on youtube, but Emma said she wanted more traffic on reddit.
+\newline\newline
+I am a musician myself, have been for many years now. While Emma's music is not the most complicated technical death metal stuff out there, I love it dearly. Her music actually moves me. No matter what she plays, be it a cover or original stuff, her music *touches* me on a deep personal level. And I have absolutely no clue why. I think it's a combination of her voice, her lyrics and the overall sound design of her songs and covers.
+\newline\newline
+But this isn't always a good thing, I feel. I can't listen to her music for hours on end. Only always a few songs, nothing more. Her music destroys me emotionally. Okay, that's a bit harsh, but she can get me, a (nearly) adult on the verge of tears. I've gone through some shit in my life, who hasn't, and I feel like her music can actually get some of it out. I am incredibly thankful that she makes her music the way she makes it. I can honestly say that Emma Blackery is my favourite artist. Keep in mind that I listen to a lot of music, from crossover thrash metal over 80's pop, berlin polygenre to classic/romantic music.
+\newline\newline
+I am also very jealous of her ability. I play quite a few instruments myself (guitar, piano, bass, drums, synth, saxophone, percussion) and aim to study audio engineering. I can definitely say that music is my literal life and mean it. I've released my first full length album at age 20. Yet I am very jealous that she is as good as she is and I really wanna know what her secret is. I love and hate her music, does that make sense?
+\newline\newline
+Her music definitely makes me think, and that's what art is all about, right? Anyway, I'm gonna continue working on my cover of The Promise and try to figure out what it is she's doing. Thank you for reading this far.
+}
+\\
+\hline
+
+\textbf{reference summary}
+&
+Emma music gud yes very love magic
+\\
+\hline
+\hline
+
+\textbf{zero-shot}
+&
+I'm a musician myself, have been for many years now. And Emma Blackery is my favourite artist.
+\\
+\hline
+\textbf{60k fine-tune}
+&
+I am a musician myself, have been for many years now. While Emma's music is not the most technical death metal stuff out there, I love it dearly. Her music actually moves me. No matter what she plays, be it a cover or original stuff, her music *touches* me on a deep personal level.
+\\
+\hline
+\textbf{supervised}
+&
+I'm jealous of Emma Blackery's music and I have no clue why.
+\\
+\hline
+\textbf{supervised + 60k fine-tune}
+&
+Emma Blackery is my favourite artist, and I love her music to death. I wish I could listen to her music all the time. However, I feel like her music destroys me emotionally. I feel like I need to enjoy her music for the human part of it, and not the technical part. She's my favourite artist.
+\\
+\hline
+% \textbf{30k fine-tune}
+% &
+% I am a musician myself, have been for many years now. While Emma's music is not the most complicated technical death metal stuff out there, I love it dearly. Her music actually moves me. No matter what she plays, be it a cover or original stuff, her music *touches* me on a deep personal level.
+% \\
+% \hline
+% \textbf{60k offline fine-tune}
+% &
+% Emma Blackery is my favourite artist. She's a very good musician. Her music messes with my emotions. I feel like it's a combination of her voice, her lyrics and the overall sound design of her songs. I think it's because her lyrics are so deep, that they get me thinking about my own world.
+% \\
+% \hline
+
+\end{tabular}
+\caption{Random ($T=0.7$) summaries for our TL;DR summarization task, with contexts randomly sampled from TL;DR validation set.}
+\label{tab:samples-summarization-tldr}
+\end{center}
+\end{table*}
+    
+
+\begin{table*}[t]
+\begin{center}
+\caption*{Samples for TL;DR summarization task (part 2)}
+\begin{tabular}{|p{2cm}|p{12cm}|}
+
+\hline
+    
+\hline
+\textbf{context post}
+&
+\multicolumn{1}{|C{12cm}|}{ 
+It really does. I did the first 5 seasons in a couple months, and ultimately I enjoyed them. The first three seasons cover just about all the really good stuff. Russell Edgington was, to me, the best supporting character in the show. He was everything that I valued about the show, which is to say, campy, violent, overly-gory fun. I went back to the show a little over a year later, and while S6 was tolerable with a few fun bits, S7 totally eroded. Tara's plot goes full retard in the last season, people die for the sake of drama and convenience or leave with no real reverence for their history. Suddenly no one can make a good decision, and there was a needless romance bait-and-switch that ruined what I felt the show was moving towards.
+\newline\newline
+What's terrible is that once you've done six seasons it's hard to walk away, but each episode of seven stings more than the last. You don't get that weird half-hollow/half-warm feeling you should when you finish a series of books or a long TV show. Outside of Pam and Erik, I didn't give two fucks about any character by the end.
+}
+\\
+\hline
+
+\textbf{reference summary}
+&
+Seasons one through three were a blast. Four was pretty meh, five and six weren't too bad, seven sucked massively.
+\\
+\hline
+\hline
+
+\textbf{zero-shot}
+&
+I finished S6 and still feel like I'm in the same place as I was with S5.
+\newline\newline
+Favorite Episodes:
+\newline\newline
+S1: "Tough Love"
+\newline\newline
+S2: "Crossover"
+\newline\newline
+S3: "The Party"
+\\
+\hline
+\textbf{60k fine-tune}
+&
+I did the first 5 seasons in a couple months, and ultimately I enjoyed them. The first three seasons cover just about all the really good stuff. Russell Edgington was, to me, the best supporting character in the show. He was everything that I valued about the show, which is to say, campy, violent, overly-gory fun
+\\
+\hline
+\textbf{supervised}
+&
+10/10 would watch again
+\\
+\hline
+\textbf{supervised + 60k fine-tune}
+&
+The first two seasons of the show were enjoyable. The show's progress in the last three seasons is frustrating because it's so similar to the first three seasons, and it's so one-sided that there's no reason to keep going. But the show's greatest strength has always been its great writing, and it's giving me that same feeling again.
+\\
+\hline
+% \textbf{30k fine-tune}
+% &
+% I did the first 5 seasons in a couple months, and ultimately I enjoyed them. The first three seasons cover just about all the really good stuff. Russell Edgington was, to me, the best supporting character in the show. He was everything that I valued about the show, which is to say, campy, violent, overly-
+% \\
+% \hline
+% \textbf{60k offline fine-tune}
+% &
+% I found the first five seasons of The Handmaid's Tale to be a very enjoyable and very smart show. The last year was dreadful on its own, but the second half had a lot of value. The show had a very strong sense of humor that is lacking in many other shows. The last few episodes were not what I expected.
+% \\
+% \hline
+
+\end{tabular}
+\caption{Random ($T=0.7$) summaries for our TL;DR summarization task, with contexts randomly sampled from TL;DR validation set.}
+\label{tab:samples-summarization-tldr2}
+\end{center}
+\end{table*}
+    
+
+\begin{table*}[t]
+\begin{center}
+\caption*{Samples for TL;DR summarization task (part 3)}
+\begin{tabular}{|p{2cm}|p{12cm}|}
+
+\hline
+    
+\hline
+\textbf{context post}
+&
+\multicolumn{1}{|C{12cm}|}{ 
+> you should be happy, lots of votes were counted twice in precincts that went to Clinton in a landslide, if they recount them by hand she will lose more votes, and probably a lot...
+\newline\newline
+You are assuming you understand what the problem here is and what the end result on the election was.  The article does not state where the problem lies.
+\newline\newline
+E.g. The machine shows a tally of 120 votes having been processed on it.  The actual reported vote tally to the election board was 100 votes.  The 20 vote differential on the machine is due to 20 times a ballot needing to be re-scanned due to error.  No double-counting of votes occurs but there is also a delta between what the machine says was recorded vs what was reported.
+\newline\newline
+In this case the final reported vote tallies may have been factually correct but there is no way to validate them against the machine record.
+\newline\newline
+To understand the problem an analysis and deconstruction of the machines and the election night events must be undertaken.  Find out the cause of the problem, if the problem caused votes to be over/under counted, or if the problem was solely with machine data that was not used for tabulation of results.
+}
+\\
+\hline
+
+\textbf{reference summary}
+&
+neither you nor I have any idea what the actual problem is so there is no basis for saying the problem favors either candidate at this time, or if either candidate would even be affected.
+\\
+\hline
+\hline
+
+\textbf{zero-shot}
+&
+Election officials did not count ballots in a timely manner, by hand, to meet the threshold of getting votes counted on election night.
+\newline\newline
+Voters were not eligible to vote on election night and were not aware of the problems.
+\newline\newline
+The election officials did not realize that their system was broken until very late in the night.
+\\
+\hline
+\textbf{60k fine-tune}
+&
+The machine shows a tally of 120 votes having been processed on it.  The actual reported vote tally to the election board was 100 votes.  The 20 vote differential on the machine is due to 20 times a ballot needing to be re-scanned due to error.  No double-counting of votes occurs but there is also a delta between what the machine says
+\\
+\hline
+\textbf{supervised}
+&
+Stop assuming the election was completely free of double-counting before you even begin to discuss the actual results.  For any result to be close, it must be based on the total vote totals reported to the election board and not just the machine results.  The election board did not report the machine results to the election board.
+\\
+\hline
+\textbf{supervised + 60k fine-tune}
+&
+The reported vote tallies may have been factually correct but there is no way to validate them against the machine record.  The machine may have actually been accurate and the machine may have been faulty in other ways.  The election may have been considered fair but the machine may not have been.  The results are still in dispute.
+\\
+\hline
+
+
+% \textbf{30k fine-tune}
+% &
+% You should be happy, lots of votes were counted twice in precincts that went to Clinton in a landslide, if they recount them by hand she will lose more votes, and probably a lot. The machine shows a tally of 120 votes having been processed on it. The actual reported vote tally to the election board was 100 votes.
+% \\
+% \hline
+% \textbf{60k offline fine-tune}
+% &
+% The machine counted 120 votes that were actually counted twice in a landslide. The automated voting system did not accurately record the votes that were actually counted in a landslide. The result was a substantial over/under count. The machine was programmed to count everything that went through the scanner and the machine was not designed to accurately and accurately record votes.
+% \\
+% \hline
+
+\end{tabular}
+\caption{Random ($T=0.7$) summaries for our TL;DR summarization task, with contexts randomly sampled from TL;DR validation set.}
+\label{tab:samples-summarization-tldr3}
+\end{center}
+\end{table*}
+    
+% produced by sandbox/jeff/paper_csv_samples_to_latex.py

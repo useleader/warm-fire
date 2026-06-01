@@ -1,0 +1,165 @@
+\documentclass[10pt]{article} 
+\makeatletter
+\def\blfootnote{\gdef\@thefnmark{}\@footnotetext}
+\makeatother
+
+\usepackage[accepted]{tmlr}
+\input{math_commands.tex}
+
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{natbib}
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{multirow}
+\usepackage{tabu}
+\usepackage{xcolor}
+\usepackage{pifont}
+\usepackage{subcaption}
+\usepackage{layouts}
+\usepackage{makecell}
+\usepackage{soul}
+
+\newcommand{\YFCC}{YFCC}
+\newcommand{\MMCC}{C2}
+\newcommand{\YFCCMMCC}{YFCC+C2}
+\newcommand{\LaViDa}{LVD-142M}
+\newcommand{\OURS}{DINOv2}
+\newcommand{\OPENOURS}{Open\OURS}
+\newcommand{\etal}{\emph{et al.}}
+\newcommand{\myparagraph}[1]{\vspace{0.5em}\noindent\textbf{#1}}
+
+\newcommand\extrafootertext[1]{
+    \bgroup
+    \renewcommand\thefootnote{\fnsymbol{footnote}}
+    \renewcommand\thempfootnote{\fnsymbol{mpfootnote}}
+    \footnotetext[0]{#1}
+    \egroup
+}
+
+\definecolor{LightCyan}{rgb}{0.318, 0.439, 0.843}
+\definecolor{LightCyan}{rgb}{0.8295, 0.85975, 0.96075}
+\newcolumntype{g}{>{\columncolor{LightCyan}}c}
+\definecolor{IncrGreen}{rgb}{0.25, 0.55, 0.25}
+\definecolor{DecrRed}{rgb}{0.55, 0.25, 0.25}
+\newcommand{\qinc}[1]{\footnotesize\textcolor{IncrGreen}{$\uparrow #1$}}
+\newcommand{\qdec}[1]{\footnotesize\textcolor{DecrRed}{$\downarrow #1$}}
+\newcommand{\qeq}[1]{\footnotesize{$=#1$}}
+
+\definecolor{rone}{rgb}{0.65, 0.15, 0.15}
+\definecolor{rtwo}{rgb}{0.15, 0.65, 0.15}
+\definecolor{rthree}{rgb}{0.15, 0.15, 0.65}
+\newcommand\rone[1]{#1}
+\newcommand\rtwo[1]{#1}
+\newcommand\rthree[1]{#1}
+
+\title{
+  \centering
+  DINOv2: Learning Robust Visual Features \\ without~Supervision
+}
+
+\author{
+\centering
+Maxime Oquab$^{**}$, 
+Timothée Darcet$^{**}$, 
+Théo Moutakanni$^{**}$, \\
+Huy V. Vo$^*$, 
+Marc Szafraniec$^*$, 
+Vasil Khalidov$^*$,  
+Pierre Fernandez,
+Daniel Haziza, \\
+Francisco Massa, 
+Alaaeldin El-Nouby,
+Mahmoud Assran, 
+Nicolas Ballas, 
+Wojciech Galuba, \\
+Russell Howes, 
+Po-Yao Huang,
+Shang-Wen Li, 
+Ishan Misra,
+Michael Rabbat,\\ 
+Vasu Sharma, 
+Gabriel Synnaeve, 
+Hu Xu,
+Hervé Jegou, 
+Julien Mairal$^1$, \\
+Patrick Labatut$^*$, 
+Armand Joulin$^*$, 
+Piotr Bojanowski$^*$ \\
+\normalfont
+\vspace{1em}
+\addr{Meta AI Research}  $\;\;\;\;\;\;\;\;$ \addr{$^1$Inria} \\
+\vspace{0.5em}
+\small{$^*$core team $\;\;\;\;\;\;\;$$^{**}$equal contribution}
+}
+
+
+\newcommand{\fix}{\marginpar{FIX}}
+\newcommand{\new}{\marginpar{NEW}}
+
+
+\def\month{01}  
+\def\year{2024} 
+\def\openreview{\url{https://openreview.net/forum?id=a68SUt6zFt}} 
+
+\begin{document}
+
+\maketitle
+
+\blfootnote{
+All the authors are affiliated to Meta, except Julien Mairal who is affiliated to Inria. 
+Timothée Darcet and Pierre Fernandez have a co-affiliation with Inria.
+Théo Moutakanni has a co-affiliation with Universit\'e Paris Saclay.
+Alaaeldin El-Nouby has a co-affiliation with Inria and ENS-PSL. 
+Correspondence: \{qas, timdarcet, theomoutakanni, ajoulin, bojanowski\}@meta.com
+}
+
+
+\input{abstract}
+\input{intro}
+\input{related}
+\input{data}
+\input{approach}
+\input{ablation}
+\input{experiments}
+\input{fairness}
+\input{carbon}
+
+\section{Future work and Discussion}
+In this work, we present DINOv2, a new series of image encoders pretrained on large curated data with no supervision. 
+This is the first SSL work on image data that leads to visual features that close the performance gap with (weakly) supervised alternatives across a wide range of benchmarks and without the need for finetuning. 
+\rthree{
+We can attribute the strong performance of the DINOv2 family of models to several factors:
+\textbf{i}) an improved training recipe with better hyperparameters and regularization (Table \ref{tab:ibot-dino}), 
+\textbf{ii}) a larger model scale with improved results regardless of the data used for training (Fig.~\ref{fig:scaleperf}), 
+\textbf{iii}) a larger dataset (Fig. \ref{fig:scaleperf}) and 
+\textbf{iv}) the distillation process that makes smaller models benefit from the performance of the strongest ViT-g model (Fig.~\ref{fig:distillation}).
+}
+A few properties emerge from these models, such as an understanding of object parts and scene geometry regardless of the image domains. 
+We expect that more of these properties will emerge at larger scales of models and data, akin to instruction emergence in large language models, and plan to continue scaling along these axes.
+This paper also demonstrates that these visual features are compatible with classifiers as simple as linear layers - meaning the underlying information is \textit{readily available}.
+In future work, we plan to leverage this ability to train a a language-enabled AI system that can process visual features as if they were word tokens, and extract the required information to ground the system.
+
+
+
+\subsubsection*{Acknowledgments.}
+We thank Mathilde Caron for initial discussions that led to this work. 
+Julien Mairal was supported by the ERC grant number 101087696 (APHELAIA project) and by ANR 3IA MIAI@Grenoble Alpes (ANR-19-P3IA-0003).
+We thank Olivia Joulin for the horse drawing used in Fig.~\ref{fig:matching}.
+We thank Madeleine and Léon for posing for Fig.~\ref{fig:depth_ood}
+We also thank the rest of FAIR and Meta AI for feedback on this work through the entire project.
+
+\bibliography{egbib}
+\bibliographystyle{tmlr}
+
+\clearpage
+\appendix
+\input{supp-data}
+\input{supp-implem}
+\input{supp-eval-datasets}
+
+\end{document}

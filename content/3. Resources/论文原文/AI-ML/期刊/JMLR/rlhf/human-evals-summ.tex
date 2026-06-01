@@ -1,0 +1,128 @@
+{
+% \newcommand{\Chart}[1]{%
+%   \begin{tikzpicture}
+%     \fill[color=black]   (0.0mm , 0.0ex) rectangle (#1*20mm , 1.5ex );
+%     \fill[color=gray] (#1*20mm  , 0.0ex) rectangle (20mm, 1.5ex);
+%   \end{tikzpicture}%
+% }
+%\newlength\MAX
+\setlength\MAX{20mm}
+%\newlength\MAXPERC
+\setlength\MAXPERC{0.2mm}
+\newcommand*\Chart[4]{
+    {\color{#3} \ifthenelse{#1 > #2}{\textbf{#1\%}}{#1\%}}
+    &
+    \rlap{\textcolor{#4}{\rule{\MAX}{2ex}}}\textcolor{#3}{\rule{#1\MAXPERC}{2ex}}
+    &
+    {\color{#4} \ifthenelse{#2 > #1}{\textbf{#2\%}}{#2\%}}
+}
+
+\newcommand{\tableentry}[5]{
+  {\color{orange} 60k fine-tuned} vs. {\color{gray} #1}
+  &  \Chart{#2}{#3}{orange}{gray}
+  & \Chart{#4}{#5}{orange}{gray}
+  \\}
+
+\newcommand{\alttableentry}[5]{
+  {\color{blue} lead-3} vs. {\color{gray} #1}
+  & \Chart{#2}{#3}{blue}{gray}
+  & \Chart{#4}{#5}{blue}{gray}
+  \\}
+
+\begin{table*}[h!]
+\centering
+\begin{tabular}{l|rlr|rlr} \toprule
+  & \multicolumn{3}{c|}{TL;DR}
+  & \multicolumn{3}{c}{CNN/Daily Mail} \\ 
+  \midrule
+
+% Source for the data in this table: https://colab.research.google.com/drive/1LCF-Abb9P5u-zG9i_wDuD9XxqiFcoziC . 3 labels per context.
+
+\tableentry{zero-shot}{96}{4}{91}{9}
+\tableentry{supervised}{97}{3}{80}{20}
+\tableentry{lead-3}{45}{55}{40}{60}
+\tableentry{supervised + 60k fine-tuned}{80}{20}{74}{26}
+\tableentry{30k fine-tuned}{40}{60}{62}{38}
+\tableentry{15k fine-tuned}{79}{21}{47}{53}
+\tableentry{60k offline fine-tuned}{64}{36}{65}{35}
+\tableentry{reference summaries}{96}{4}{84}{16}
+
+\midrule
+
+\alttableentry{supervised}{97}{3}{89}{11}
+\alttableentry{reference summaries}{97}{3}{89}{11}
+\alttableentry{supervised + 60k fine-tuned}{75}{25}{85}{15}
+
+\midrule
+
+% Source for the old version of the data:
+% Source for main vs. supervised, ref, lead-3, lead-3-trunc; and supervised vs. lead-3: https://colab.research.google.com/drive/1ySnLhj3bbexHwY3FZphAZb8icDsaJASR . 3 labels per context.
+% Source for tldr main vs. slft: https://colab.research.google.com/drive/1eBxM1zAp7ikgHLjfOBhxAv1MF04X49ja . 3 labels per context.
+% Source for tldr main vs. 30k, 15k: https://colab.research.google.com/drive/1IcTykaSxk1PWBftqTrpa8yd_uDlxFrEU . 3 labels per context.
+% Source for tldr main vs. offline: https://colab.research.google.com/drive/1fJlRy7D7RBuyyB5Kg4lCAEHKjUx8gKx3 . 3 labels per context.
+% Source for news main vs. offline: https://colab.research.google.com/drive/1L6MuUE9Ie65TUgDCKFN84xlbUZOzWBj3 . 3 labels per context.
+% Source for main vs. human: https://colab.research.google.com/drive/1SWI1XjtznaYcqqlMvYhcWmBdkLpzMC3B . 3 labels per context.
+% Source for human vs. lead-3: https://colab.research.google.com/drive/1rp-E-FUDO8ZXTNW1Uaoz1yx97r1Dmf89 . 3 labels per context.
+% Source for news main vs. 30k, 15k, 8k: https://colab.research.google.com/drive/1W_E6tGNZeemsNUxn0VOvISjW9nDck_cA . 3 labels per context.
+% Source for news main vs. slft: https://colab.research.google.com/drive/1uXbt0hyc2skNZ-dNvU0Qyd7PqpRzduEK . 3 labels per context.
+% Source for news slft vs. lead-3, lead-3-trunc: https://colab.research.google.com/drive/16ChOP9PXaAbpFmxl-xo5BnHU932eXU37 . 3 labels per context.
+% Source for tldr sflt vs. lead-3-trunc: https://colab.research.google.com/drive/14Xpseo31METC2Um5yWJIe8VEf1AC7Qcy . 3 labels per context.
+% Source for news supervised, reference summaries vs. lead-3-trunc: https://colab.research.google.com/drive/1GogRPSc3WYCHglvZMIFU_7GoXgXvI88S . 3 labels per context.
+% Source for tldr supervised, reference summaries vs. lead-3-trunc: https://colab.research.google.com/drive/1TCp06hAF_-NP7zMrspw1kUjnQn1x4SOo . 3 labels per context.
+% For tldr lead-3 vs. supervised + 60k fine-tuned, see experiment aug/13/cmp_tldr/1/slft-vs-lead3 in the database.
+
+% Old version of the data:
+
+%\tableentry{zero-shot}{97}{3}{93}{7}
+
+%\tableentry{supervised}{96}{4}{78}{22}
+
+% without truncating lead-3 to full sentences
+%tableentry{lead-3}{47}{53}{44}{56}
+
+% truncating lead-3 to full sentences
+
+%\tableentry{lead-3}{48}{52}{38}{62}
+
+%\tableentry{supervised + 60k fine-tuned}{70}{30}{50}{50}
+
+%\tableentry{30k fine-tuned}{43}{57}{59}{41}
+
+%\tableentry{15k fine-tuned}{78}{22}{45}{55}
+
+%\tableentry{8k fine-tuned}{---}{---}{\textbf{60\%}}{40\%}
+
+%\tableentry{60k offline fine-tuned}{71}{29}{66}{34}
+
+%\tableentry{reference summaries}{95}{5}{63}{37}
+
+%\midrule
+
+% without truncating lead-3 to full sentences
+%\alttableentry{supervised}{95}{5}{82}{18}
+
+% truncating lead-3 to full sentences
+%\alttableentry{supervised}{96}{4}{85}{15}
+
+% without truncating lead-3 to full sentences
+%\alttableentry{reference summaries}{92}{8}{78}{22}
+
+% truncating lead-3 to full sentences
+%\alttableentry{reference summaries}{96}{4}{79}{21}
+
+% without truncating lead-3 to full sentences
+%supervised + 60k fine-tuned vs. lead-3
+%& --- & ---
+%& 31\% & 69\%
+%\\
+
+%truncating lead-3 to full sentences
+%\alttableentry{supervised + 60k fine-tuned}{80}{20}{73}{27}
+
+\bottomrule
+\end{tabular}
+%\vspace{.1in}
+\caption{Human evaluation of summarization models. For each pair of models and each dataset, we sample 1024 articles from the test set, generate a summary from each model, and ask 3 humans to pick the best summary using the same instructions as in training. The model chosen by a majority of the humans wins on that article. We report the fraction of articles that each model wins. For all models, we sample with temperature 0.7 for TL;DR and 0.5 for CNN/DM.
+\label{tab:human_evals_summ}}
+\end{table*}
+}

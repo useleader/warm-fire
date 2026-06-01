@@ -1,0 +1,713 @@
+\begin{thebibliography}{100}\itemsep=-1pt
+
+\bibitem{adelson2001seeing}
+Edward~H Adelson.
+\newblock On seeing stuff: the perception of materials by humans and machines.
+\newblock {\em Human vision and electronic imaging {VI}}, 2001.
+
+\bibitem{alexe2010object}
+Bogdan Alexe, Thomas Deselaers, and Vittorio Ferrari.
+\newblock What is an object?
+\newblock {\em CVPR}, 2010.
+
+\bibitem{arbelaez2010contour}
+Pablo Arbeláez, Michael Maire, Charless Fowlkes, and Jitendra Malik.
+\newblock Contour detection and hierarchical image segmentation.
+\newblock {\em TPAMI}, 2010.
+
+\bibitem{Ba2016}
+Jimmy~Lei Ba, Jamie~Ryan Kiros, and Geoffrey~E Hinton.
+\newblock Layer normalization.
+\newblock {\em arXiv:1607.06450}, 2016.
+
+\bibitem{Bao2021}
+Hangbo Bao, Li Dong, and Furu Wei.
+\newblock {BEiT}: {BERT} pre-training of image transformers.
+\newblock {\em arXiv:2106.08254}, 2021.
+
+\bibitem{zerowaste}
+Dina Bashkirova, Mohamed Abdelfattah, Ziliang Zhu, James Akl, Fadi Alladkani,
+  Ping Hu, Vitaly Ablavsky, Berk Calli, Sarah~Adel Bargal, and Kate Saenko.
+\newblock {ZeroWaste} dataset: Towards deformable object segmentation in
+  cluttered scenes.
+\newblock {\em CVPR}, 2022.
+
+\bibitem{berg2019}
+Stuart Berg, Dominik Kutra, Thorben Kroeger, Christoph~N. Straehle, Bernhard~X.
+  Kausler, Carsten Haubold, Martin Schiegg, Janez Ales, Thorsten Beier, Markus
+  Rudy, Kemal Eren, Jaime~I. Cervantes, Buote Xu, Fynn Beuttenmueller, Adrian
+  Wolny, Chong Zhang, Ullrich Koethe, Fred~A. Hamprecht, and Anna Kreshuk.
+\newblock ilastik: interactive machine learning for (bio)image analysis.
+\newblock {\em Nature Methods}, 2019.
+
+\bibitem{bommasani2021opportunities}
+Rishi Bommasani, Drew~A Hudson, Ehsan Adeli, Russ Altman, Simran Arora, Sydney
+  von Arx, Michael~S Bernstein, Jeannette Bohg, Antoine Bosselut, Emma
+  Brunskill, et~al.
+\newblock On the opportunities and risks of foundation models.
+\newblock {\em arXiv:2108.07258}, 2021.
+
+\bibitem{bredell2018iterative}
+Gustav Bredell, Christine Tanner, and Ender Konukoglu.
+\newblock Iterative interaction training for segmentation editing networks.
+\newblock {\em {MICCAI}}, 2018.
+
+\bibitem{Brown2020}
+Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared~D Kaplan, Prafulla
+  Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell,
+  Sandhini Agarwal, Ariel Herbert-Voss, Gretchen Krueger, Tom Henighan, Rewon
+  Child, Aditya Ramesh, Daniel Ziegler, Jeffrey Wu, Clemens Winter, Chris
+  Hesse, Mark Chen, Eric Sigler, Mateusz Litwin, Scott Gray, Benjamin Chess,
+  Jack Clark, Christopher Berner, Sam McCandlish, Alec Radford, Ilya Sutskever,
+  and Dario Amodei.
+\newblock Language models are few-shot learners.
+\newblock {\em NeurIPS}, 2020.
+
+\bibitem{Cai2018}
+Zhaowei Cai and Nuno Vasconcelos.
+\newblock {Cascade R-CNN}: Delving into high quality object detection.
+\newblock {\em CVPR}, 2018.
+
+\bibitem{cells}
+Juan~C. Caicedo, Allen Goodman, Kyle~W. Karhohs, Beth~A. Cimini, Jeanelle
+  Ackerman, Marzieh Haghighi, CherKeng Heng, Tim Becker, Minh Doan, Claire
+  McQuin, Mohammad Rohban, Shantanu Singh, and Anne~E. Carpenter.
+\newblock Nucleus segmentation across imaging experiments: the 2018 data
+  science bowl.
+\newblock {\em Nature Methods}, 2019.
+
+\bibitem{canny1986computational}
+John Canny.
+\newblock A computational approach to edge detection.
+\newblock {\em TPAMI}, 1986.
+
+\bibitem{Carion2020}
+Nicolas Carion, Francisco Massa, Gabriel Synnaeve, Nicolas Usunier, Alexander
+  Kirillov, and Sergey Zagoruyko.
+\newblock End-to-end object detection with {Transformers}.
+\newblock {\em ECCV}, 2020.
+
+\bibitem{charpiat2008automatic}
+Guillaume Charpiat, Matthias Hofmann, and Bernhard Schölkopf.
+\newblock Automatic image colorization via multimodal predictions.
+\newblock {\em ECCV}, 2008.
+
+\bibitem{chavali2016object}
+Neelima Chavali, Harsh Agrawal, Aroma Mahendru, and Dhruv Batra.
+\newblock Object-proposal evaluation protocol is' gameable'.
+\newblock {\em CVPR}, 2016.
+
+\bibitem{chen20223D}
+Jiazhou Chen, Yanghui Xu, Shufang Lu, Ronghua Liang, and Liangliang Nan.
+\newblock {3D} instance segmentation of {MVS} buildings.
+\newblock {\em IEEE Transactions on Geoscience and Remote Sensing}, 2022.
+
+\bibitem{chen2022focalclick}
+Xi Chen, Zhiyan Zhao, Yilei Zhang, Manni Duan, Donglian Qi, and Hengshuang
+  Zhao.
+\newblock {FocalClick}: towards practical interactive image segmentation.
+\newblock {\em CVPR}, 2022.
+
+\bibitem{cheng2022masked}
+Bowen Cheng, Ishan Misra, Alexander~G Schwing, Alexander Kirillov, and Rohit
+  Girdhar.
+\newblock Masked-attention mask transformer for universal image segmentation.
+\newblock {\em CVPR}, 2022.
+
+\bibitem{cheng2021per}
+Bowen Cheng, Alex Schwing, and Alexander Kirillov.
+\newblock Per-pixel classification is not all you need for semantic
+  segmentation.
+\newblock {\em NeurIPS}, 2021.
+
+\bibitem{chowdhery2022palm}
+Aakanksha Chowdhery, Sharan Narang, Jacob Devlin, Maarten Bosma, Gaurav Mishra,
+  Adam Roberts, Paul Barham, Hyung~Won Chung, Charles Sutton, Sebastian
+  Gehrmann, et~al.
+\newblock {PaLM}: Scaling language modeling with pathways.
+\newblock {\em arXiv:2204.02311}, 2022.
+
+\bibitem{ndis1}
+Luca Ciampi, Carlos Santiago, Joao Costeira, Claudio Gennaro, and Giuseppe
+  Amato.
+\newblock Domain adaptation for traffic density estimation.
+\newblock {\em International Joint Conference on Computer Vision, Imaging and
+  Computer Graphics Theory and Applications}, 2021.
+
+\bibitem{ndis2}
+Luca Ciampi, Carlos Santiago, Joao Costeira, Claudio Gennaro, and Giuseppe
+  Amato.
+\newblock Night and day instance segmented park ({NDISPark}) dataset: a
+  collection of images taken by day and by night for vehicle detection,
+  segmentation and counting in parking areas.
+\newblock {\em Zenodo}, 2022.
+
+\bibitem{DRAM}
+Nadav Cohen, Yael Newman, and Ariel Shamir.
+\newblock Semantic segmentation in art paintings.
+\newblock {\em Computer Graphics Forum}, 2022.
+
+\bibitem{Cordts2016}
+Marius Cordts, Mohamed Omran, Sebastian Ramos, Timo Rehfeld, Markus Enzweiler,
+  Rodrigo Benenson, Uwe Franke, Stefan Roth, and Bernt Schiele.
+\newblock The {Cityscapes} dataset for semantic urban scene understanding.
+\newblock {\em CVPR}, 2016.
+
+\bibitem{da2012learning}
+Bruno da Silva, George Konidaris, and Andrew Barto.
+\newblock Learning parameterized skills.
+\newblock {\em ICML}, 2012.
+
+\bibitem{EpicKitchens}
+Dima Damen, Hazel Doughty, Giovanni~Maria Farinella, Antonino Furnari, Jian Ma,
+  Evangelos Kazakos, Davide Moltisanti, Jonathan Munro, Toby Perrett, Will
+  Price, and Michael Wray.
+\newblock Rescaling egocentric vision: Collection, pipeline and challenges for
+  {EPIC-KITCHENS-100}.
+\newblock {\em IJCV}, 2022.
+
+\bibitem{VISOR}
+Ahmad Darkhalil, Dandan Shan, Bin Zhu, Jian Ma, Amlan Kar, Richard Higgins,
+  Sanja Fidler, David Fouhey, and Dima Damen.
+\newblock {EPIC-KITCHENS VISOR} benchmark: Video segmentations and object
+  relations.
+\newblock {\em NeurIPS}, 2022.
+
+\bibitem{De2019}
+Terrance De~Vries, Ishan Misra, Changhan Wang, and Laurens Van~der Maaten.
+\newblock Does object recognition work for everyone?
+\newblock {\em {CVPR} workshops}, 2019.
+
+\bibitem{diaz2022crowdworksheets}
+Mark D\'{\i}az, Ian Kivlichan, Rachel Rosen, Dylan Baker, Razvan Amironesei,
+  Vinodkumar Prabhakaran, and Emily Denton.
+\newblock {CrowdWorkSheets}: Accounting for individual and collective
+  identities underlying crowdsourced dataset annotation.
+\newblock {\em ACM Conference on Fairness, Accountability, and Transparency},
+  2022.
+
+\bibitem{ding2020phraseclick}
+Henghui Ding, Scott Cohen, Brian Price, and Xudong Jiang.
+\newblock {PhraseClick}: toward achieving flexible interactive segmentation by
+  phrase and click.
+\newblock {\em ECCV}, 2020.
+
+\bibitem{dollar2014fast}
+Piotr Doll{\'a}r and C~Lawrence Zitnick.
+\newblock Fast edge detection using structured forests.
+\newblock {\em TPAMI}, 2014.
+
+\bibitem{Dosovitskiy2021}
+Alexey Dosovitskiy, Lucas Beyer, Alexander Kolesnikov, Dirk Weissenborn,
+  Xiaohua Zhai, Thomas Unterthiner, Mostafa Dehghani, Matthias Minderer, Georg
+  Heigold, Sylvain Gelly, Jakob Uszkoreit, and Neil Houlsby.
+\newblock An image is worth 16x16 words: Transformers for image recognition at
+  scale.
+\newblock {\em ICLR}, 2021.
+
+\bibitem{gtea1}
+Alireza Fathi, Xiaofeng Ren, and James~M. Rehg.
+\newblock Learning to recognize objects in egocentric activities.
+\newblock {\em CVPR}, 2011.
+
+\bibitem{felzenszwalb2004efficient}
+Pedro~F Felzenszwalb and Daniel~P Huttenlocher.
+\newblock Efficient graph-based image segmentation.
+\newblock {\em IJCV}, 2004.
+
+\bibitem{fitzpatrick1988}
+Thomas~B. Fitzpatrick.
+\newblock The validity and practicality of sun-reactive skin types i through
+  vi.
+\newblock {\em Archives of Dermatology}, 1988.
+
+\bibitem{forte2020getting}
+Marco Forte, Brian Price, Scott Cohen, Ning Xu, and Fran{\c{c}}ois Piti{\'e}.
+\newblock Getting to 99\% accuracy in interactive segmentation.
+\newblock {\em arXiv:2003.07932}, 2020.
+
+\bibitem{timberSeg}
+Jean-Michel Fortin, Olivier Gamache, Vincent Grondin, François Pomerleau, and
+  Philippe Giguère.
+\newblock Instance segmentation for autonomous log grasping in forestry
+  operations.
+\newblock {\em {IROS}}, 2022.
+
+\bibitem{gebru2021datasheets}
+Timnit Gebru, Jamie Morgenstern, Briana Vecchione, Jennifer~Wortman Vaughan,
+  Hanna Wallach, Hal~Daum{\'e} Iii, and Kate Crawford.
+\newblock Datasheets for datasets.
+\newblock {\em Communications of the {ACM}}, 2021.
+
+\bibitem{Ghiasi2021}
+Golnaz Ghiasi, Yin Cui, Aravind Srinivas, Rui Qian, Tsung-Yi Lin, Ekin~D Cubuk,
+  Quoc~V Le, and Barret Zoph.
+\newblock Simple copy-paste is a strong data augmentation method for instance
+  segmentation.
+\newblock {\em CVPR}, 2021.
+
+\bibitem{Girshick2014}
+Ross Girshick, Jeff Donahue, Trevor Darrell, and Jitendra Malik.
+\newblock Rich feature hierarchies for accurate object detection and semantic
+  segmentation.
+\newblock {\em CVPR}, 2014.
+
+\bibitem{Goyal2017}
+Priya Goyal, Piotr Dollár, Ross Girshick, Pieter Noordhuis, Lukasz Wesolowski,
+  Aapo Kyrola, Andrew Tulloch, Yangqing Jia, and Kaiming He.
+\newblock Accurate, large minibatch {SGD}: Training {ImageNet} in 1 hour.
+\newblock {\em arXiv:1706.02677}, 2017.
+
+\bibitem{Ego4D2022CVPR}
+Kristen Grauman, Andrew Westbury, Eugene Byrne, Zachary Chavis, Antonino
+  Furnari, Rohit Girdhar, Jackson Hamburger, Hao Jiang, Miao Liu, Xingyu Liu,
+  Miguel Martin, Tushar Nagarajan, Ilija Radosavovic, Santhosh~Kumar
+  Ramakrishnan, Fiona Ryan, Jayant Sharma, Michael Wray, Mengmeng Xu,
+  Eric~Zhongcong Xu, Chen Zhao, Siddhant Bansal, Dhruv Batra, Vincent
+  Cartillier, Sean Crane, Tien Do, Morrie Doulaty, Akshay Erapalli, Christoph
+  Feichtenhofer, Adriano Fragomeni, Qichen Fu, Christian Fuegen, Abrham
+  Gebreselasie, Cristina Gonzalez, James Hillis, Xuhua Huang, Yifei Huang,
+  Wenqi Jia, Weslie Khoo, Jachym Kolar, Satwik Kottur, Anurag Kumar, Federico
+  Landini, Chao Li, Yanghao Li, Zhenqiang Li, Karttikeya Mangalam, Raghava
+  Modhugu, Jonathan Munro, Tullie Murrell, Takumi Nishiyasu, Will Price,
+  Paola~Ruiz Puentes, Merey Ramazanova, Leda Sari, Kiran Somasundaram, Audrey
+  Southerland, Yusuke Sugano, Ruijie Tao, Minh Vo, Yuchen Wang, Xindi Wu,
+  Takuma Yagi, Yunyi Zhu, Pablo Arbelaez, David Crandall, Dima Damen,
+  Giovanni~Maria Farinella, Bernard Ghanem, Vamsi~Krishna Ithapu, C.~V.
+  Jawahar, Hanbyul Joo, Kris Kitani, Haizhou Li, Richard Newcombe, Aude Oliva,
+  Hyun~Soo Park, James~M. Rehg, Yoichi Sato, Jianbo Shi, Mike~Zheng Shou,
+  Antonio Torralba, Lorenzo Torresani, Mingfei Yan, and Jitendra Malik.
+\newblock {Ego4D}: Around the {W}orld in 3,000 {H}ours of {E}gocentric {V}ideo.
+\newblock {\em CVPR}, 2022.
+
+\bibitem{Gupta2019}
+Agrim Gupta, Piotr Dollar, and Ross Girshick.
+\newblock {LVIS}: A dataset for large vocabulary instance segmentation.
+\newblock {\em CVPR}, 2019.
+
+\bibitem{guzman2012multiple}
+Abner Guzman-Rivera, Dhruv Batra, and Pushmeet Kohli.
+\newblock Multiple choice learning: Learning to produce multiple structured
+  outputs.
+\newblock {\em NeurIPS}, 2012.
+
+\bibitem{haucke2022socrates}
+Timm Haucke, Hjalmar~S. Kühl, and Volker Steinhage.
+\newblock {SOCRATES}: Introducing depth in visual wildlife monitoring using
+  stereo vision.
+\newblock {\em Sensors}, 2022.
+
+\bibitem{he2022masked}
+Kaiming He, Xinlei Chen, Saining Xie, Yanghao Li, Piotr Dollár, and Ross
+  Girshick.
+\newblock Masked autoencoders are scalable vision learners.
+\newblock {\em CVPR}, 2022.
+
+\bibitem{He2017}
+Kaiming He, Georgia Gkioxari, Piotr Dollár, and Ross Girshick.
+\newblock {Mask R-CNN}.
+\newblock {\em ICCV}, 2017.
+
+\bibitem{He2016}
+Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
+\newblock Deep residual learning for image recognition.
+\newblock {\em CVPR}, 2016.
+
+\bibitem{Hendrycks2016}
+Dan Hendrycks and Kevin Gimpel.
+\newblock Gaussian error linear units (gelus).
+\newblock {\em arXiv:1606.08415}, 2016.
+
+\bibitem{hoffmann2022training}
+Jordan Hoffmann, Sebastian Borgeaud, Arthur Mensch, Elena Buchatskaya, Trevor
+  Cai, Eliza Rutherford, Diego de~Las Casas, Lisa~Anne Hendricks, Johannes
+  Welbl, Aidan Clark, et~al.
+\newblock Training compute-optimal large language models.
+\newblock {\em arXiv:2203.15556}, 2022.
+
+\bibitem{hong2020trashcan}
+Jungseok Hong, Michael Fulton, and Junaed Sattar.
+\newblock {TrashCan}: A semantically-segmented dataset towards visual detection
+  of marine debris.
+\newblock {\em arXiv:2007.08097}, 2020.
+
+\bibitem{Huang2016deep}
+Gao Huang, Yu Sun, Zhuang Liu, Daniel Sedra, and Kilian~Q Weinberger.
+\newblock Deep networks with stochastic depth.
+\newblock {\em ECCV}, 2016.
+
+\bibitem{jain2022oneformer}
+Jitesh Jain, Jiachen Li, MangTik Chiu, Ali Hassani, Nikita Orlov, and Humphrey
+  Shi.
+\newblock Oneformer: One transformer to rule universal image segmentation.
+\newblock {\em arXiv:2211.06220}, 2022.
+
+\bibitem{jia2021scaling}
+Chao Jia, Yinfei Yang, Ye Xia, Yi-Ting Chen, Zarana Parekh, Hieu Pham, Quoc Le,
+  Yun-Hsuan Sung, Zhen Li, and Tom Duerig.
+\newblock Scaling up visual and vision-language representation learning with
+  noisy text supervision.
+\newblock {\em ICML}, 2021.
+
+\bibitem{kaplan2020scaling}
+Jared Kaplan, Sam McCandlish, Tom Henighan, Tom~B Brown, Benjamin Chess, Rewon
+  Child, Scott Gray, Alec Radford, Jeffrey Wu, and Dario Amodei.
+\newblock Scaling laws for neural language models.
+\newblock {\em arXiv:2001.08361}, 2020.
+
+\bibitem{kass1988snakes}
+Michael Kass, Andrew Witkin, and Demetri Terzopoulos.
+\newblock Snakes: Active contour models.
+\newblock {\em IJCV}, 1988.
+
+\bibitem{kim2022learning}
+Dahun Kim, Tsung-Yi Lin, Anelia Angelova, In~So Kweon, and Weicheng Kuo.
+\newblock Learning open-world object proposals without learning to classify.
+\newblock {\em {IEEE} Robotics and Automation Letters}, 2022.
+
+\bibitem{kirillov2019panoptic}
+Alexander Kirillov, Kaiming He, Ross Girshick, Carsten Rother, and Piotr
+  Dollár.
+\newblock Panoptic segmentation.
+\newblock {\em CVPR}, 2019.
+
+\bibitem{OpenImages}
+Alina Kuznetsova, Hassan Rom, Neil Alldrin, Jasper Uijlings, Ivan Krasin, Jordi
+  Pont-Tuset, Shahab Kamali, Stefan Popov, Matteo Malloci, Alexander
+  Kolesnikov, Tom Duerig, and Vittorio Ferrari.
+\newblock The open images dataset v4: Unified image classification, object
+  detection, and visual relationship detection at scale.
+\newblock {\em IJCV}, 2020.
+
+\bibitem{lacoste2019quantifying}
+Alexandre Lacoste, Alexandra Luccioni, Victor Schmidt, and Thomas Dandres.
+\newblock Quantifying the carbon emissions of machine learning.
+\newblock {\em arXiv:1910.09700}, 2019.
+
+\bibitem{li2022exploring}
+Yanghao Li, Hanzi Mao, Ross Girshick, and Kaiming He.
+\newblock Exploring plain vision transformer backbones for object detection.
+\newblock {\em ECCV}, 2022.
+
+\bibitem{gtea2}
+Yin Li, Zhefan Ye, and James~M. Rehg.
+\newblock Delving into egocentric actions.
+\newblock {\em CVPR}, 2015.
+
+\bibitem{li2018interactive}
+Zhuwen Li, Qifeng Chen, and Vladlen Koltun.
+\newblock Interactive image segmentation with latent diversity.
+\newblock {\em CVPR}, 2018.
+
+\bibitem{Lin2017a}
+Tsung-Yi Lin, Priya Goyal, Ross Girshick, Kaiming He, and Piotr Dollár.
+\newblock Focal loss for dense object detection.
+\newblock {\em ICCV}, 2017.
+
+\bibitem{Lin2014}
+Tsung-Yi Lin, Michael Maire, Serge Belongie, James Hays, Pietro Perona, Deva
+  Ramanan, Piotr Dollár, and C~Lawrence Zitnick.
+\newblock {Microsoft COCO: Common objects in context}.
+\newblock {\em ECCV}, 2014.
+
+\bibitem{liu2022simpleclick}
+Qin Liu, Zhenlin Xu, Gedas Bertasius, and Marc Niethammer.
+\newblock {SimpleClick}: Interactive image segmentation with simple vision
+  transformers.
+\newblock {\em arXiv:2210.11006}, 2022.
+
+\bibitem{Loshchilov2019}
+Ilya Loshchilov and Frank Hutter.
+\newblock Decoupled weight decay regularization.
+\newblock {\em ICLR}, 2019.
+
+\bibitem{lucas2014gelatinous}
+Cathy~H Lucas, Daniel~OB Jones, Catherine~J Hollyhead, Robert~H Condon,
+  Carlos~M Duarte, William~M Graham, Kelly~L Robinson, Kylie~A Pitt, Mark
+  Schildhauer, and Jim Regetz.
+\newblock Gelatinous zooplankton biomass in the global oceans: geographic
+  variation and environmental drivers.
+\newblock {\em Global Ecology and Biogeography}, 2014.
+
+\bibitem{mahadevan2018iteratively}
+Sabarinath Mahadevan, Paul Voigtlaender, and Bastian Leibe.
+\newblock Iteratively trained interactive segmentation.
+\newblock {\em BMVC}, 2018.
+
+\bibitem{maninis2018deep}
+Kevis-Kokitsi Maninis, Sergi Caelles, Jordi Pont-Tuset, and Luc Van~Gool.
+\newblock Deep extreme cut: From extreme points to object segmentation.
+\newblock {\em CVPR}, 2018.
+
+\bibitem{martin2001database}
+David Martin, Charless Fowlkes, Doron Tal, and Jitendra Malik.
+\newblock A database of human segmented natural images and its application to
+  evaluating segmentation algorithms and measuring ecological statistics.
+\newblock {\em ICCV}, 2001.
+
+\bibitem{milletari2016v}
+Fausto Milletari, Nassir Navab, and Seyed-Ahmad Ahmadi.
+\newblock {V-Net}: Fully convolutional neural networks for volumetric medical
+  image segmentation.
+\newblock {\em {3DV}}, 2016.
+
+\bibitem{plants}
+Massimo Minervini, Andreas Fischbach, Hanno Scharr, and Sotirios~A. Tsaftaris.
+\newblock Finely-grained annotated datasets for image-based plant phenotyping.
+\newblock {\em Pattern Recognition Letters}, 2016.
+
+\bibitem{mitchell2019model}
+Margaret Mitchell, Simone Wu, Andrew Zaldivar, Parker Barnes, Lucy Vasserman,
+  Ben Hutchinson, Elena Spitzer, Inioluwa~Deborah Raji, and Timnit Gebru.
+\newblock Model cards for model reporting.
+\newblock {\em Proceedings of the conference on fairness, accountability, and
+  transparency}, 2019.
+
+\bibitem{papadopoulos2017extreme}
+Dim~P Papadopoulos, Jasper~RR Uijlings, Frank Keller, and Vittorio Ferrari.
+\newblock Extreme clicking for efficient object annotation.
+\newblock {\em ICCV}, 2017.
+
+\bibitem{patterson2021carbon}
+David Patterson, Joseph Gonzalez, Quoc Le, Chen Liang, Lluis-Miquel Munguia,
+  Daniel Rothchild, David So, Maud Texier, and Jeff Dean.
+\newblock Carbon emissions and large neural network training.
+\newblock {\em arXiv:2104.10350}, 2021.
+
+\bibitem{peters2017semi}
+Matthew~E Peters, Waleed Ammar, Chandra Bhagavatula, and Russell Power.
+\newblock Semi-supervised sequence tagging with bidirectional language models.
+\newblock {\em Proceedings of the 55th Annual Meeting of the Association for
+  Computational Linguistics}, 2017.
+
+\bibitem{pu2022edter}
+Mengyang Pu, Yaping Huang, Yuming Liu, Qingji Guan, and Haibin Ling.
+\newblock {EDTER}: Edge detection with transformer.
+\newblock {\em CVPR}, 2022.
+
+\bibitem{doors}
+Mattia Pugliatti and Francesco Topputo.
+\newblock {DOORS: Dataset fOr bOuldeRs Segmentation}.
+\newblock {\em Zenodo}, 2022.
+
+\bibitem{ovis}
+Jiyang Qi, Yan Gao, Yao Hu, Xinggang Wang, Xiaoyu Liu, Xiang Bai, Serge
+  Belongie, Alan Yuille, Philip Torr, and Song Bai.
+\newblock Occluded video instance segmentation: A benchmark.
+\newblock {\em ICCV}, 2022.
+
+\bibitem{Radford2021}
+Alec Radford, Jong~Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh,
+  Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark,
+  et~al.
+\newblock Learning transferable visual models from natural language
+  supervision.
+\newblock {\em ICML}, 2021.
+
+\bibitem{Ramesh2021}
+Aditya Ramesh, Mikhail Pavlov, Gabriel Goh, Scott Gray, Chelsea Voss, Alec
+  Radford, Mark Chen, and Ilya Sutskever.
+\newblock Zero-shot text-to-image generation.
+\newblock {\em ICML}, 2021.
+
+\bibitem{Ren2015}
+Shaoqing Ren, Kaiming He, Ross Girshick, and Jian Sun.
+\newblock {Faster R-CNN}: Towards real-time object detection with region
+  proposal networks.
+\newblock {\em NeurIPS}, 2015.
+
+\bibitem{ren2003learning}
+Xiaofeng Ren and Jitendra Malik.
+\newblock Learning a classification model for segmentation.
+\newblock {\em ICCV}, 2003.
+
+\bibitem{hypersim}
+Mike Roberts, Jason Ramapuram, Anurag Ranjan, Atulit Kumar, Miguel~Angel
+  Bautista, Nathan Paczan, Russ Webb, and Joshua~M. Susskind.
+\newblock {Hypersim}: {A} photorealistic synthetic dataset for holistic indoor
+  scene understanding.
+\newblock {\em ICCV}, 2021.
+
+\bibitem{schumann2021step}
+Candice Schumann, Susanna Ricco, Utsav Prabhu, Vittorio Ferrari, and Caroline
+  Pantofaru.
+\newblock A step toward more inclusive people annotations for fairness.
+\newblock {\em Proceedings of the 2021 AAAI/ACM Conference on AI, Ethics, and
+  Society}, 2021.
+
+\bibitem{serengil2020lightface}
+Sefik~Ilkin Serengil and Alper Ozpinar.
+\newblock {LightFace}: A hybrid deep face recognition framework.
+\newblock {\em {ASYU}}, 2020.
+
+\bibitem{serengil2021lightface}
+Sefik~Ilkin Serengil and Alper Ozpinar.
+\newblock {HyperExtended LightFace}: A facial attribute analysis framework.
+\newblock {\em {ICEET}}, 2021.
+
+\bibitem{shotton2006textonboost}
+Jamie Shotton, John Winn, Carsten Rother, and Antonio Criminisi.
+\newblock {TextonBoost}: Joint appearance, shape and context modeling for
+  mulit-class object recognition and segmentation.
+\newblock {\em ECCV}, 2006.
+
+\bibitem{streets}
+Corey Snyder and Minh Do.
+\newblock {STREETS}: A novel camera network dataset for traffic flow.
+\newblock {\em NeurIPS}, 2019.
+
+\bibitem{sofiiuk2022reviving}
+Konstantin Sofiiuk, Ilya~A Petrov, and Anton Konushin.
+\newblock Reviving iterative training with mask guidance for interactive
+  segmentation.
+\newblock {\em {ICIP}}, 2022.
+
+\bibitem{Srivastava2014}
+Nitish Srivastava, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, and Ruslan
+  Salakhutdinov.
+\newblock Dropout: A simple way to prevent neural networks from overfitting.
+\newblock {\em The Journal of Machine Learning Research}, 2014.
+
+\bibitem{stauffer1999adaptive}
+Chris Stauffer and W~Eric~L Grimson.
+\newblock Adaptive background mixture models for real-time tracking.
+\newblock {\em CVPR}, 1999.
+
+\bibitem{tancik2020fourier}
+Matthew Tancik, Pratul Srinivasan, Ben Mildenhall, Sara Fridovich-Keil, Nithin
+  Raghavan, Utkarsh Singhal, Ravi Ramamoorthi, Jonathan Barron, and Ren Ng.
+\newblock Fourier features let networks learn high frequency functions in low
+  dimensional domains.
+\newblock {\em NeurIPS}, 2020.
+
+\bibitem{THU-READ2}
+Yansong Tang, Yi Tian, Jiwen Lu, Jianjiang Feng, and Jie Zhou.
+\newblock Action recognition in {RGB-D} egocentric videos.
+\newblock {\em {ICIP}}, 2017.
+
+\bibitem{THU-READ1}
+Yansong Tang, Zian Wang, Jiwen Lu, Jianjiang Feng, and Jie Zhou.
+\newblock Multi-stream deep neural networks for {RGB-D} egocentric action
+  recognition.
+\newblock {\em IEEE Transactions on Circuits and Systems for Video Technology},
+  2019.
+
+\bibitem{worldbank2022}
+{The World Bank}.
+\newblock The world by income and regions, 2022.
+\newblock
+  \href{https://datatopics.worldbank.org/world-development-indicators/the-world-by-income-and-region.html}{https://datatopics.worldbank.org/world-development-indicators/the-world-by-income-and-region.html}.
+
+\bibitem{thrun1995learning}
+Sebastian Thrun.
+\newblock Is learning the n-th thing any easier than learning the first?
+\newblock {\em NeurIPS}, 1995.
+
+\bibitem{ndd20}
+Cameron Trotter, Georgia Atkinson, Matt Sharpe, Kirsten Richardson, A.~Stephen
+  McGough, Nick Wright, Ben Burville, and Per Berggren.
+\newblock {NDD20}: A large-scale few-shot dolphin dataset for coarse and
+  fine-grained categorisation.
+\newblock {\em arXiv:2005.13359}, 2020.
+
+\bibitem{epa2022}
+{United States Environmental Protection Agency}.
+\newblock {Greenhouse Gas Equivalencies Calculator}.
+\newblock
+  \href{https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator}{https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator},
+  2022.
+
+\bibitem{Sande2011}
+Koen~EA van~de Sande, Jasper~RR Uijlings, Theo Gevers, and Arnold~WM Smeulders.
+\newblock Segmentation as selective search for object recognition.
+\newblock {\em ICCV}, 2011.
+
+\bibitem{Vaswani2017}
+Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones,
+  Aidan~N Gomez, Lukasz Kaiser, and Illia Polosukhin.
+\newblock Attention is all you need.
+\newblock {\em NeurIPS}, 2017.
+
+\bibitem{wang2021towards}
+Boying Wang, Libo Zhang, Longyin Wen, Xianglong Liu, and Yanjun Wu.
+\newblock Towards real-world prohibited item detection: A large-scale x-ray
+  benchmark.
+\newblock {\em CVPR}, 2021.
+
+\bibitem{wang2022open}
+Weiyao Wang, Matt Feiszli, Heng Wang, Jitendra Malik, and Du Tran.
+\newblock Open-world instance segmentation: Exploiting pseudo ground truth from
+  learned pairwise affinity.
+\newblock {\em CVPR}, 2022.
+
+\bibitem{wu2023multiview}
+Chao-Yuan Wu, Justin Johnson, Jitendra Malik, Christoph Feichtenhofer, and
+  Georgia Gkioxari.
+\newblock Multiview compressive coding for 3{D} reconstruction.
+\newblock {\em CVPR}, 2023.
+
+\bibitem{sun2010}
+Jianxiong Xiao, James Hays, Krista Ehinger, Aude Oliva, and Antonio Torralba.
+\newblock {SUN} database: Large-scale scene recognition from abbey to zoo.
+\newblock {\em CVPR}, 2010.
+
+\bibitem{xie2015holistically}
+Saining Xie and Zhuowen Tu.
+\newblock Holistically-nested edge detection.
+\newblock {\em ICCV}, 2015.
+
+\bibitem{xu2016deep}
+Ning Xu, Brian Price, Scott Cohen, Jimei Yang, and Thomas~S Huang.
+\newblock Deep interactive object selection.
+\newblock {\em CVPR}, 2016.
+
+\bibitem{yang2020towards}
+Kaiyu Yang, Klint Qinami, Li Fei-Fei, Jia Deng, and Olga Russakovsky.
+\newblock Towards fairer datasets: Filtering and balancing the distribution of
+  the people subtree in the imagenet hierarchy.
+\newblock {\em Proceedings of the 2020 conference on fairness, accountability,
+  and transparency}, 2020.
+
+\bibitem{iShape}
+Lei Yang, Yan~Zi Wei, Yisheng HE, Wei Sun, Zhenhang Huang, Haibin Huang, and
+  Haoqiang Fan.
+\newblock {iShape}: A first step towards irregular shape instance segmentation.
+\newblock {\em arXiv:2109.15068}, 2021.
+
+\bibitem{yogamani2019woodscape}
+Senthil Yogamani, Ciar{\'a}n Hughes, Jonathan Horgan, Ganesh Sistu, Padraig
+  Varley, Derek O'Dea, Michal Uric{\'a}r, Stefan Milz, Martin Simon, Karl
+  Amende, et~al.
+\newblock {WoodScape}: A multi-task, multi-camera fisheye dataset for
+  autonomous driving.
+\newblock {\em ICCV}, 2019.
+
+\bibitem{egoHos}
+Lingzhi Zhang, Shenghao Zhou, Simon Stent, and Jianbo Shi.
+\newblock Fine-grained egocentric hand-object segmentation: Dataset, model, and
+  applications.
+\newblock {\em ECCV}, 2022.
+
+\bibitem{zhang2021knet}
+Wenwei Zhang, Jiangmiao Pang, Kai Chen, and Chen~Change Loy.
+\newblock {K-Net}: Towards unified image segmentation.
+\newblock {\em NeurIPS}, 2021.
+
+\bibitem{zhao2017}
+Jieyu Zhao, Tianlu Wang, Mark Yatskar, Vicente Ordonez, and Kai-Wei Chang.
+\newblock Men also like shopping: Reducing gender bias amplification using
+  corpus-level constraints.
+\newblock {\em arXiv:1707.09457}, 2017.
+
+\bibitem{zhou2017places}
+Bolei Zhou, Agata Lapedriza, Aditya Khosla, Aude Oliva, and Antonio Torralba.
+\newblock Places: A 10 million image database for scene recognition.
+\newblock {\em TPAMI}, 2017.
+
+\bibitem{Zhou2019}
+Bolei Zhou, Hang Zhao, Xavier Puig, Tete Xiao, Sanja Fidler, Adela Barriuso,
+  and Antonio Torralba.
+\newblock Semantic understanding of scenes through the {ADE20K} dataset.
+\newblock {\em IJCV}, 2019.
+
+\end{thebibliography}
