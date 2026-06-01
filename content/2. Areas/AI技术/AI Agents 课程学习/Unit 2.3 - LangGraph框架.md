@@ -1,6 +1,5 @@
 ---
 title: Unit 2.3 - LangGraph 框架
-publish: false
 status: 🟢 已完成
 course_url: https://hf.co/learn/agents-course/unit2/langgraph/introduction
 publish: true

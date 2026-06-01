@@ -1,6 +1,5 @@
 ---
 title: Unit 0 - 课程导览与准备
-publish: false
 status: 🔴 未开始
 course_url: https://hf.co/learn/agents-course/unit0/introduction
 publish: true

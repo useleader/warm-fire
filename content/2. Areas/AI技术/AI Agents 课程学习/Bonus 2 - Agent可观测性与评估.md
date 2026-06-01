@@ -1,6 +1,5 @@
 ---
 title: Bonus 2 - Agent 可观测性与评估
-publish: false
 status: 🟢 已完成
 course_url: https://hf.co/learn/agents-course/bonus-unit2/introduction
 publish: true

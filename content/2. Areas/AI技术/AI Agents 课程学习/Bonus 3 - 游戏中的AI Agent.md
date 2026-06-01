@@ -1,6 +1,5 @@
 ---
 title: Bonus 3 - 游戏中的 AI Agent
-publish: false
 status: 🟢 已完成
 course_url: https://hf.co/learn/agents-course/bonus-unit3/introduction
 publish: true

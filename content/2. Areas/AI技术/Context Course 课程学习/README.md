@@ -1,6 +1,5 @@
 ---
 title: Context Course 课程学习
-publish: false
 publish: true
 ---
 

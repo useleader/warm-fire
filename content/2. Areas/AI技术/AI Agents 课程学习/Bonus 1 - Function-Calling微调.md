@@ -1,6 +1,5 @@
 ---
 title: Bonus 1 - Function-Calling 微调
-publish: false
 status: 🟢 已完成
 course_url: https://hf.co/learn/agents-course/bonus-unit1/introduction
 publish: true

@@ -1,6 +1,5 @@
 ---
 title: Unit 0 - 课程导览与工具安装
-publish: false
 course_url: https://huggingface.co/learn/context-course/unit0/introduction
 publish: true
 ---

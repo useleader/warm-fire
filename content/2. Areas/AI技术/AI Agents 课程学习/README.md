@@ -1,6 +1,5 @@
 ---
 title: AI Agents 课程学习
-publish: false
 course_url: https://huggingface.co/learn/agents-course/
 publish: true
 ---

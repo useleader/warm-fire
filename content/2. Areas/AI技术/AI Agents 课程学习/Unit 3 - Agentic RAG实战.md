@@ -1,6 +1,5 @@
 ---
 title: Unit 3 - Agentic RAG 实战
-publish: false
 status: 🟢 已完成
 course_url: https://hf.co/learn/agents-course/unit3/agentic-rag/introduction
 publish: true
